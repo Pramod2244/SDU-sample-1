@@ -1,14 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { ArrowDown } from "lucide-react";
 
 const HeroSection = () => {
-  const heroImage = PlaceHolderImages.find((img) => img.id === "hero-background");
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -34,16 +30,14 @@ const HeroSection = () => {
 
   return (
     <section className="relative h-screen flex items-center justify-center text-white">
-      {heroImage && (
-        <Image
-          src={heroImage.imageUrl}
-          alt={heroImage.description}
-          fill
-          className="object-cover"
-          priority
-          data-ai-hint={heroImage.imageHint}
-        />
-      )}
+      <video
+        src="https://download-video-ak.vimeocdn.com/v3-1/playback/fd958212-899e-494c-9b06-fee33e8a5763/11c5e2b1?__token__=st=1769015247~exp=1769018847~acl=%2Fv3-1%2Fplayback%2Ffd958212-899e-494c-9b06-fee33e8a5763%2F11c5e2b1%2A~hmac=2206881cc3232a059c391ae89d4a&r=dXMtY2VudHJhbDE%3D"
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      />
       <div className="absolute inset-0 bg-black/65" />
       <motion.div
         className="relative z-10 text-center px-4"

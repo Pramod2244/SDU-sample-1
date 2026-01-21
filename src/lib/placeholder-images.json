@@ -1,12 +1,6 @@
 {
   "placeholderImages": [
     {
-      "id": "hero-background",
-      "description": "A sprawling, modern university campus on a sunny day.",
-      "imageUrl": "https://images.unsplash.com/photo-1689686610856-3bcf921eb1f0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx1bml2ZXJzaXR5JTIwY2FtcHVzfGVufDB8fHx8MTc2ODk5OTMwOHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "university campus"
-    },
-    {
       "id": "admissions-image",
       "description": "A diverse group of students collaborating in a bright, modern library.",
       "imageUrl": "https://images.unsplash.com/photo-1728455635901-bb16530faf40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdHVkZW50cyUyMHN0dWR5aW5nfGVufDB8fHx8MTc2OTAwMTA1NHww&ixlib=rb-4.1.0&q=80&w=1080",
