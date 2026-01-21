@@ -93,7 +93,7 @@ const Header = () => {
                         <ChevronDown className="ml-1 h-4 w-4" />
                       </Button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent className="bg-card">
+                    <DropdownMenuContent className="bg-card border-t-4 border-destructive" sideOffset={14}>
                       {link.subLinks.map((subLink) => (
                         <DropdownMenuItem key={subLink.name} asChild>
                           <Link href={subLink.href} className="text-foreground">
