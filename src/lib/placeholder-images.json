@@ -1,3 +1,64 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-background",
+      "description": "A sprawling, modern university campus on a sunny day.",
+      "imageUrl": "https://images.unsplash.com/photo-1689686610856-3bcf921eb1f0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx1bml2ZXJzaXR5JTIwY2FtcHVzfGVufDB8fHx8MTc2ODk5OTMwOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "university campus"
+    },
+    {
+      "id": "admissions-image",
+      "description": "A diverse group of students collaborating in a bright, modern library.",
+      "imageUrl": "https://images.unsplash.com/photo-1728455635901-bb16530faf40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdHVkZW50cyUyMHN0dWR5aW5nfGVufDB8fHx8MTc2OTAwMTA1NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "students studying"
+    },
+    {
+      "id": "campus-life-housing",
+      "description": "A modern and clean student dormitory room with a view.",
+      "imageUrl": "https://images.unsplash.com/photo-1563244943-ce82ae870e42?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzdHVkZW50JTIwZG9ybWl0b3J5fGVufDB8fHx8MTc2OTAxNDU2M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "student dormitory"
+    },
+    {
+      "id": "campus-life-clubs",
+      "description": "A group of students smiling and working together on a project.",
+      "imageUrl": "https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxzdHVkZW50JTIwZ3JvdXB8ZW58MHx8fHwxNzY4OTAxNTIxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "student group"
+    },
+    {
+      "id": "campus-life-wellness",
+      "description": "A state-of-the-art university gym with various fitness equipment.",
+      "imageUrl": "https://images.unsplash.com/photo-1593786930094-d5c8164ac771?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx1bml2ZXJzaXR5JTIwZ3ltfGVufDB8fHx8MTc2OTAxNDU2M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "university gym"
+    },
+    {
+      "id": "campus-life-community",
+      "description": "Students volunteering for a community cleanup event.",
+      "imageUrl": "https://images.unsplash.com/photo-1652811434618-5ca379628c51?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx2b2x1bnRlZXJzJTIwd29ya2luZ3xlbnwwfHx8fDE3NjkwMTQ1NjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "volunteers working"
+    },
+    {
+      "id": "news-featured",
+      "description": "Graduation ceremony with students in caps and gowns celebrating.",
+      "imageUrl": "https://images.unsplash.com/photo-1627556704283-452301a45fd0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxncmFkdWF0aW9uJTIwY2VyZW1vbnl8ZW58MHx8fHwxNzY4OTI3OTc3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "graduation ceremony"
+    },
+    {
+      "id": "news-event1",
+      "description": "A large lecture hall filled with an attentive audience.",
+      "imageUrl": "https://images.unsplash.com/photo-1724315069759-3bac28f679f6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxsZWN0dXJlJTIwaGFsbHxlbnwwfHx8fDE3Njg5NDMzOTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "lecture hall"
+    },
+    {
+      "id": "news-event2",
+      "description": "A modern science laboratory with advanced equipment.",
+      "imageUrl": "https://images.unsplash.com/photo-1602052577122-f73b9710adba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzY2llbmNlJTIwbGFib3JhdG9yeXxlbnwwfHx8fDE3Njg5NjAyNDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "science laboratory"
+    },
+    {
+      "id": "about-image",
+      "description": "The interior of a grand university library with rows of books.",
+      "imageUrl": "https://images.unsplash.com/photo-1683319598210-d70486f2f996?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx1bml2ZXJzaXR5JTIwbGlicmFyeXxlbnwwfHx8fDE3NjkwMTQ1NjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "university library"
+    }
+  ]
 }
