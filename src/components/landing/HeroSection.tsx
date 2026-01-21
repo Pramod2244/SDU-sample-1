@@ -63,7 +63,7 @@ const HeroSection = () => {
         initial="hidden"
         animate="visible"
       >
-        <div>
+        <div className="mt-24">
           <motion.h1
             variants={itemVariants}
             className="font-headline text-5xl md:text-7xl font-bold leading-tight"
