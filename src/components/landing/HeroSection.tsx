@@ -58,7 +58,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
 
       <motion.div
-        className="relative z-10 container mx-auto px-4 pb-24"
+        className="relative z-10 container mx-auto px-4 pb-16"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
