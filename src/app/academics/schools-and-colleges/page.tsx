@@ -50,7 +50,7 @@ const SchoolsAndCollegesPage = () => {
         backgroundAttachment: 'fixed',
       }}
     >
-      <div className="flex flex-col min-h-screen bg-background/95">
+      <div className="flex flex-col min-h-screen bg-background/90">
         <Header />
         <main className="flex-1">
           {/* Hero Section */}
@@ -89,7 +89,7 @@ const SchoolsAndCollegesPage = () => {
                 {schools.map((school) => {
                   const schoolImage = PlaceHolderImages.find(img => img.id === school.imageId);
                   return (
-                    <Card key={school.name} className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col">
+                    <Card key={school.name} className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col bg-card/80 backdrop-blur-sm border-white/20">
                        {schoolImage && (
                           <div className="relative h-48 w-full">
                               <Image
