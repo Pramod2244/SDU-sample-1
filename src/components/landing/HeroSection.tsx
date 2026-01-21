@@ -55,15 +55,15 @@ const HeroSection = () => {
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
       />
-      <div className="absolute inset-0 bg-black/65" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
 
       <motion.div
-        className="relative z-10 container mx-auto px-4 text-left mb-8"
+        className="relative z-10 container mx-auto px-4 pb-24"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <div>
+        <div className="mb-16">
           <motion.h1
             variants={itemVariants}
             className="font-headline text-5xl md:text-7xl font-bold leading-tight"
@@ -79,11 +79,9 @@ const HeroSection = () => {
             </Link>
           </motion.div>
         </div>
-      </motion.div>
-      
-      <div className="relative z-10 pb-12">
+        
         <ValueCards />
-      </div>
+      </motion.div>
       
       <motion.button
         onClick={togglePlay}
