@@ -1,6 +1,5 @@
 import Header from '@/components/landing/Header';
 import HeroSection from '@/components/landing/HeroSection';
-import ValueCards from '@/components/landing/ValueCards';
 import Admissions from '@/components/landing/Admissions';
 import Academics from '@/components/landing/Academics';
 import CampusLife from '@/components/landing/CampusLife';
@@ -14,7 +13,6 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <HeroSection />
-        <ValueCards />
         <Admissions />
         <Academics />
         <CampusLife />
