@@ -3,9 +3,21 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,11 +34,34 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { name: "Admissions &amp; Aid", href: "#admissions" },
-    { name: "Academics", href: "#academics" },
+    {
+      name: "Admissions & Aid",
+      href: "#admissions",
+      subLinks: [
+        { name: "Apply Now", href: "#" },
+        { name: "Undergraduate Admissions", href: "#" },
+        { name: "Graduate Admissions", href: "#" },
+        { name: "International Admissions", href: "#" },
+        { name: "Transfer Admissions", href: "#" },
+        { name: "Executive & Professional Admissions", href: "#" },
+        { name: "Tuition & Fees", href: "#" },
+        { name: "Financial Aid & Scholarships", href: "#" },
+        { name: "Request Information", href: "#" },
+        { name: "Visit & Tour", href: "#" },
+      ],
+    },
+    {
+      name: "Academics",
+      href: "#academics",
+      subLinks: [
+        { name: "Undergraduate", href: "#academics" },
+        { name: "Graduate", href: "#academics" },
+        { name: "Certificates", href: "#academics" },
+      ]
+    },
     { name: "Campus Life", href: "#campus-life" },
     { name: "About", href: "#about" },
-    { name: "News &amp; Events", href: "#news" },
+    { name: "News & Events", href: "#news" },
   ];
 
   return (
@@ -45,12 +80,39 @@ const Header = () => {
             <Link href="/" className={cn("font-headline text-2xl font-bold", isScrolled ? "text-primary" : "text-white")}>
               SDUAHDR
             </Link>
-            <nav className="hidden lg:flex items-center space-x-6">
-              {navLinks.map((link) => (
-                <Link key={link.name} href={link.href} className={cn("text-sm font-medium transition-colors", isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80")}>
-                  {link.name}
-                </Link>
-              ))}
+            <nav className="hidden lg:flex items-center space-x-1">
+              {navLinks.map((link) =>
+                link.subLinks ? (
+                  <DropdownMenu key={link.name}>
+                    <DropdownMenuTrigger asChild>
+                      <Button variant="ghost" className={cn("text-sm font-medium px-3 py-2", isScrolled ? "text-foreground hover:bg-transparent hover:text-primary" : "text-white hover:bg-white/10 hover:text-white")}>
+                        {link.name}
+                        <ChevronDown className="ml-1 h-4 w-4" />
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent className="bg-card">
+                      {link.subLinks.map((subLink) => (
+                        <DropdownMenuItem key={subLink.name} asChild>
+                          <Link href={subLink.href} className="text-foreground">
+                            {subLink.name}
+                          </Link>
+                        </DropdownMenuItem>
+                      ))}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                ) : (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className={cn(
+                      "text-sm font-medium transition-colors px-3 py-2 rounded-md",
+                      isScrolled ? "text-foreground hover:text-primary hover:bg-transparent" : "text-white hover:text-white/80 hover:bg-white/10"
+                    )}
+                  >
+                    {link.name}
+                  </Link>
+                )
+              )}
             </nav>
             <div className="hidden lg:flex items-center space-x-2">
               <Button variant={isScrolled ? "outline" : "default"} className={cn(!isScrolled && "bg-white text-primary hover:bg-white/90")}>Apply</Button>
@@ -82,12 +144,41 @@ const Header = () => {
                 <X />
               </Button>
             </div>
-            <nav className="flex flex-col space-y-6">
-              {navLinks.map((link) => (
-                <Link key={link.name} href={link.href} onClick={() => setIsMenuOpen(false)} className="text-xl font-medium text-foreground hover:text-primary">
-                  {link.name}
-                </Link>
-              ))}
+            <nav className="flex flex-col">
+              {navLinks.map((link) =>
+                link.subLinks ? (
+                  <Accordion key={link.name} type="single" collapsible className="w-full">
+                    <AccordionItem value={link.name} className="border-b">
+                      <AccordionTrigger className="py-3 text-xl font-medium text-foreground hover:text-primary hover:no-underline">
+                        {link.name}
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <div className="flex flex-col space-y-2 pl-6 border-l border-border ml-2">
+                          {link.subLinks.map((subLink) => (
+                            <Link
+                              key={subLink.name}
+                              href={subLink.href}
+                              onClick={() => setIsMenuOpen(false)}
+                              className="py-2 text-lg text-foreground/80 hover:text-primary"
+                            >
+                              {subLink.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+                ) : (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="py-3 text-xl font-medium text-foreground hover:text-primary border-b"
+                  >
+                    {link.name}
+                  </Link>
+                )
+              )}
             </nav>
             <div className="mt-10 flex flex-col space-y-4">
               <Button size="lg">Apply</Button>
