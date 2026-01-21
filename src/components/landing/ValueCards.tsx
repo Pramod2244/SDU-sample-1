@@ -1,31 +1,22 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Book, Target, Globe } from "lucide-react";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import type { LucideIcon } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-interface Value {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-}
-
-const values: Value[] = [
+const sections = [
   {
-    icon: Book,
-    title: "Whole-Person Education",
-    description: "Fostering intellectual, personal, and spiritual growth to develop well-rounded individuals.",
+    superTitle: "HIGHER-POWERED LEARNING",
+    title: "Whole Person Education",
+    description:
+      "At SDUAHDR University, we empower you to realize your full potential through an inclusive and holistic educational experience grounded in universal values.",
+    buttonText: "Educational Approach",
   },
   {
-    icon: Target,
-    title: "Career-Focused Learning",
-    description: "Integrating practical experience and career preparation into every academic program.",
-  },
-  {
-    icon: Globe,
-    title: "Global Perspective",
-    description: "Cultivating global awareness and intercultural competence for a connected world.",
+    superTitle: "MEANINGFUL CAREERS",
+    title: "Ready for the World",
+    description:
+      "Our education and deep ties to the best companies prepare you for success in your career and community—wherever life takes you.",
+    buttonText: "Learn More",
   },
 ];
 
@@ -35,13 +26,14 @@ const ValueCards = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.3,
+        delay: 0.2,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
@@ -53,7 +45,7 @@ const ValueCards = () => {
   };
 
   return (
-    <section className="py-20 lg:py-32 bg-card">
+    <section className="py-20 lg:py-24 bg-accent text-accent-foreground">
       <motion.div
         className="container mx-auto px-4"
         initial="hidden"
@@ -61,27 +53,21 @@ const ValueCards = () => {
         viewport={{ once: true, amount: 0.3 }}
         variants={containerVariants}
       >
-        <div className="grid md:grid-cols-3 gap-8">
-          {values.map((value, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              whileHover={{ y: -10, scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <Card className="text-center h-full shadow-lg hover:shadow-primary/20 transition-shadow duration-300">
-                <CardHeader className="items-center">
-                  <div className="bg-primary text-primary-foreground p-4 rounded-full mb-4">
-                    <value.icon className="h-8 w-8" />
-                  </div>
-                  <CardTitle className="font-headline text-2xl">
-                    {value.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-foreground/80">{value.description}</p>
-                </CardContent>
-              </Card>
+        <div className="grid md:grid-cols-2 gap-x-12 gap-y-16">
+          {sections.map((section, index) => (
+            <motion.div key={index} variants={itemVariants}>
+              <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
+                {section.superTitle}
+              </p>
+              <h2 className="font-headline text-4xl font-bold mb-4">
+                {section.title}
+              </h2>
+              <p className="text-lg text-accent-foreground/80 mb-8 leading-relaxed">
+                {section.description}
+              </p>
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                {section.buttonText}
+              </Button>
             </motion.div>
           ))}
         </div>
