@@ -116,7 +116,6 @@ const Header = () => {
             </nav>
             <div className="hidden lg:flex items-center space-x-2">
               <Button variant={isScrolled ? "outline" : "default"} className={cn(!isScrolled && "bg-white text-primary hover:bg-white/90")}>Apply</Button>
-              <Button variant={isScrolled ? "default" : "outline"} className={cn("transition-colors", !isScrolled && "border-white text-white hover:bg-white hover:text-primary")}>Visit</Button>
             </div>
             <div className="lg:hidden">
               <Button onClick={() => setIsMenuOpen(true)} size="icon" variant="ghost" className={cn(isScrolled ? "text-foreground" : "text-white hover:text-white hover:bg-white/10")}>
@@ -182,7 +181,6 @@ const Header = () => {
             </nav>
             <div className="mt-10 flex flex-col space-y-4">
               <Button size="lg">Apply</Button>
-              <Button size="lg" variant="outline">Visit</Button>
             </div>
           </motion.div>
         )}
