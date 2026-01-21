@@ -45,7 +45,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative h-screen flex flex-col text-white">
+    <section className="relative h-screen flex flex-col justify-end text-white">
       <video
         ref={videoRef}
         src="https://download-video-ak.vimeocdn.com/v3-1/playback/fd958212-899e-494c-9b06-fee33e8a5763/11c5e2b1?__token__=st=1769015247~exp=1769018847~acl=%2Fv3-1%2Fplayback%2Ffd958212-899e-494c-9b06-fee33e8a5763%2F11c5e2b1%2A~hmac=2206881cc3232a059c391ae89428e6356dd699552e65569abbd0f00dfbde0d4a&r=dXMtY2VudHJhbDE%3D"
@@ -58,12 +58,12 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-black/65" />
 
       <motion.div
-        className="relative z-10 flex-grow flex items-center container mx-auto px-4 text-left"
+        className="relative z-10 container mx-auto px-4 text-left mb-20"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <div className="mt-24">
+        <div>
           <motion.h1
             variants={itemVariants}
             className="font-headline text-5xl md:text-7xl font-bold leading-tight"
