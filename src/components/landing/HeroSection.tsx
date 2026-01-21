@@ -58,7 +58,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-black/65" />
 
       <motion.div
-        className="relative z-10 container mx-auto px-4 text-left mb-20"
+        className="relative z-10 container mx-auto px-4 text-left mb-8"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
