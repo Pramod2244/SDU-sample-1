@@ -53,6 +53,42 @@
       "description": "The interior of a grand university library with rows of books.",
       "imageUrl": "https://images.unsplash.com/photo-1683319598210-d70486f2f996?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx1bml2ZXJzaXR5JTIwbGlicmFyeXxlbnwwfHx8fDE3NjkwMTQ1NjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "university library"
+    },
+    {
+      "id": "schools-colleges-hero",
+      "description": "A fountain on a university campus with lush greenery.",
+      "imageUrl": "https://images.unsplash.com/photo-1579273188982-95e5610b7b65?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx1bml2ZXJzaXR5JTIwZm91bnRhaW58ZW58MHx8fHwxNzkxNzQwMjQzfDA&ixlib=rb-4.1.0&q=80&w=1200",
+      "imageHint": "university fountain"
+    },
+    {
+      "id": "college-arts-sciences",
+      "description": "Modern university building with glass facade.",
+      "imageUrl": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB1bml2ZXJzaXR5fGVufDB8fHx8MTc5MTc0MDI5Nnww&ixlib=rb-4.1.0&q=80&w=600",
+      "imageHint": "modern university"
+    },
+    {
+      "id": "college-business",
+      "description": "Students in a business lecture.",
+      "imageUrl": "https://images.unsplash.com/photo-1542744095-291d1f67b221?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGxlY3R1cmV8ZW58MHx8fHwxNzkxNzQwMzMwfDA&ixlib=rb-4.1.0&q=80&w=600",
+      "imageHint": "business lecture"
+    },
+    {
+      "id": "college-nursing",
+      "description": "Nursing students in a simulation lab.",
+      "imageUrl": "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxudXJzaW5nJTIwc3R1ZGVudHN8ZW58MHx8fHwxNzkxNzQwMzU1fDA&ixlib=rb-4.1.0&q=80&w=600",
+      "imageHint": "nursing students"
+    },
+    {
+      "id": "college-education",
+      "description": "A teacher helping a student in a classroom.",
+      "imageUrl": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMGNsYXNzcm9vbXxlbnwwfHx8fDE3OTE3NDAzODR8MA&ixlib=rb-4.1.0&q=80&w=600",
+      "imageHint": "students classroom"
+    },
+    {
+      "id": "college-engineering",
+      "description": "Engineering students working on a robotics project.",
+      "imageUrl": "https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxlbmdpbmVlcmluZyUyMHN0dWRlbnRzfGVufDB8fHx8MTc5MTc0MDQxMnww&ixlib=rb-4.1.0&q=80&w=600",
+      "imageHint": "engineering students"
     }
   ]
 }

@@ -57,6 +57,7 @@ const Header = () => {
         { name: "Undergraduate", href: "#academics" },
         { name: "Graduate", href: "#academics" },
         { name: "Certificates", href: "#academics" },
+        { name: "Schools & Colleges", href: "/academics/schools-and-colleges" },
       ]
     },
     { name: "Campus Life", href: "#campus-life" },
