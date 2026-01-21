@@ -48,7 +48,7 @@ const HeroSection = () => {
     <section className="relative h-screen flex flex-col justify-end text-white">
       <video
         ref={videoRef}
-        src="https://download-video-ak.vimeocdn.com/v3-1/playback/fd958212-899e-494c-9b06-fee33e8a5763/11c5e2b1?__token__=st=1769019376~exp=1769022976~acl=%2Fv3-1%2Fplayback%2Ffd958212-899e-494c-9b06-fee33e8a5763%2F11c5e2b1%2A~hmac=4b9c2e8ed4b5cf2b8d6b5c6474eabd312b6d9f0aca7e0fb3c7bb2a924af7e673&r=dXMtY2VudHJhbDE%3D"
+        src="https://raw.githubusercontent.com/Pramod2244/hello-world/master/18088-288458760_small.mp4"
         autoPlay
         muted
         loop
