@@ -22,10 +22,10 @@ const Admissions = () => {
   const contentY = useTransform(scrollYProgress, [0, 1], [50, -50]);
 
   const contentBlocks = [
-    { title: "Undergraduate", description: "Begin your academic journey with us." },
-    { title: "Graduate", description: "Advance your career and expertise." },
-    { title: "International", description: "Join our global student community." },
-    { title: "Financial Aid", description: "Explore scholarships and support options." },
+    { title: "Admission Process", description: "Step-by-step guide to join SDUAHER." },
+    { title: "Programmes Offered", description: "Explore UG, PG, and PhD courses." },
+    { title: "Fee Structure", description: "Details on tuition and other fees." },
+    { title: "Admission Enquiry", description: "Contact us for your admission queries." },
   ];
 
   return (
@@ -50,10 +50,10 @@ const Admissions = () => {
         </div>
         <motion.div style={{ y: contentY }} className="space-y-8">
           <h2 className="font-headline text-4xl md:text-5xl font-bold text-primary">
-            Admissions &amp; Aid
+            Admissions
           </h2>
           <p className="text-lg text-foreground/80 leading-relaxed">
-            Your future starts here. Discover the application process, requirements, and financial aid opportunities available at SDUAHDR.
+            Begin your journey at SDUAHER. Find information about our admission process, key dates, and how to apply for our esteemed medical programs.
           </p>
           <div className="grid md:grid-cols-2 gap-6">
             {contentBlocks.map((block, i) => (

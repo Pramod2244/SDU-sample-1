@@ -1,31 +1,25 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { BookOpen, GraduationCap, Briefcase } from "lucide-react";
+import { BookOpen, GraduationCap, Microscope } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import type { Icon } from "lucide-react";
 
 const programs = {
   undergraduate: [
-    { title: "Computer Science", description: "Explore the world of algorithms and data." },
-    { title: "Business Administration", description: "Lead and innovate in the corporate world." },
-    { title: "Psychology", description: "Understand the human mind and behavior." },
-    { title: "Environmental Science", description: "Address planetary challenges with science." },
-    { title: "Digital Arts", description: "Create compelling visual experiences." },
-    { title: "International Relations", description: "Navigate the complexities of global politics." },
+    { title: "MBBS", description: "Bachelor of Medicine, Bachelor of Surgery program." },
+    { title: "B.Sc. Allied Health Sciences", description: "Courses in Medical Lab, Imaging Tech & more." },
   ],
   graduate: [
-    { title: "Master of Data Science", description: "Harness data to drive decisions." },
-    { title: "MBA", description: "Accelerate your leadership journey." },
-    { title: "Ph.D. in Neuroscience", description: "Advance the frontiers of brain research." },
-    { title: "M.A. in Public Policy", description: "Shape effective and equitable policies." },
+    { title: "MD/MS Programmes", description: "Postgraduate degrees in 21 specialities." },
+    { title: "M.Sc. Medical Sciences", description: "Master's in Anatomy, Physiology, etc." },
+    { title: "MPH", description: "Master of Public Health program." },
   ],
-  certificates: [
-    { title: "Project Management", description: "Master the art of successful project delivery." },
-    { title: "Cybersecurity", description: "Protect digital assets and infrastructure." },
-    { title: "Digital Marketing", description: "Excel in the modern marketing landscape." },
-    { title: "AI &amp; Machine Learning", description: "Build intelligent systems and solutions." },
+  research: [
+    { title: "Ph.D. Programmes", description: "Doctoral research in various medical fields." },
+    { title: "Fellowship Programmes", description: "Specialized training in clinical areas." },
+    { title: "Post-Doctoral Fellowship", description: "Advanced research opportunities." },
   ],
 };
 
@@ -56,7 +50,7 @@ const Academics = () => {
   const tabs: TabInfo[] = [
     { value: "undergraduate", label: "Undergraduate", icon: BookOpen, data: programs.undergraduate },
     { value: "graduate", label: "Graduate", icon: GraduationCap, data: programs.graduate },
-    { value: "certificates", label: "Certificates", icon: Briefcase, data: programs.certificates },
+    { value: "research", label: "PhD & Fellowships", icon: Microscope, data: programs.research },
   ];
 
   const containerVariants = {
@@ -75,10 +69,10 @@ const Academics = () => {
           className="text-center mb-12"
         >
           <h2 className="font-headline text-4xl md:text-5xl font-bold text-primary">
-            Explore Our Programs
+            Programmes Offered
           </h2>
           <p className="mt-4 text-lg text-foreground/80 max-w-3xl mx-auto">
-            Find your path among our diverse range of undergraduate, graduate, and professional programs designed for real-world success.
+            From undergraduate to doctoral levels, our programmes are designed to create the next generation of healthcare leaders.
           </p>
         </motion.div>
 

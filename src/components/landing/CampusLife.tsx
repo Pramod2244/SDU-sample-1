@@ -7,10 +7,10 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Card, CardContent } from "@/components/ui/card";
 
 const topics = [
-  { id: "campus-life-housing", title: "Housing &amp; Dining", description: "Comfortable living and diverse culinary experiences.", imageHint: "student dormitory" },
-  { id: "campus-life-clubs", title: "Student Clubs", description: "Connect with peers who share your passions.", imageHint: "student group" },
-  { id: "campus-life-wellness", title: "Wellness &amp; Safety", description: "A supportive environment for your well-being.", imageHint: "university gym" },
-  { id: "campus-life-community", title: "Community Engagement", description: "Make a positive impact on and off campus.", imageHint: "volunteers working" },
+  { id: "campus-life-housing", title: "Hostel & Mess", description: "Secure and comfortable on-campus housing with modern amenities and hygienic food.", imageHint: "student dormitory" },
+  { id: "campus-life-clubs", title: "Library & Information", description: "A vast collection of books, journals, and digital resources to support learning.", imageHint: "university library" },
+  { id: "campus-life-wellness", title: "Sports & Recreation", description: "Extensive facilities for indoor and outdoor sports to promote physical well-being.", imageHint: "sports facility" },
+  { id: "campus-life-community", title: "Student Wellness", description: "Comprehensive support for student health, counseling, and overall well-being.", imageHint: "students relaxing" },
 ];
 
 const CampusLife = () => {
@@ -37,10 +37,10 @@ const CampusLife = () => {
           className="text-center mb-12"
         >
           <h2 className="font-headline text-4xl md:text-5xl font-bold text-primary">
-            Vibrant Campus Life
+            Life at SDUAHER
           </h2>
           <p className="mt-4 text-lg text-foreground/80 max-w-3xl mx-auto">
-            Life at SDUAHDR is more than just academics. It&apos;s about growth, community, and unforgettable experiences.
+            Experience a vibrant and supportive campus environment that fosters both academic and personal growth.
           </p>
         </motion.div>
       </div>

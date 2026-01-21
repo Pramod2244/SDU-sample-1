@@ -50,28 +50,24 @@ const About = () => {
           </motion.div>
           <motion.div variants={itemVariants} className="space-y-8">
             <h2 className="font-headline text-4xl md:text-5xl font-bold text-primary">
-              About SDUAHDR
+              About SDUAHER
             </h2>
 
             <div className="space-y-6">
               <motion.div variants={itemVariants}>
                 <h3 className="font-headline text-2xl font-semibold mb-2">
-                  Mission &amp; Vision
+                  Vision
                 </h3>
                 <p className="text-lg text-foreground/80 leading-relaxed">
-                  To cultivate a community of lifelong learners, critical
-                  thinkers, and compassionate leaders who are prepared to address
-                  the challenges of a complex and interconnected world.
+                  To be recognized as a center of excellence for education, research, and healthcare, dedicated to producing competent professionals who are committed to serving the society.
                 </p>
               </motion.div>
               <motion.div variants={itemVariants}>
                 <h3 className="font-headline text-2xl font-semibold mb-2">
-                  Our Values
+                  Mission
                 </h3>
                 <p className="text-lg text-foreground/80 leading-relaxed">
-                  Excellence, integrity, and social responsibility form the
-                  cornerstone of our educational philosophy, guiding our pursuit
-                  of knowledge and service to humanity.
+                  To provide high-quality, comprehensive education in medicine and allied health sciences. To foster a culture of research and innovation. To deliver patient-centered, evidence-based healthcare.
                 </p>
               </motion.div>
             </div>
@@ -81,18 +77,15 @@ const About = () => {
               className="border-l-4 border-primary pl-6 py-4 bg-background rounded-r-lg"
             >
               <blockquote className="text-xl italic text-foreground">
-                "An investment in knowledge pays the best interest."
+                "An institution dedicated to the service of mankind."
               </blockquote>
-              <p className="mt-2 text-right font-semibold">- Our Founder</p>
+              <p className="mt-2 text-right font-semibold">- Late Sri Devaraj Urs</p>
             </motion.div>
 
             <motion.div variants={itemVariants}>
-              <h3 className="font-headline text-2xl font-semibold mb-2">A Brief History</h3>
+              <h3 className="font-headline text-2xl font-semibold mb-2">A University with a Rich History</h3>
               <p className="text-foreground/80 leading-relaxed">
-                Founded on the principles of academic rigor and community
-                engagement, SDUAHDR has grown from a small college into a
-                leading research university, consistently pushing the boundaries
-                of innovation and discovery.
+                Sri Devaraj Urs Academy of Higher Education and Research, Tamaka, Kolar, is a Deemed to be University, declared under Section 3 of the UGC Act, 1956. The University has been accredited by NAAC with ‘A’ Grade and ranked 97th in the University category in NIRF-2023.
               </p>
             </motion.div>
           </motion.div>

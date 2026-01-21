@@ -3,8 +3,8 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'SDUAHDR University',
-  description: 'Shape Your Future at SDUAHDR. Education driven by purpose, innovation, and global impact.',
+  title: 'SDUAHER | Sri Devaraj Urs Academy of Higher Education and Research',
+  description: 'Official website of Sri Devaraj Urs Academy of Higher Education and Research (SDUAHER), Kolar. A Deemed-to-be-University offering excellence in medical education and research.',
 };
 
 export default function RootLayout({

@@ -5,18 +5,18 @@ import { Button } from "@/components/ui/button";
 
 const sections = [
   {
-    superTitle: "HIGHER-POWERED LEARNING",
-    title: "Whole Person Education",
+    superTitle: "ACADEMIC EXCELLENCE",
+    title: "Premier Medical Education",
     description:
-      "At SDUAHDR University, we empower you to realize your full potential through an inclusive and holistic educational experience grounded in universal values.",
-    buttonText: "Educational Approach",
+      "Offering comprehensive undergraduate, postgraduate, and super-specialty programs through our constituent Sri Devaraj Urs Medical College.",
+    buttonText: "Explore Programs",
   },
   {
-    superTitle: "MEANINGFUL CAREERS",
-    title: "Ready for the World",
+    superTitle: "INNOVATIVE RESEARCH",
+    title: "Fostering Discovery",
     description:
-      "Our education and deep ties to the best companies prepare you for success in your career and community—wherever life takes you.",
-    buttonText: "Learn More",
+      "Committed to advancing healthcare through cutting-edge research, state-of-the-art facilities, and a culture of inquiry and innovation.",
+    buttonText: "Our Research",
   },
 ];
 

@@ -14,15 +14,15 @@ const NewsEvents = () => {
 
   const events = [
     {
-      date: "OCT 25",
-      title: "Annual Research Symposium",
-      description: "Presenting groundbreaking student and faculty research.",
+      date: "JUN 05",
+      title: "World Environment Day",
+      description: "Join us for a tree plantation drive on campus.",
       image: event1Image
     },
     {
-      date: "NOV 12",
-      title: "Homecoming Weekend",
-      description: "Join alumni and students for a weekend of celebration.",
+      date: "JUN 21",
+      title: "International Yoga Day",
+      description: "A session on yoga and wellness for students and faculty.",
       image: event2Image
     },
   ];
@@ -55,7 +55,7 @@ const NewsEvents = () => {
             News &amp; Events
           </h2>
           <p className="mt-4 text-lg text-foreground/80 max-w-3xl mx-auto">
-            Stay up-to-date with the latest happenings and exciting events at SDUAHDR.
+            Stay up-to-date with the latest happenings and exciting events at SDUAHER.
           </p>
         </motion.div>
 
@@ -75,10 +75,10 @@ const NewsEvents = () => {
                 </div>
               )}
               <CardContent className="p-6">
-                <Badge variant="default" className="mb-2 bg-primary">Campus News</Badge>
-                <h4 className="font-headline text-2xl font-bold mb-2">SDUAHDR Celebrates Record-Breaking Graduation Year</h4>
+                <Badge variant="default" className="mb-2 bg-primary">Rankings</Badge>
+                <h4 className="font-headline text-2xl font-bold mb-2">SDUAHER Ranked 97th in NIRF 2023 University Rankings</h4>
                 <p className="text-foreground/80">
-                  This year&apos;s commencement marked a historic milestone for the university, with the largest graduating class to date embarking on their future careers.
+                  SDUAHER has secured the 97th rank among universities in India in the National Institutional Ranking Framework (NIRF) 2023, a testament to our academic excellence.
                 </p>
               </CardContent>
             </Card>

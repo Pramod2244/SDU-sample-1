@@ -68,13 +68,13 @@ const HeroSection = () => {
             variants={itemVariants}
             className="font-headline text-5xl md:text-7xl font-bold leading-tight"
           >
-            BE ON THE FOREFRONT.
+            Excellence in Education
             <br />
-            BE UNSTOPPABLE.
+            & Medical Research
           </motion.h1>
           <motion.div variants={itemVariants} className="mt-6">
-            <Link href="#" className="text-lg inline-flex items-center gap-2 hover:underline">
-              See what it means to Be Legendary
+            <Link href="#about" className="text-lg inline-flex items-center gap-2 hover:underline">
+              A Deemed to be University Accredited 'A' by NAAC
               <ArrowRight className="h-5 w-5" />
             </Link>
           </motion.div>

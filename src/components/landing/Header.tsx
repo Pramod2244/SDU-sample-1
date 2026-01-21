@@ -35,34 +35,36 @@ const Header = () => {
 
   const navLinks = [
     {
-      name: "Admissions & Aid",
+      name: "About Us",
+      href: "#about",
+      subLinks: [
+        { name: "Overview", href: "#about" },
+        { name: "Vision & Mission", href: "#about" },
+        { name: "Leadership", href: "#" },
+      ],
+    },
+    {
+      name: "Admissions",
       href: "#admissions",
       subLinks: [
-        { name: "Apply Now", href: "#" },
-        { name: "Undergraduate Admissions", href: "#" },
-        { name: "Graduate Admissions", href: "#" },
-        { name: "International Admissions", href: "#" },
-        { name: "Transfer Admissions", href: "#" },
-        { name: "Executive & Professional Admissions", href: "#" },
-        { name: "Tuition & Fees", href: "#" },
-        { name: "Financial Aid & Scholarships", href: "#" },
-        { name: "Request Information", href: "#" },
-        { name: "Visit & Tour", href: "#" },
+        { name: "Admission Process", href: "#admissions" },
+        { name: "Programmes Offered", href: "#academics" },
+        { name: "Fee Structure", href: "#" },
+        { name: "Admission Enquiry", href: "#" },
       ],
     },
     {
       name: "Academics",
       href: "#academics",
       subLinks: [
-        { name: "Undergraduate", href: "#academics" },
-        { name: "Graduate", href: "#academics" },
-        { name: "Certificates", href: "#academics" },
-        { name: "Schools & Colleges", href: "/academics/schools-and-colleges" },
+        { name: "Programmes Offered", href: "#academics" },
+        { name: "Constituent Colleges", href: "/academics/schools-and-colleges" },
+        { name: "Departments", href: "/academics/schools-and-colleges" },
       ]
     },
-    { name: "Campus Life", href: "#campus-life" },
-    { name: "About", href: "#about" },
-    { name: "News & Events", href: "#news" },
+    { name: "Research", href: "#" },
+    { name: "Student Life", href: "#campus-life" },
+    { name: "Contact", href: "#footer" },
   ];
 
   return (
@@ -79,7 +81,7 @@ const Header = () => {
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-20">
             <Link href="/" className={cn("font-headline text-2xl font-bold", isScrolled ? "text-primary" : "text-white")}>
-              SDUAHDR
+              SDUAHER
             </Link>
             <nav className="hidden lg:flex items-center space-x-1">
               {navLinks.map((link) =>
@@ -116,7 +118,7 @@ const Header = () => {
               )}
             </nav>
             <div className="hidden lg:flex items-center space-x-2">
-              <Button variant={isScrolled ? "outline" : "default"} className={cn(!isScrolled && "bg-white text-primary hover:bg-white/90")}>Apply</Button>
+              <Button variant={isScrolled ? "outline" : "default"} className={cn(!isScrolled && "bg-white text-primary hover:bg-white/90")}>Enquire</Button>
             </div>
             <div className="lg:hidden">
               <Button onClick={() => setIsMenuOpen(true)} size="icon" variant="ghost" className={cn(isScrolled ? "text-foreground" : "text-white hover:text-white hover:bg-white/10")}>
@@ -138,7 +140,7 @@ const Header = () => {
           >
             <div className="flex justify-between items-center mb-10">
               <Link href="/" className="font-headline text-2xl font-bold text-primary">
-                SDUAHDR
+                SDUAHER
               </Link>
               <Button onClick={() => setIsMenuOpen(false)} size="icon" variant="ghost">
                 <X />
@@ -181,7 +183,7 @@ const Header = () => {
               )}
             </nav>
             <div className="mt-10 flex flex-col space-y-4">
-              <Button size="lg">Apply</Button>
+              <Button size="lg">Enquire</Button>
             </div>
           </motion.div>
         )}

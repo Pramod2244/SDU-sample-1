@@ -15,12 +15,13 @@ const Footer = () => {
   const links = [
     { label: "Sitemap", href: "#" },
     { label: "Privacy Policy", href: "#" },
-    { label: "Accessibility", href: "#" },
     { label: "Contact Us", href: "#" },
+    { label: "NIRF", href: "#" },
   ];
 
   return (
     <motion.footer
+      id="footer"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
@@ -30,10 +31,10 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
           <div className="space-y-4">
-            <h3 className="font-headline text-2xl font-bold">SDUAHDR</h3>
-            <p>123 University Avenue, Metro City, 10001</p>
-            <p>Email: contact@sduahdr.edu</p>
-            <p>Phone: (123) 456-7890</p>
+            <h3 className="font-headline text-2xl font-bold">SDUAHER</h3>
+            <p>TAMAKA, KOLAR - 563103, <br/> KARNATAKA, INDIA.</p>
+            <p>Email: registrar@sduu.ac.in</p>
+            <p>Phone: +91 8152 210604</p>
           </div>
           
           <div className="space-y-4">
@@ -62,7 +63,7 @@ const Footer = () => {
         </div>
         
         <div className="mt-12 pt-8 border-t border-accent-foreground/20 text-center text-sm text-accent-foreground/70">
-          <p>&copy; {new Date().getFullYear()} SDUAHDR University. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} SDUAHER. All Rights Reserved.</p>
         </div>
       </div>
     </motion.footer>

@@ -7,34 +7,17 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
-const schools = [
-  {
-    name: 'College of Arts & Sciences',
-    description: 'Fostering critical thinking and creative expression across the humanities, social sciences, and natural sciences.',
-    imageId: 'college-arts-sciences',
-  },
-  {
-    name: 'Albers School of Business and Economics',
-    description: 'Developing ethical business leaders with a global mindset to make a positive impact on society.',
-    imageId: 'college-business',
-  },
-  {
-    name: 'College of Nursing',
-    description: 'Preparing compassionate and skilled healthcare professionals to serve diverse communities.',
-    imageId: 'college-nursing',
-  },
-  {
-    name: 'College of Education',
-    description: 'Empowering educators and leaders to create equitable and effective learning environments.',
-    imageId: 'college-education',
-  },
-  {
-    name: 'College of Science and Engineering',
-    description: 'Driving innovation and discovery through rigorous research and hands-on learning in STEM fields.',
-    imageId: 'college-engineering',
-  },
+const departments = [
+  { name: 'Anatomy', imageId: 'dept-anatomy', imageHint: 'anatomy lab' },
+  { name: 'Physiology', imageId: 'dept-physiology', imageHint: 'physiology lab' },
+  { name: 'Biochemistry', imageId: 'dept-biochemistry', imageHint: 'biochemistry lab' },
+  { name: 'Pathology', imageId: 'dept-pathology', imageHint: 'pathology lab' },
+  { name: 'Microbiology', imageId: 'dept-microbiology', imageHint: 'microbiology lab' },
+  { name: 'Pharmacology', imageId: 'dept-pharmacology', imageHint: 'pharmacology lab' },
+  { name: 'General Medicine', imageId: 'dept-general-medicine', imageHint: 'doctor patient' },
+  { name: 'General Surgery', imageId: 'dept-general-surgery', imageHint: 'operating room' },
+  { name: 'Pediatrics', imageId: 'dept-pediatrics', imageHint: 'pediatrician child' },
 ];
-
 
 const SchoolsAndCollegesPage = () => {
   const heroImage = PlaceHolderImages.find((img) => img.id === 'schools-colleges-hero');
@@ -68,44 +51,44 @@ const SchoolsAndCollegesPage = () => {
             <div className="absolute inset-0 bg-black/60" />
             <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
               <h1 className="font-headline text-5xl md:text-7xl font-bold leading-tight">
-                SCHOOLS AND COLLEGES
+                Sri Devaraj Urs Medical College
               </h1>
               <p className="mt-4 text-lg md:text-xl text-white/90">
-                Explore seven schools and colleges with academically challenging programs that change your life—and the world—for the better.
+                A constituent college of SDUAHER, offering excellence in medical education, research, and healthcare since 1986.
               </p>
               <Button size="lg" className="mt-8 bg-primary hover:bg-primary/90 text-primary-foreground">
-                Admissions & Aid
+                College Website
               </Button>
             </div>
           </section>
 
-          {/* Schools Grid Section */}
+          {/* Departments Grid Section */}
           <section className="py-20 lg:py-32">
             <div className="container mx-auto px-4">
               <h2 className="font-headline text-4xl md:text-5xl font-bold text-primary text-center mb-12">
-                Our Schools and Colleges
+                Our Departments
               </h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {schools.map((school) => {
-                  const schoolImage = PlaceHolderImages.find(img => img.id === school.imageId);
+                {departments.map((dept) => {
+                  const deptImage = PlaceHolderImages.find(img => img.id === dept.imageId);
                   return (
-                    <Card key={school.name} className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col bg-card/80 backdrop-blur-sm border-white/20">
-                       {schoolImage && (
+                    <Card key={dept.name} className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col bg-card/80 backdrop-blur-sm border-white/20">
+                       {deptImage && (
                           <div className="relative h-48 w-full">
                               <Image
-                                  src={schoolImage.imageUrl}
-                                  alt={school.name}
+                                  src={deptImage.imageUrl}
+                                  alt={dept.name}
                                   fill
                                   className="object-cover"
-                                  data-ai-hint={schoolImage.imageHint}
+                                  data-ai-hint={deptImage.imageHint}
                               />
                           </div>
                       )}
                       <CardHeader>
-                        <CardTitle className="font-headline text-2xl">{school.name}</CardTitle>
+                        <CardTitle className="font-headline text-2xl">{dept.name}</CardTitle>
                       </CardHeader>
                       <CardContent className="flex-grow flex flex-col">
-                        <p className="text-foreground/80 mb-4 flex-grow">{school.description}</p>
+                        <p className="text-foreground/80 mb-4 flex-grow">Explore the department of {dept.name}, its faculty, research, and academic programs.</p>
                         <Link href="#" className="font-semibold text-primary hover:underline inline-flex items-center">
                           Learn More <ArrowRight className="ml-2 h-4 w-4" />
                         </Link>
