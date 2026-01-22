@@ -50,15 +50,12 @@ const SchoolsAndCollegesPage = () => {
             )}
             <div className="absolute inset-0 bg-black/60" />
             <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
-              <h1 className="font-headline text-5xl md:text-7xl font-bold leading-tight">
+              <h1 className="font-headline text-5xl md:text-6xl font-bold leading-tight">
                 Sri Devaraj Urs Medical College
               </h1>
               <p className="mt-4 text-lg md:text-xl text-white/90">
                 A constituent college of SDUAHER, offering excellence in medical education, research, and healthcare since 1986.
               </p>
-              <Button size="lg" className="mt-8 bg-primary hover:bg-primary/90 text-primary-foreground">
-                College Website
-              </Button>
             </div>
           </section>
 

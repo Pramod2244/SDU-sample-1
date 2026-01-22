@@ -1,6 +1,12 @@
 {
   "placeholderImages": [
     {
+      "id": "campus-life-hero",
+      "description": "Students walking and talking in a modern university hallway.",
+      "imageUrl": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxzdHVkZW50cyUyMGhhbGx3YXl8ZW58MHx8fHwxNzkxODg4NTIwfDA&ixlib=rb-4.1.0&q=80&w=1200",
+      "imageHint": "students hallway"
+    },
+    {
       "id": "admissions-image",
       "description": "A diverse group of medical students in a classroom.",
       "imageUrl": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtZWRpY2FsJTIwc3R1ZGVudHMlMjBjbGFzc3Jvb218ZW58MHx8fHwxNzkxNzk5MzE1fDA&ixlib=rb-4.1.0&q=80&w=1080",
