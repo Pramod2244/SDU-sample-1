@@ -61,14 +61,17 @@ const Story = () => {
     );
   }
 
+  const N = storyContent.length;
   return (
-    <section ref={targetRef} className="relative h-[500vh] bg-black">
+    <section ref={targetRef} className="relative h-[400vh] bg-black">
       <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Images */}
+        {/* Background Images with Cross-fade */}
         {storyContent.map((item, index) => {
-          const start = index / storyContent.length;
-          const end = (index + 1) / storyContent.length;
-          const opacity = useTransform(scrollYProgress, [start, start + 0.1, end - 0.1, end], [0, 1, 1, 0]);
+          const opacity = useTransform(
+            scrollYProgress,
+            [ (index - 0.5) / N, index / N, (index + 0.5) / N ],
+            [0, 1, 0]
+          );
           
           return (
             item.image && (
@@ -80,24 +83,24 @@ const Story = () => {
           );
         })}
 
-        {/* Foreground Text */}
-        <div className="relative z-10 text-center text-white w-full h-full">
+        {/* Foreground Text with Cross-fade */}
+        <div className="relative z-10 text-center text-white w-full h-full flex items-center justify-center">
             {storyContent.map((item, index) => {
-              const start = index / storyContent.length;
-              const end = (index + 1) / storyContent.length;
-              const opacity = useTransform(scrollYProgress, [start, start + 0.1, end - 0.1, end], [0, 1, 1, 0]);
-              const y = useTransform(scrollYProgress, [start, end], ['50px', '-50px']);
+              const opacity = useTransform(
+                scrollYProgress,
+                [ (index - 0.5) / N, index / N, (index + 0.5) / N ],
+                [0, 1, 0]
+              );
+              const y = useTransform(scrollYProgress, [index / N, (index + 1) / N], ['2rem', '-2rem']);
               
               return (
                 <motion.div
                   key={index}
                   style={{ opacity, y }}
-                  className="absolute inset-0"
+                  className="absolute max-w-3xl mx-auto px-4"
                 >
-                  <div className="flex flex-col justify-center items-center h-screen max-w-3xl mx-auto px-4">
-                      <h2 className="font-headline text-5xl md:text-7xl font-bold">{item.title}</h2>
-                      <p className="mt-6 text-lg md:text-2xl text-white/80">{item.text}</p>
-                  </div>
+                  <h2 className="font-headline text-5xl md:text-7xl font-bold">{item.title}</h2>
+                  <p className="mt-6 text-lg md:text-2xl text-white/80">{item.text}</p>
                 </motion.div>
               );
             })}
