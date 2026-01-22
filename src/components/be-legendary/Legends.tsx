@@ -108,19 +108,19 @@ const Legends = () => {
                   <div className="h-full">
                     <Dialog>
                       <DialogTrigger asChild>
-                        <Card className="bg-card border-border h-full flex flex-col group cursor-pointer transition-all duration-300 hover:border-primary hover:shadow-2xl hover:-translate-y-2">
+                        <Card className="bg-card border-border h-full flex flex-col group cursor-pointer transition-all duration-300 hover:border-primary hover:shadow-2xl hover:-translate-y-2 overflow-hidden">
+                          {legend.image && (
+                            <div className="relative h-80 w-full">
+                              <Image
+                                src={legend.image.imageUrl}
+                                alt={legend.name}
+                                fill
+                                className="object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                                data-ai-hint={legend.image.imageHint}
+                              />
+                            </div>
+                          )}
                           <CardHeader>
-                            {legend.image && (
-                              <div className="relative h-80 rounded-t-lg overflow-hidden mb-4">
-                                <Image
-                                  src={legend.image.imageUrl}
-                                  alt={legend.name}
-                                  fill
-                                  className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                                  data-ai-hint={legend.image.imageHint}
-                                />
-                              </div>
-                            )}
                             <CardTitle className="font-headline text-3xl text-primary">{legend.name}</CardTitle>
                             <p className="text-base text-foreground/60">{legend.title}</p>
                           </CardHeader>
