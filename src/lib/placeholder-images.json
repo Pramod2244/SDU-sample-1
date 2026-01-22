@@ -119,6 +119,24 @@
       "description": "Doctor examining a child.",
       "imageUrl": "https://images.unsplash.com/photo-1632053005736-6bd9cfc4daf9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cGVkaWF0cmljaWFuJTIwY2hpbGR8ZW58MHx8fHwxNzY5MDIwNzA0fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "pediatrician child"
+    },
+    {
+      "id": "be-legendary-hero-bg",
+      "description": "A stunning wide shot of a modern university campus at sunset.",
+      "imageUrl": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx1bml2ZXJzaXR5JTIwY2FtcHVzfGVufDB8fHx8MTc5MTg3MjE3N3ww&ixlib=rb-4.1.0&q=80&w=1920",
+      "imageHint": "university campus"
+    },
+    {
+      "id": "legendary-content-1",
+      "description": "Students in a modern science lab.",
+      "imageUrl": "https://images.unsplash.com/photo-1579154341569-342c6b3e3aa8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtZWRpY2FsJTIwcmVzZWFyY2h8ZW58MHx8fHwxNzkxODcyMjA5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "medical research"
+    },
+    {
+      "id": "legendary-content-2",
+      "description": "Doctor mentoring a medical student.",
+      "imageUrl": "https://images.unsplash.com/photo-1550831107-1553da8c8464?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkb2N0b3IlMjBtZW50b3J8ZW58MHx8fHwxNzkxODcyMjQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "doctor mentor"
     }
   ]
 }

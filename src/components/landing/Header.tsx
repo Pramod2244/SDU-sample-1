@@ -87,6 +87,7 @@ const Header = () => {
     },
     { name: "Research", href: "#" },
     { name: "Life at SDUAHER", href: "#campus-life" },
+    { name: "Be Legendary", href: "/be-legendary" },
   ];
   
   const allNavLinksForMobile = [
