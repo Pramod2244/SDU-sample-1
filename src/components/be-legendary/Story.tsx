@@ -15,16 +15,6 @@ const storyContent = [
     title: "Innovate with Purpose",
     text: "Engage in groundbreaking research that pushes boundaries and transforms lives. Your work here has a global impact.",
     image: PlaceHolderImages.find(img => img.id === 'legendary-story-2'),
-  },
-  {
-    title: "Lead with Compassion",
-    text: "Master the science of medicine and the art of care. We cultivate professionals who lead with both their head and their heart.",
-    image: PlaceHolderImages.find(img => img.id === 'legendary-story-3'),
-  },
-  {
-    title: "Join a Legacy of Excellence",
-    text: "Become part of a community dedicated to excellence, service, and the relentless pursuit of knowledge.",
-    image: PlaceHolderImages.find(img => img.id === 'legendary-story-4'),
   }
 ];
 
@@ -63,7 +53,7 @@ const Story = () => {
 
   const N = storyContent.length;
   return (
-    <section ref={targetRef} className="relative h-[400vh] bg-black">
+    <section ref={targetRef} className="relative h-[200vh] bg-black">
       <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
         {/* Background Images with Cross-fade */}
         {storyContent.map((item, index) => {

@@ -1,10 +1,8 @@
 "use client";
 
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Button } from '@/components/ui/button';
 import {
   Dialog,
   DialogContent,
@@ -15,6 +13,13 @@ import {
 } from "@/components/ui/dialog";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowUpRight } from 'lucide-react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const legends = [
   {
@@ -37,7 +42,21 @@ const legends = [
     summary: 'Established a network of mobile clinics providing essential healthcare in remote regions of Africa.',
     story: 'Dr. Chloe Martinez embodies the spirit of service that SDUAHER champions. After witnessing healthcare disparities during a student exchange program, she dedicated her career to global public health. She founded "HealthReach," a non-profit organization that operates a fleet of mobile clinics delivering primary care, vaccinations, and health education to communities with no other access to medical services. Her work has impacted over a million people and has earned her international accolades, including the prestigious Global Humanitarian Award.',
     image: PlaceHolderImages.find(img => img.id === 'legend-3'),
-  }
+  },
+  {
+    name: 'Dr. David Chen',
+    title: 'Oncology Innovator, Class of ‘02',
+    summary: 'Pioneered a new targeted gene therapy for rare forms of cancer.',
+    story: 'Dr. David Chen has dedicated his career to fighting cancer. At SDUAHER, he was known for his insatiable curiosity and brilliant mind. His postdoctoral research led to the development of a revolutionary gene therapy that targets specific cancer cells, leaving healthy cells unharmed. This breakthrough has offered hope to patients with previously untreatable cancers and has established Dr. Chen as a leader in the field of oncology.',
+    image: PlaceHolderImages.find(img => img.id === 'legend-1'),
+  },
+  {
+    name: 'Dr. Emily White',
+    title: 'Pediatric Specialist, Class of ‘15',
+    summary: 'Champion for children\'s mental health and early developmental screening.',
+    story: 'Dr. Emily White has transformed pediatric care in her community. Recognizing the critical need for early mental health intervention, she established a comprehensive screening program within her practice. Her holistic approach, which integrates mental and physical health, has become a model for pediatricians nationwide. Dr. White credits her time at SDUAHER for teaching her the importance of compassionate, patient-centered care.',
+    image: PlaceHolderImages.find(img => img.id === 'legend-3'),
+  },
 ];
 
 const Legends = () => {
@@ -45,7 +64,7 @@ const Legends = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.2, delayChildren: 0.3 }
+      transition: { delay: 0.3 }
     },
   };
   
@@ -73,53 +92,67 @@ const Legends = () => {
         </motion.div>
         
         <motion.div 
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-          variants={containerVariants}
+          className="relative px-8"
+          variants={itemVariants}
         >
-          {legends.map((legend, index) => (
-            <Dialog key={index}>
-              <DialogTrigger asChild>
-                <motion.div variants={itemVariants}>
-                  <Card className="bg-card border-border h-full flex flex-col group cursor-pointer transition-all duration-300 hover:border-primary hover:shadow-2xl hover:-translate-y-2">
-                    <CardHeader>
-                      {legend.image && (
-                        <div className="relative h-80 rounded-t-lg overflow-hidden mb-4">
-                          <Image
-                            src={legend.image.imageUrl}
-                            alt={legend.name}
-                            fill
-                            className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                            data-ai-hint={legend.image.imageHint}
-                          />
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-8">
+              {legends.map((legend, index) => (
+                <CarouselItem key={index} className="pl-8 md:basis-1/2 lg:basis-1/3">
+                  <div className="h-full">
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Card className="bg-card border-border h-full flex flex-col group cursor-pointer transition-all duration-300 hover:border-primary hover:shadow-2xl hover:-translate-y-2">
+                          <CardHeader>
+                            {legend.image && (
+                              <div className="relative h-80 rounded-t-lg overflow-hidden mb-4">
+                                <Image
+                                  src={legend.image.imageUrl}
+                                  alt={legend.name}
+                                  fill
+                                  className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                                  data-ai-hint={legend.image.imageHint}
+                                />
+                              </div>
+                            )}
+                            <CardTitle className="font-headline text-3xl text-primary">{legend.name}</CardTitle>
+                            <p className="text-base text-foreground/60">{legend.title}</p>
+                          </CardHeader>
+                          <CardContent className="flex-grow">
+                            <p className="text-foreground/80">{legend.summary}</p>
+                          </CardContent>
+                          <CardFooter>
+                            <div className="text-lg text-primary font-semibold inline-flex items-center">
+                              Read Their Story <ArrowUpRight className="ml-2 h-5 w-5" />
+                            </div>
+                          </CardFooter>
+                        </Card>
+                      </DialogTrigger>
+                      <DialogContent className="bg-card border-border text-foreground max-w-3xl">
+                        <DialogHeader>
+                          <DialogTitle className="font-headline text-4xl text-primary mb-2">{legend.name}</DialogTitle>
+                          <DialogDescription className="text-foreground/60 text-lg">
+                            {legend.title}
+                          </DialogDescription>
+                        </DialogHeader>
+                        <div className="py-4 text-foreground/80 leading-relaxed text-base max-h-[60vh] overflow-y-auto pr-4">
+                          {legend.story}
                         </div>
-                      )}
-                      <CardTitle className="font-headline text-3xl text-primary">{legend.name}</CardTitle>
-                      <p className="text-base text-foreground/60">{legend.title}</p>
-                    </CardHeader>
-                    <CardContent className="flex-grow">
-                      <p className="text-foreground/80">{legend.summary}</p>
-                    </CardContent>
-                    <CardFooter>
-                      <div className="text-lg text-primary font-semibold inline-flex items-center">
-                        Read Their Story <ArrowUpRight className="ml-2 h-5 w-5" />
-                      </div>
-                    </CardFooter>
-                  </Card>
-                </motion.div>
-              </DialogTrigger>
-              <DialogContent className="bg-card border-border text-foreground max-w-3xl">
-                <DialogHeader>
-                  <DialogTitle className="font-headline text-4xl text-primary mb-2">{legend.name}</DialogTitle>
-                  <DialogDescription className="text-foreground/60 text-lg">
-                    {legend.title}
-                  </DialogDescription>
-                </DialogHeader>
-                <div className="py-4 text-foreground/80 leading-relaxed text-base max-h-[60vh] overflow-y-auto pr-4">
-                  {legend.story}
-                </div>
-              </DialogContent>
-            </Dialog>
-          ))}
+                      </DialogContent>
+                    </Dialog>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex" />
+            <CarouselNext className="hidden md:flex" />
+          </Carousel>
         </motion.div>
       </motion.div>
     </section>
