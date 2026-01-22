@@ -22,6 +22,7 @@ import {
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -86,17 +87,29 @@ const Header = () => {
             <nav className="hidden lg:flex items-center space-x-1">
               {navLinks.map((link) =>
                 link.subLinks ? (
-                  <DropdownMenu key={link.name}>
+                  <DropdownMenu
+                    key={link.name}
+                    open={openMenu === link.name}
+                    onOpenChange={(isOpen) => setOpenMenu(isOpen ? link.name : null)}
+                  >
                     <DropdownMenuTrigger asChild>
-                      <Button variant="ghost" className={cn("text-sm font-medium px-3 py-2", isScrolled ? "text-foreground hover:bg-transparent hover:text-primary" : "text-white hover:bg-white/10 hover:text-white")}>
+                      <Button
+                        variant="ghost"
+                        className={cn("text-sm font-medium px-3 py-2", isScrolled ? "text-foreground hover:bg-transparent hover:text-primary" : "text-white hover:bg-white/10 hover:text-white")}
+                        onMouseEnter={() => setOpenMenu(link.name)}
+                      >
                         {link.name}
                         <ChevronDown className="ml-1 h-4 w-4" />
                       </Button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent className="bg-card border-t-4 border-destructive" sideOffset={14}>
+                    <DropdownMenuContent
+                      onMouseLeave={() => setOpenMenu(null)}
+                      className="bg-card border-t-4 border-destructive"
+                      sideOffset={14}
+                    >
                       {link.subLinks.map((subLink) => (
                         <DropdownMenuItem key={subLink.name} asChild>
-                          <Link href={subLink.href} className="text-foreground">
+                          <Link href={subLink.href} className="text-foreground" onClick={() => setOpenMenu(null)}>
                             {subLink.name}
                           </Link>
                         </DropdownMenuItem>
@@ -111,6 +124,7 @@ const Header = () => {
                       "text-sm font-medium transition-colors px-3 py-2 rounded-md",
                       isScrolled ? "text-foreground hover:text-primary hover:bg-transparent" : "text-white hover:text-white/80 hover:bg-white/10"
                     )}
+                    onMouseEnter={() => setOpenMenu(null)}
                   >
                     {link.name}
                   </Link>
