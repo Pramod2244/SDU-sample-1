@@ -110,7 +110,7 @@ const Header = () => {
         )}
       >
         {/* Top bar */}
-        <div className={cn("hidden lg:block transition-colors border-b", isScrolled ? "bg-secondary/50 border-border" : "bg-black/10 border-transparent")}>
+        <div className={cn("hidden lg:block transition-colors border-b", isScrolled ? "bg-secondary/50 border-border" : "bg-transparent border-transparent")}>
           <div className="container mx-auto px-4 flex justify-end items-center h-10">
             <div className="flex items-center space-x-6 text-sm">
               {topNavLinks.map((link) => (
@@ -132,7 +132,7 @@ const Header = () => {
 
 
         <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center h-20">
+          <div className="flex justify-between items-center h-16">
             <Link href="/" className={cn("font-headline text-2xl font-bold transition-colors duration-500", isScrolled ? "text-primary" : "text-white", "hover:text-primary")}>
               SDUAHER
             </Link>
