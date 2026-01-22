@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from "react";
@@ -81,7 +82,7 @@ const Header = () => {
       >
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-20">
-            <Link href="/" className={cn("font-headline text-2xl font-bold", isScrolled ? "text-primary" : "text-white")}>
+            <Link href="/" className={cn("font-headline text-2xl font-bold transition-colors", isScrolled ? "text-primary" : "text-white", "hover:text-primary")}>
               SDUAHER
             </Link>
             <nav className="hidden lg:flex items-center space-x-1">
