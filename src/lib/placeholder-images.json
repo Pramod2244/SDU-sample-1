@@ -137,6 +137,30 @@
       "description": "Doctor mentoring a medical student.",
       "imageUrl": "https://images.unsplash.com/photo-1550831107-1553da8c8464?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkb2N0b3IlMjBtZW50b3J8ZW58MHx8fHwxNzkxODcyMjQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "doctor mentor"
+    },
+    {
+      "id": "legendary-story-1",
+      "description": "A student walks down a path on a university campus.",
+      "imageUrl": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx1bml2ZXJzaXR5JTIwY2FtcHVzfGVufDB8fHx8MTc5MTg3MjE3N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "university path"
+    },
+    {
+      "id": "legendary-story-2",
+      "description": "Students working together in a science laboratory.",
+      "imageUrl": "https://images.unsplash.com/photo-1532187643623-dbf267341858?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMGxhYnxlbnwwfHx8fDE3OTE5NDQ1Mjd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "students lab"
+    },
+    {
+      "id": "legendary-story-3",
+      "description": "A medical student consulting with a patient.",
+      "imageUrl": "https://images.unsplash.com/photo-1628182749440-a3793f773484?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtZWRpY2FsJTIwc3R1ZGVudCUyMHBhdGllbnR8ZW58MHx8fHwxNzkxOTQ0NTYwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "student patient"
+    },
+    {
+      "id": "legendary-story-4",
+      "description": "Students in caps and gowns at a graduation ceremony.",
+      "imageUrl": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxncmFkdWF0aW9uJTIwY2VyZW1vbnl8ZW58MHx8fHwxNzkxOTQ0NTg3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "graduation ceremony"
     }
   ]
 }
