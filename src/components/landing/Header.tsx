@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import {
@@ -49,9 +49,16 @@ const Header = () => {
     };
   }, []);
 
-  const navLinks = [
+  const topNavLinks = [
+    { name: "News", href: "#news" },
+    { name: "Events", href: "#news" },
+    { name: "Visit", href: "#" },
+    { name: "Give", href: "#" },
+  ];
+
+  const mainNavLinks = [
     {
-      name: "About Us",
+      name: "Who We Are",
       href: "#about",
       subLinks: [
         { name: "Overview", href: "#about" },
@@ -60,7 +67,7 @@ const Header = () => {
       ],
     },
     {
-      name: "Admissions",
+      name: "Admissions & Aid",
       href: "#admissions",
       subLinks: [
         { name: "Admission Process", href: "#admissions" },
@@ -79,9 +86,17 @@ const Header = () => {
       ]
     },
     { name: "Research", href: "#" },
-    { name: "Student Life", href: "#campus-life" },
-    { name: "Contact", href: "#footer" },
+    { name: "Life at SDUAHER", href: "#campus-life" },
   ];
+  
+  const allNavLinksForMobile = [
+    ...mainNavLinks,
+    { name: "News", href: "#news"},
+    { name: "Events", href: "#news"},
+    { name: "Visit", href: "#"},
+    { name: "Give", href: "#"},
+    { name: "Contact", href: "#footer" },
+  ]
 
   return (
     <>
@@ -94,13 +109,35 @@ const Header = () => {
           isScrolled ? "bg-card shadow-md" : "bg-transparent"
         )}
       >
+        {/* Top bar */}
+        <div className={cn("hidden lg:block transition-colors border-b", isScrolled ? "bg-secondary/50 border-border" : "bg-black/10 border-transparent")}>
+          <div className="container mx-auto px-4 flex justify-end items-center h-10">
+            <div className="flex items-center space-x-6 text-sm">
+              {topNavLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={cn(
+                    "font-medium transition-colors",
+                    isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80"
+                  )}
+                >
+                  {link.name}
+                </Link>
+              ))}
+              <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground">Apply</Button>
+            </div>
+          </div>
+        </div>
+
+
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-20">
             <Link href="/" className={cn("font-headline text-2xl font-bold transition-colors duration-500", isScrolled ? "text-primary" : "text-white", "hover:text-primary")}>
               SDUAHER
             </Link>
             <nav className="hidden lg:flex items-center space-x-1">
-              {navLinks.map((link) =>
+              {mainNavLinks.map((link) =>
                 link.subLinks ? (
                   <DropdownMenu
                     key={link.name}
@@ -110,7 +147,7 @@ const Header = () => {
                     <DropdownMenuTrigger asChild>
                       <Button
                         variant="ghost"
-                        className={cn("text-sm font-medium px-3 py-2", isScrolled ? "text-foreground hover:bg-transparent hover:text-primary" : "text-white hover:bg-white/10 hover:text-white")}
+                        className={cn("text-base font-medium px-3 py-2", isScrolled ? "text-foreground hover:bg-transparent hover:text-primary" : "text-white hover:bg-white/10 hover:text-white")}
                         onMouseEnter={() => handleMouseEnter(link.name)}
                         onMouseLeave={handleMouseLeave}
                       >
@@ -121,7 +158,7 @@ const Header = () => {
                     <DropdownMenuContent
                       onMouseEnter={() => handleMouseEnter(link.name)}
                       onMouseLeave={handleMouseLeave}
-                      className="bg-card border-t-4 border-destructive"
+                      className="bg-card border-t-4 border-primary"
                       sideOffset={14}
                     >
                       {link.subLinks.map((subLink) => (
@@ -138,7 +175,7 @@ const Header = () => {
                     key={link.name}
                     href={link.href}
                     className={cn(
-                      "text-sm font-medium transition-colors px-3 py-2 rounded-md",
+                      "text-base font-medium transition-colors px-3 py-2 rounded-md",
                       isScrolled ? "text-foreground hover:text-primary hover:bg-transparent" : "text-white hover:text-white/80 hover:bg-white/10"
                     )}
                     onMouseEnter={() => setOpenMenu(null)}
@@ -147,10 +184,11 @@ const Header = () => {
                   </Link>
                 )
               )}
+               <Button size="icon" variant="ghost" className={cn(isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80", "ml-2")}>
+                  <Search className="h-5 w-5"/>
+               </Button>
             </nav>
-            <div className="hidden lg:flex items-center space-x-2">
-              <Button variant={isScrolled ? "outline" : "default"} className={cn(!isScrolled && "bg-white text-primary hover:bg-white/90")}>Enquire</Button>
-            </div>
+            
             <div className="lg:hidden">
               <Button onClick={() => setIsMenuOpen(true)} size="icon" variant="ghost" className={cn(isScrolled ? "text-foreground" : "text-white hover:text-white hover:bg-white/10")}>
                 <Menu />
@@ -178,7 +216,7 @@ const Header = () => {
               </Button>
             </div>
             <nav className="flex flex-col">
-              {navLinks.map((link) =>
+              {allNavLinksForMobile.map((link) =>
                 link.subLinks ? (
                   <Accordion key={link.name} type="single" collapsible className="w-full">
                     <AccordionItem value={link.name} className="border-b">
@@ -214,7 +252,10 @@ const Header = () => {
               )}
             </nav>
             <div className="mt-10 flex flex-col space-y-4">
-              <Button size="lg">Enquire</Button>
+              <Button size="lg">Apply</Button>
+              <Button size="lg" variant="outline" className="flex items-center gap-2">
+                <Search className="h-5 w-5"/> Search
+              </Button>
             </div>
           </motion.div>
         )}
