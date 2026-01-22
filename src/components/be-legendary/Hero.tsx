@@ -4,6 +4,7 @@ import { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import Image from 'next/image';
 
 const Hero = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -32,7 +33,7 @@ const Hero = () => {
           <div className="relative w-full h-full">
               {!isMobile ? (
                   <video
-                      src="https://raw.githubusercontent.com/Pramod2244/hello-world/master/18088-288458760_small.mp4"
+                      src="https://raw.githubusercontent.com/Pramod2244/hello-world/master/90933-629483642_small.mp4"
                       autoPlay
                       muted
                       loop
