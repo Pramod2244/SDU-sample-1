@@ -1,7 +1,6 @@
-
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -24,6 +23,21 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
+
+  const menuTimeout = useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = (menuName: string) => {
+    if (menuTimeout.current) {
+      clearTimeout(menuTimeout.current);
+    }
+    setOpenMenu(menuName);
+  };
+
+  const handleMouseLeave = () => {
+    menuTimeout.current = setTimeout(() => {
+      setOpenMenu(null);
+    }, 150); // a small delay to allow moving between trigger and content
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -91,20 +105,22 @@ const Header = () => {
                   <DropdownMenu
                     key={link.name}
                     open={openMenu === link.name}
-                    onOpenChange={(isOpen) => setOpenMenu(isOpen ? link.name : null)}
+                    onOpenChange={(isOpen) => !isOpen && setOpenMenu(null)}
                   >
                     <DropdownMenuTrigger asChild>
                       <Button
                         variant="ghost"
                         className={cn("text-sm font-medium px-3 py-2", isScrolled ? "text-foreground hover:bg-transparent hover:text-primary" : "text-white hover:bg-white/10 hover:text-white")}
-                        onMouseEnter={() => setOpenMenu(link.name)}
+                        onMouseEnter={() => handleMouseEnter(link.name)}
+                        onMouseLeave={handleMouseLeave}
                       >
                         {link.name}
                         <ChevronDown className="ml-1 h-4 w-4" />
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent
-                      onMouseLeave={() => setOpenMenu(null)}
+                      onMouseEnter={() => handleMouseEnter(link.name)}
+                      onMouseLeave={handleMouseLeave}
                       className="bg-card border-t-4 border-destructive"
                       sideOffset={14}
                     >
