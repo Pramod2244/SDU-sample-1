@@ -118,7 +118,7 @@ const Header = () => {
                   key={link.name}
                   href={link.href}
                   className={cn(
-                    "font-medium transition-colors",
+                    "font-medium transition-colors text-lg",
                     isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80"
                   )}
                 >
@@ -158,7 +158,7 @@ const Header = () => {
                     <DropdownMenuContent
                       onMouseEnter={() => handleMouseEnter(link.name)}
                       onMouseLeave={handleMouseLeave}
-                      className="bg-card border-t-4 border-primary"
+                      className="relative bg-card border before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-[4px] before:bg-primary"
                       sideOffset={14}
                     >
                       {link.subLinks.map((subLink) => (
