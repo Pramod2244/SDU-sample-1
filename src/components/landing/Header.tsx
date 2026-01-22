@@ -112,7 +112,7 @@ const Header = () => {
         {/* Top bar */}
         <div className={cn("hidden lg:block transition-colors border-b", isScrolled ? "bg-secondary/50 border-border" : "bg-transparent border-transparent")}>
           <div className="container mx-auto px-4 flex justify-end items-center h-10">
-            <div className="flex items-center space-x-6 text-sm">
+            <div className="flex items-center space-x-6 text-base">
               {topNavLinks.map((link) => (
                 <Link
                   key={link.name}
@@ -132,8 +132,8 @@ const Header = () => {
 
 
         <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center h-16">
-            <Link href="/" className={cn("font-headline text-2xl font-bold transition-colors duration-500", isScrolled ? "text-primary" : "text-white", "hover:text-primary")}>
+          <div className="flex justify-between items-center h-20">
+            <Link href="/" className={cn("font-headline text-3xl font-bold transition-colors duration-500", isScrolled ? "text-primary" : "text-white", "hover:text-primary")}>
               SDUAHER
             </Link>
             <nav className="hidden lg:flex items-center space-x-1">
@@ -147,7 +147,7 @@ const Header = () => {
                     <DropdownMenuTrigger asChild>
                       <Button
                         variant="ghost"
-                        className={cn("text-base font-medium px-3 py-2", isScrolled ? "text-foreground hover:bg-transparent hover:text-primary" : "text-white hover:bg-white/10 hover:text-white")}
+                        className={cn("text-lg font-medium px-3 py-2", isScrolled ? "text-foreground hover:bg-transparent hover:text-primary" : "text-white hover:bg-white/10 hover:text-white")}
                         onMouseEnter={() => handleMouseEnter(link.name)}
                         onMouseLeave={handleMouseLeave}
                       >
@@ -175,7 +175,7 @@ const Header = () => {
                     key={link.name}
                     href={link.href}
                     className={cn(
-                      "text-base font-medium transition-colors px-3 py-2 rounded-md",
+                      "text-lg font-medium transition-colors px-3 py-2 rounded-md",
                       isScrolled ? "text-foreground hover:text-primary hover:bg-transparent" : "text-white hover:text-white/80 hover:bg-white/10"
                     )}
                     onMouseEnter={() => setOpenMenu(null)}
