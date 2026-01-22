@@ -3,42 +3,52 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
+// Updated quotes based on the OCR from the image
 const quotes = [
   {
-    quote: "The good physician treats the disease; the great physician treats the patient who has the disease.",
-    author: "William Osler",
+    quote: "This place didn't just change my résumé, it changed my aim.",
+    author: "Jordan M.",
+    details: "Computer Science, '25",
   },
   {
-    quote: "To know even one life has breathed easier because you have lived. This is to have succeeded.",
-    author: "Ralph Waldo Emerson",
+    quote: "I found mentors who expect big things—and help me get there.",
+    author: "Anika R.",
+    details: "Mechanical Engineering, '26",
   },
   {
-    quote: "Wherever the art of medicine is loved, there is also a love of humanity.",
-    author: "Hippocrates",
+    quote: "Purpose isn't a slogan here. It's the work we do every day.",
+    author: "Luis F.",
+    details: "Public Policy, '24",
   },
   {
-    quote: "The aim of medicine is to prevent disease and prolong life; the ideal of medicine is to eliminate the need for a physician.",
-    author: "William J. Mayo",
+    quote: "Being in the city means what we learn moves—fast.",
+    author: "Sam K.",
+    details: "Marketing, '25",
+  },
+  {
+    quote: "Community is why I came. Opportunity is why I stay.",
+    author: "Maya T.",
+    details: "Nursing, '26",
   }
 ];
 
-const QuoteItem = ({ quote, author, scrollYProgress, index }: { quote: string; author: string; scrollYProgress: any; index: number }) => {
+const QuoteItem = ({ quote, author, details, scrollYProgress, index }: { quote: string; author: string; details: string; scrollYProgress: any; index: number }) => {
     const N = quotes.length;
-    // Each item's "active" range is when the scroll progress is centered on it.
     const itemStart = index / N;
     const itemEnd = (index + 1) / N;
-    
-    // We create a smoother highlighting effect that is strongest when the item is in its "active" range.
+    const sectionCenter = itemStart + (itemEnd - itemStart) / 2;
+
+    // A more focused opacity transform
     const highlightOpacity = useTransform(
         scrollYProgress,
-        [itemStart - (1 / N) * 0.5, itemStart, itemEnd, itemEnd + (1 / N) * 0.5],
-        [0.3, 1, 1, 0.3]
+        [itemStart, sectionCenter, itemEnd],
+        [0.5, 1, 0.5]
     );
 
     const scale = useTransform(
         scrollYProgress,
-        [itemStart - (1 / N) * 0.5, itemStart, itemEnd, itemEnd + (1 / N) * 0.5],
-        [0.95, 1, 1, 0.95]
+        [itemStart, sectionCenter, itemEnd],
+        [0.95, 1, 0.95]
     );
 
     return (
@@ -46,10 +56,13 @@ const QuoteItem = ({ quote, author, scrollYProgress, index }: { quote: string; a
             style={{ opacity: highlightOpacity, scale }}
             className="text-center"
         >
-            <blockquote className="font-headline text-3xl md:text-5xl font-medium text-primary leading-tight">
-                “{quote}”
+            <blockquote className="text-3xl md:text-5xl font-bold leading-tight">
+                {quote}
             </blockquote>
-            <p className="mt-6 text-xl text-foreground/70">— {author}</p>
+            <div className="mt-6">
+              <p className="text-base font-semibold">{author}</p>
+              <p className="text-base text-primary-foreground/70">{details}</p>
+            </div>
         </motion.div>
     );
 };
@@ -57,16 +70,18 @@ const QuoteItem = ({ quote, author, scrollYProgress, index }: { quote: string; a
 
 const Quotes = () => {
   const targetRef = useRef<HTMLDivElement>(null);
-  // The scroll progress is measured as the component scrolls through the center of the viewport.
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ['start end', 'end start']
   });
 
   return (
-    <section ref={targetRef} className="bg-black py-20 lg:py-40">
-      <div className="container mx-auto px-4 max-w-4xl">
-        <div className="flex flex-col gap-24 md:gap-32">
+    <section ref={targetRef} className="bg-primary text-primary-foreground py-20 lg:py-32 relative overflow-hidden">
+      <div className="absolute -top-8 left-16 text-[20rem] font-headline opacity-10 -rotate-12 select-none z-0">“</div>
+      <div className="absolute -bottom-24 right-16 text-[20rem] font-headline opacity-10 rotate-12 select-none z-0">”</div>
+      
+      <div className="container mx-auto px-4 max-w-4xl relative z-10">
+        <div className="flex flex-col gap-16 md:gap-20">
             {quotes.map((item, index) => (
                 <QuoteItem key={index} {...item} scrollYProgress={scrollYProgress} index={index} />
             ))}
