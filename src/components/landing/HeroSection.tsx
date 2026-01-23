@@ -45,7 +45,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative h-screen flex flex-col justify-end text-white">
+    <section className="relative min-h-screen flex flex-col text-white">
       <video
         ref={videoRef}
         src="https://raw.githubusercontent.com/Pramod2244/hello-world/master/18088-288458760_small.mp4"
@@ -57,13 +57,15 @@ const HeroSection = () => {
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
 
+      <div className="flex-grow" />
+
       <motion.div
-        className="relative z-10 container mx-auto px-4 pb-8 sm:pb-16"
+        className="relative z-10 container mx-auto px-4 pb-12"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <div className="mb-8 sm:mb-16">
+        <div className="mb-8">
           <motion.h1
             variants={itemVariants}
             className="font-headline text-5xl md:text-7xl font-bold leading-tight"
