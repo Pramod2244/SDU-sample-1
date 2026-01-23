@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -54,10 +54,10 @@ const ExperienceCard = ({
   const image = PlaceHolderImages.find((img) => img.id === id);
   return (
     <motion.div
-      className="w-[90vw] md:w-[45vw] lg:w-[30vw] shrink-0"
-      whileHover={{ scale: 1.02 }}
+      className="w-[80vw] md:w-[40vw] lg:w-[30vw] shrink-0"
+      whileHover={{ y: -5 }}
     >
-      <Card className="h-full bg-card overflow-hidden group shadow-lg">
+      <Card className="h-full bg-card overflow-hidden group shadow-lg border border-transparent hover:border-primary transition-all duration-300">
         <div className="relative h-72 w-full">
           {image && (
             <Image
@@ -66,9 +66,10 @@ const ExperienceCard = ({
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-105"
               data-ai-hint={imageHint}
+              sizes="(max-width: 768px) 80vw, (max-width: 1200px) 40vw, 30vw"
             />
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent" />
         </div>
         <CardContent className="p-6">
           <CardTitle className="font-headline text-2xl mb-2">{title}</CardTitle>
@@ -83,42 +84,53 @@ const ExperienceCard = ({
 };
 
 const HorizontalExperiences = () => {
-  const targetRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-    offset: ["start start", "end end"],
-  });
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  const textOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
-  const textY = useTransform(scrollYProgress, [0, 0.1], ["0rem", "-5rem"]);
-  
-  // Adjusted scroll range and distance for better timing and accuracy
-  const x = useTransform(scrollYProgress, [0.15, 0.95], ["5vw", "-170%"]);
-  
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2, delayChildren: 0.2 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+  };
+
   return (
-    <section ref={targetRef} className="relative h-[300vh] bg-background">
-      <div className="sticky top-0 h-screen flex items-center overflow-hidden">
-        
-        {/* Sticky Text, fades out */}
-        <motion.div 
-            className="absolute top-1/4 left-0 right-0 z-10"
-            style={{ opacity: textOpacity, y: textY }}
-        >
-          <div className="container mx-auto px-4">
-            <h2 className="font-headline text-5xl md:text-7xl font-bold text-primary">Find Your Place.</h2>
-            <p className="mt-4 text-xl text-foreground/70 max-w-2xl">
-              From the stage to the sports field, discover a community where you belong.
-            </p>
-          </div>
+    <section className="bg-background py-20 lg:py-32 overflow-hidden">
+      <motion.div 
+        className="container mx-auto px-4"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={containerVariants}
+      >
+        <motion.div variants={itemVariants} className="mb-12">
+          <h2 className="font-headline text-5xl md:text-7xl font-bold text-primary">Find Your Place.</h2>
+          <p className="mt-4 text-xl text-foreground/70 max-w-2xl">
+            From the stage to the sports field, discover a community where you belong. Drag to explore.
+          </p>
         </motion.div>
 
-        {/* Horizontally Scrolling Cards */}
-        <motion.div style={{ x }} className="flex gap-8">
-          {experiences.map((exp) => (
-            <ExperienceCard key={exp.id} {...exp} />
-          ))}
+        <motion.div 
+          ref={scrollContainerRef} 
+          className="w-full cursor-grab active:cursor-grabbing"
+          variants={itemVariants}
+        >
+          <motion.div
+            drag="x"
+            dragConstraints={scrollContainerRef}
+            className="flex gap-8"
+          >
+            {experiences.map((exp) => (
+              <ExperienceCard key={exp.id} {...exp} />
+            ))}
+          </motion.div>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 };
