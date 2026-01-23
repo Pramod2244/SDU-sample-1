@@ -33,7 +33,7 @@
     {
       "id": "campus-life-community",
       "description": "A group of students relaxing on a university campus lawn.",
-      "imageUrl": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMHJlbGF4aW5nfGVufDB8fHx8MTc5MTc5OTg5MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMHJlbGF4aW5nfGVufDB8fHx8fDE3OTE3OTk4OTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "students relaxing"
     },
     {
@@ -57,7 +57,7 @@
     {
       "id": "about-image",
       "description": "A modern university building with a statue in front.",
-      "imageUrl": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB1bml2ZXJzaXR5fGVufDB8fHx8MTc5MTc0MDI5Nnww&ixlib=rb-4.1.0&q=80&w=600",
+      "imageUrl": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB1bml2ZXJzaXR5fGVufDB8fHx8fDE3OTE3NDAyOTZ8MA&ixlib=rb-4.1.0&q=80&w=600",
       "imageHint": "modern university"
     },
     {
@@ -147,7 +147,7 @@
     {
       "id": "legendary-story-1",
       "description": "A student walks down a path on a university campus.",
-      "imageUrl": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx1bml2ZXJzaXR5JTIwY2FtcHVzfGVufDB8fHx8MTc5MTg3MjE3N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx1bml2ZXJzaXR5JTIwY2FtcHVzfGVufDB8fHx8fDE3OTE4NzIxNzN8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "university path"
     },
     {
@@ -201,8 +201,8 @@
     {
       "id": "horizontal-exp-1",
       "description": "Students collaborating in a university club meeting.",
-      "imageUrl": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMGNvbGxhYm9yYXRpbmd8ZW58MHx8fHwxNzk0MjE3MjQzfDA&ixlib=rb-4.0.3&q=80&w=800",
-      "imageHint": "students collaborating"
+      "imageUrl": "https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHVkZW50JTIwY2x1YnxlbnwwfHx8fDE3OTQyODU0OTF8MA&ixlib=rb-4.0.3&q=80&w=800",
+      "imageHint": "student club"
     },
     {
       "id": "horizontal-exp-2",
@@ -213,8 +213,8 @@
     {
       "id": "horizontal-exp-3",
       "description": "Students performing at a university cultural festival.",
-      "imageUrl": "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjdWx0dXJhbCUyMGZlc3RpdmFsfGVufDB8fHx8fDE3OTQyMTcyNzB8MA&ixlib=rb-4.0.3&q=80&w=800",
-      "imageHint": "cultural festival"
+      "imageUrl": "https://images.unsplash.com/photo-1511795409834-ef04bbd51622?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx1bml2ZXJzaXR5JTIwZXZlbnR8ZW58MHx8fHwxNzk0Mjg1NTQyfDA&ixlib=rb-4.0.3&q=80&w=800",
+      "imageHint": "university event"
     },
     {
       "id": "horizontal-exp-4",
@@ -243,14 +243,14 @@
     {
       "id": "wellness-2",
       "description": "Campus security officer patrolling at night.",
-      "imageUrl": "https://images.unsplash.com/photo-1586922341992-14ce1414336c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjYW1wdXMlMjBwYXRoJTIwbmlnaHR8ZW58MHx8fHwxNzk0MjE3NjQyfDA&ixlib=rb-4.0.3&q=80&w=1080",
-      "imageHint": "campus security"
+      "imageUrl": "https://images.unsplash.com/photo-1581568736305-49a04e012c13?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzZWN1cml0eSUyMHxlbnwwfHx8fDE3NjkxNjQzMTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "campus security camera"
     },
     {
       "id": "wellness-3",
       "description": "A diverse group of students in a community gathering.",
-      "imageUrl": "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMGNvbW11bml0eXxlbnwwfHx8fDE3OTI0NjA1MDJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "students community"
+      "imageUrl": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHVkZW50JTIwY29tbXVuaXR5JTIwZ3JvdXB8ZW58MHx8fHwxNzk0Mjg1NzQwfDA&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageHint": "student community group"
     },
     {
       "id": "city-parallax-bg",
@@ -279,8 +279,8 @@
     {
       "id": "footer-bg",
       "description": "A fountain on a university campus in the evening.",
-      "imageUrl": "https://images.unsplash.com/photo-1560788484-88339bde532b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjYW1wdXMlMjBmb3VudGFpbiUyMGV2ZW5pbmd8ZW58MHx8fHwxNzk0MjE3NzM0fDA&ixlib=rb-4.0.3&q=80&w=1920",
-      "imageHint": "campus fountain"
+      "imageUrl": "https://images.unsplash.com/photo-1523987355523-c74560752486?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjYW1wdXMlMjBhdCUyMGR1c2t8ZW58MHx8fHwxNzk0Mjg1NjM0fDA&ixlib=rb-4.0.3&q=80&w=1920",
+      "imageHint": "campus dusk"
     }
   ]
 }
