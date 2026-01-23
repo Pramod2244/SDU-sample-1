@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, type MotionValue } from 'framer-motion';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Image from 'next/image';
 
@@ -18,23 +18,62 @@ const storyContent = [
   }
 ];
 
-const Story = () => {
-    const [isMobile, setIsMobile] = useState<boolean | undefined>(undefined);
-    useEffect(() => {
-        const checkIsMobile = () => setIsMobile(window.innerWidth < 768);
-        checkIsMobile();
-        window.addEventListener('resize', checkIsMobile);
-        return () => window.removeEventListener('resize', checkIsMobile);
-    }, []);
+const StoryImage = ({ item, index, scrollYProgress }: { item: typeof storyContent[0], index: number, scrollYProgress: MotionValue<number> }) => {
+  const N = storyContent.length;
+  const opacity = useTransform(
+    scrollYProgress,
+    [(index - 0.5) / N, index / N, (index + 0.5) / N],
+    [0, 1, 0]
+  );
 
+  return (
+    item.image && (
+      <motion.div style={{ opacity }} className="absolute inset-0">
+        <Image src={item.image.imageUrl} alt={item.image.description} fill className="object-cover" data-ai-hint={item.image.imageHint} />
+        <div className="absolute inset-0 bg-black/50" />
+      </motion.div>
+    )
+  );
+};
+
+const StoryText = ({ item, index, scrollYProgress }: { item: typeof storyContent[0], index: number, scrollYProgress: MotionValue<number> }) => {
+  const N = storyContent.length;
+  const opacity = useTransform(
+    scrollYProgress,
+    [(index - 0.5) / N, index / N, (index + 0.5) / N],
+    [0, 1, 0]
+  );
+  const y = useTransform(scrollYProgress, [index / N, (index + 1) / N], ['2rem', '-2rem']);
+
+  return (
+    <motion.div
+      style={{ opacity, y }}
+      className="absolute max-w-3xl mx-auto px-4"
+    >
+      <h2 className="font-headline text-5xl md:text-7xl font-bold">{item.title}</h2>
+      <p className="mt-6 text-lg md:text-2xl text-white/80">{item.text}</p>
+    </motion.div>
+  );
+};
+
+
+const Story = () => {
+  const [isMobile, setIsMobile] = useState<boolean | undefined>(undefined);
   const targetRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ['start start', 'end end']
   });
 
+  useEffect(() => {
+    const checkIsMobile = () => setIsMobile(window.innerWidth < 768);
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
+
   if (isMobile === undefined) {
-      return <div className="bg-black h-[200vh]" />;
+    return <div className="bg-black h-[200vh]" />;
   }
 
   if (isMobile) {
@@ -55,49 +94,18 @@ const Story = () => {
     );
   }
 
-  const N = storyContent.length;
   return (
     <section ref={targetRef} className="relative h-[200vh] bg-black">
       <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Images with Cross-fade */}
-        {storyContent.map((item, index) => {
-          const opacity = useTransform(
-            scrollYProgress,
-            [ (index - 0.5) / N, index / N, (index + 0.5) / N ],
-            [0, 1, 0]
-          );
-          
-          return (
-            item.image && (
-                <motion.div key={index} style={{ opacity }} className="absolute inset-0">
-                    <Image src={item.image.imageUrl} alt={item.image.description} fill className="object-cover" data-ai-hint={item.image.imageHint}/>
-                    <div className="absolute inset-0 bg-black/50" />
-                </motion.div>
-            )
-          );
-        })}
+        
+        {storyContent.map((item, index) => (
+          <StoryImage key={`image-${index}`} item={item} index={index} scrollYProgress={scrollYProgress} />
+        ))}
 
-        {/* Foreground Text with Cross-fade */}
         <div className="relative z-10 text-center text-white w-full h-full flex items-center justify-center">
-            {storyContent.map((item, index) => {
-              const opacity = useTransform(
-                scrollYProgress,
-                [ (index - 0.5) / N, index / N, (index + 0.5) / N ],
-                [0, 1, 0]
-              );
-              const y = useTransform(scrollYProgress, [index / N, (index + 1) / N], ['2rem', '-2rem']);
-              
-              return (
-                <motion.div
-                  key={index}
-                  style={{ opacity, y }}
-                  className="absolute max-w-3xl mx-auto px-4"
-                >
-                  <h2 className="font-headline text-5xl md:text-7xl font-bold">{item.title}</h2>
-                  <p className="mt-6 text-lg md:text-2xl text-white/80">{item.text}</p>
-                </motion.div>
-              );
-            })}
+            {storyContent.map((item, index) => (
+              <StoryText key={`text-${index}`} item={item} index={index} scrollYProgress={scrollYProgress} />
+            ))}
         </div>
       </div>
     </section>
