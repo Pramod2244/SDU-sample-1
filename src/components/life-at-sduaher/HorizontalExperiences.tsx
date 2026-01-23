@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef } from "react";
-import { motion } from "framer-motion";
+import { useRef, useState, useLayoutEffect } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -53,9 +53,8 @@ const ExperienceCard = ({
 }) => {
   const image = PlaceHolderImages.find((img) => img.id === id);
   return (
-    <motion.div
+    <div
       className="w-[80vw] md:w-[40vw] lg:w-[30vw] shrink-0"
-      whileHover={{ y: -5 }}
     >
       <Card className="h-full bg-card overflow-hidden group shadow-lg border border-transparent hover:border-primary transition-all duration-300">
         <div className="relative h-72 w-full">
@@ -79,58 +78,57 @@ const ExperienceCard = ({
           </div>
         </CardContent>
       </Card>
-    </motion.div>
+    </div>
   );
 };
 
+
 const HorizontalExperiences = () => {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2, delayChildren: 0.2 },
-    },
-  };
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start start', 'end end'],
+  });
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
-  };
+  const [carouselEnd, setCarouselEnd] = useState(0);
+
+  useLayoutEffect(() => {
+    const onResize = () => {
+      if (carouselRef.current) {
+        const scrollWidth = carouselRef.current.scrollWidth;
+        const clientWidth = carouselRef.current.clientWidth;
+        setCarouselEnd(scrollWidth - clientWidth);
+      }
+    };
+    onResize();
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
+  // Map vertical scroll progress to horizontal translation
+  const x = useTransform(scrollYProgress, [0.1, 0.85], [0, -carouselEnd]);
+  
+  // Fade out the text as scrolling starts
+  const textOpacity = useTransform(scrollYProgress, [0.05, 0.15], [1, 0]);
 
   return (
-    <section className="bg-background py-20 lg:py-32 overflow-x-clip">
-      <motion.div 
-        className="container mx-auto px-4"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={containerVariants}
-      >
-        <motion.div variants={itemVariants} className="mb-12">
+    <section ref={sectionRef} className="relative h-[300vh] bg-background">
+      <div className="sticky top-0 flex h-screen flex-col justify-center overflow-hidden">
+        <motion.div style={{ opacity: textOpacity }} className="container mx-auto px-4 mb-12">
           <h2 className="font-headline text-5xl md:text-7xl font-bold text-primary">Find Your Place.</h2>
           <p className="mt-4 text-xl text-foreground/70 max-w-2xl">
-            From the stage to the sports field, discover a community where you belong. Drag to explore.
+            From the stage to the sports field, discover a community where you belong.
           </p>
         </motion.div>
 
-        <motion.div 
-          ref={scrollContainerRef} 
-          className="w-full cursor-grab active:cursor-grabbing"
-          variants={itemVariants}
-        >
-          <motion.div
-            drag="x"
-            dragConstraints={scrollContainerRef}
-            className="flex gap-8"
-          >
-            {experiences.map((exp) => (
-              <ExperienceCard key={exp.id} {...exp} />
-            ))}
-          </motion.div>
+        <motion.div ref={carouselRef} style={{ x }} className="flex gap-8 pl-8 md:pl-16 lg:pl-32">
+          {experiences.map((exp) => (
+            <ExperienceCard key={exp.id} {...exp} />
+          ))}
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 };
