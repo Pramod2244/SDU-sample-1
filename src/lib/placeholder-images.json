@@ -201,7 +201,7 @@
     {
       "id": "horizontal-exp-1",
       "description": "Students collaborating in a university club meeting.",
-      "imageUrl": "https://images.unsplash.com/photo-1571260899051-092a154880d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMGNvbGxhYm9yYXRpbmd8ZW58MHx8fHwxNzkyNDYwMjYyfDA&ixlib=rb-4.1.0&q=80&w=800",
+      "imageUrl": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMGNvbGxhYm9yYXRpbmd8ZW58MHx8fHwxNzk0MjE3MjQzfDA&ixlib=rb-4.0.3&q=80&w=800",
       "imageHint": "students collaborating"
     },
     {
@@ -213,7 +213,7 @@
     {
       "id": "horizontal-exp-3",
       "description": "Students performing at a university cultural festival.",
-      "imageUrl": "https://images.unsplash.com/photo-1511795409834-ef04bbd51622?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjdWx0dXJhbCUyMGZlc3RpdmFsfGVufDB8fHx8fDE3OTI0NjAzMTJ8MA&ixlib=rb-4.1.0&q=80&w=800",
+      "imageUrl": "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjdWx0dXJhbCUyMGZlc3RpdmFsfGVufDB8fHx8fDE3OTQyMTcyNzB8MA&ixlib=rb-4.0.3&q=80&w=800",
       "imageHint": "cultural festival"
     },
     {
@@ -243,7 +243,7 @@
     {
       "id": "wellness-2",
       "description": "Campus security officer patrolling at night.",
-      "imageUrl": "https://images.unsplash.com/photo-1627883714282-5a50e18f26c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjYW1wdXMlMjBzZWN1cml0eXxlbnwwfHx8fDE3OTI0NjA0ODF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1586922341992-14ce1414336c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjYW1wdXMlMjBwYXRoJTIwbmlnaHR8ZW58MHx8fHwxNzk0MjE3NjQyfDA&ixlib=rb-4.0.3&q=80&w=1080",
       "imageHint": "campus security"
     },
     {
@@ -279,7 +279,7 @@
     {
       "id": "footer-bg",
       "description": "A fountain on a university campus in the evening.",
-      "imageUrl": "https://images.unsplash.com/photo-1590487796912-143f3af92429?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjYW1wdXMlMjBmb3VudGFpbnxlbnwwfHx8fDE3OTI1Mzk3OTd8MA&ixlib=rb-4.1.0&q=80&w=1920",
+      "imageUrl": "https://images.unsplash.com/photo-1560788484-88339bde532b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjYW1wdXMlMjBmb3VudGFpbiUyMGV2ZW5pbmd8ZW58MHx8fHwxNzk0MjE3NzM0fDA&ixlib=rb-4.0.3&q=80&w=1920",
       "imageHint": "campus fountain"
     }
   ]
