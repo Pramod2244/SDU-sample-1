@@ -100,7 +100,7 @@ const HorizontalExperiences = () => {
   };
 
   return (
-    <section className="bg-background py-20 lg:py-32 overflow-hidden">
+    <section className="bg-background py-20 lg:py-32 overflow-x-clip">
       <motion.div 
         className="container mx-auto px-4"
         initial="hidden"
