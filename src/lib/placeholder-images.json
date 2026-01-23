@@ -2,9 +2,9 @@
   "placeholderImages": [
     {
       "id": "hero-background-mobile",
-      "description": "A detailed photo of the facade of a classic, gothic-style university building.",
-      "imageUrl": "https://images.unsplash.com/photo-1600869135438-60b94a03e157?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxnb3RoaWMlMjB1bml2ZXJzaXR5JTIwYnVpbGRpbmclMjBmYWNhZGV8ZW58MHx8fHwxNzkzODA0NjU3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "university facade"
+      "description": "A stunning wide shot of a modern university campus at sunset, with students walking.",
+      "imageUrl": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx1bml2ZXJzaXR5JTIwY2FtcHVzfGVufDB8fHx8MTc5NDEyNzU0N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "university campus"
     },
     {
       "id": "campus-life-hero",
@@ -99,7 +99,7 @@
     {
       "id": "dept-pathology",
       "description": "Microscope in a pathology lab.",
-      "imageUrl": "https://images.unsplash.com/photo-1630959300412-fe5827ce8fe2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwYXRob2xvZ3klMjBsYWJ8ZW58MHx8fHwxNzY5MDIwNzA0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1630959300412-fe5827ce8fe2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwYXRob2xvZ3klMjBsYWJ8ZW58MHx8fHwxNzY5MDIwNzA0fDA&ixlibrb-4.1.0&q=80&w=1080",
       "imageHint": "pathology lab"
     },
     {
@@ -111,85 +111,85 @@
     {
       "id": "dept-pharmacology",
       "description": "Pharmacology lab with various chemicals.",
-      "imageUrl": "https://images.unsplash.com/photo-1768498950658-87ecfe232b59?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwaGFybWFjb2xvZ3klMjBsYWJ8ZW58MHx8fHwxNzY5MDIwNzA0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1768498950658-87ecfe232b59?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwaGFybWFjb2xvZ3klMjBsYWJ8ZW58MHx8fHwxNzY5MDIwNzA0fDA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "pharmacology lab"
     },
     {
       "id": "dept-general-medicine",
       "description": "Doctor consulting with a patient.",
-      "imageUrl": "https://images.unsplash.com/photo-1631217871099-88310a909a32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkb2N0b3IlMjBwYXRpZW50fGVufDB8fHx8MTc2OTAwOTg5OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1631217871099-88310a909a32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkb2N0b3IlMjBwYXRpZW50fGVufDB8fHx8MTc2OTAwOTg5OHww&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "doctor patient"
     },
     {
       "id": "dept-general-surgery",
       "description": "Surgical theater.",
-      "imageUrl": "https://images.unsplash.com/photo-1640876777002-badf6aee5bcc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxvcGVyYXRpbmclMjByb29tfGVufDB8fHx8MTc2ODk5MTQyOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1640876777002-badf6aee5bcc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxvcGVyYXRpbmclMjByb29tfGVufDB8fHx8MTc2ODk5MTQyOHww&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "operating room"
     },
     {
       "id": "dept-pediatrics",
       "description": "Doctor examining a child.",
-      "imageUrl": "https://images.unsplash.com/photo-1632053005736-6bd9cfc4daf9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cGVkaWF0cmljaWFuJTIwY2hpbGR8ZW58MHx8fHwxNzY5MDIwNzA0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1632053005736-6bd9cfc4daf9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cGVkaWF0cmljaWFuJTIwY2hpbGR8ZW58MHx8fHwxNzY5MDIwNzA0fDA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "pediatrician child"
     },
     {
       "id": "be-legendary-hero-bg",
       "description": "A stunning wide shot of a modern university campus at sunset.",
-      "imageUrl": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx1bml2ZXJzaXR5JTIwY2FtcHVzfGVufDB8fHx8MTc5MTg3MjE3N3ww&ixlib=rb-4.1.0&q=80&w=1920",
+      "imageUrl": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx1bml2ZXJzaXR5JTIwY2FtcHVzfGVufDB8fHx8MTc5MTg3MjE3N3ww&ixlib.rb-4.1.0&q=80&w=1920",
       "imageHint": "university campus"
     },
     {
       "id": "legendary-content-1",
       "description": "Students in a modern science lab.",
-      "imageUrl": "https://images.unsplash.com/photo-1579154341569-342c6b3e3aa8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtZWRpY2FsJTIwcmVzZWFyY2h8ZW58MHx8fHwxNzkxODcyMjA5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1579154341569-342c6b3e3aa8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtZWRpY2FsJTIwcmVzZWFyY2h8ZW58MHx8fHwxNzkxODcyMjA5fDA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "medical research"
     },
     {
       "id": "legendary-content-2",
       "description": "Doctor mentoring a medical student.",
-      "imageUrl": "https://images.unsplash.com/photo-1550831107-1553da8c8464?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkb2N0b3IlMjBtZW50b3J8ZW58MHx8fHwxNzkxODcyMjQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1550831107-1553da8c8464?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkb2N0b3IlMjBtZW50b3J8ZW58MHx8fHwxNzkxODcyMjQyfDA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "doctor mentor"
     },
     {
       "id": "legendary-story-1",
       "description": "A student walks down a path on a university campus.",
-      "imageUrl": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx1bml2ZXJzaXR5JTIwY2FtcHVzfGVufDB8fHx8MTc5MTg3MjE3N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx1bml2ZXJzaXR5JTIwY2FtcHVzfGVufDB8fHx8MTc5MTg3MjE3N3ww&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "university path"
     },
     {
       "id": "legendary-story-2",
       "description": "Students working together in a science laboratory.",
-      "imageUrl": "https://images.unsplash.com/photo-1532187643623-dbf267341858?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMGxhYnxlbnwwfHx8fDE3OTE5NDQ1Mjd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1532187643623-dbf267341858?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMGxhYnxlbnwwfHx8fDE3OTE5NDQ1Mjd8MA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "students lab"
     },
     {
       "id": "legendary-story-3",
       "description": "A medical student consulting with a patient.",
-      "imageUrl": "https://images.unsplash.com/photo-1628182749440-a3793f773484?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtZWRpY2FsJTIwc3R1ZGVudCUyMHBhdGllbnR8ZW58MHx8fHwxNzkxOTQ0NTYwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1628182749440-a3793f773484?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtZWRpY2FsJTIwc3R1ZGVudCUyMHBhdGllbnR8ZW58MHx8fHwxNzkxOTQ0NTYwfDA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "student patient"
     },
     {
       "id": "legendary-story-4",
       "description": "Students in caps and gowns at a graduation ceremony.",
-      "imageUrl": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxncmFkdWF0aW9uJTIwY2VyZW1vbnl8ZW58MHx8fHwxNzkxOTQ0NTg3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxncmFkdWF0aW9uJTIwY2VyZW1vbnl8ZW58MHx8fHwxNzkxOTQ0NTg3fDA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "graduation ceremony"
     },
     {
       "id": "legend-1",
       "description": "Portrait of an experienced doctor.",
-      "imageUrl": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwb3J0cmFpdCUyMGRvY3RvcnxlbnwwfHx8fDE3OTIwMjE4MTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwb3J0cmFpdCUyMGRvY3RvcnxlbnwwfHx8fDE3OTIwMjE4MTB8MA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "portrait doctor"
     },
     {
       "id": "legend-2",
       "description": "Portrait of a confident surgeon in scrubs.",
-      "imageUrl": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwb3J0cmFpdCUyMHN1cmdlb258ZW58MHx8fHwxNzkyMDIxODQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwb3J0cmFpdCUyMHN1cmdlb258ZW58MHx8fHwxNzkyMDIxODQyfDA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "portrait surgeon"
     },
     {
       "id": "legend-3",
       "description": "Portrait of a female researcher in a lab coat.",
-      "imageUrl": "https://images.unsplash.com/photo-1579154341569-342c6b3e3aa8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwcm90cmFpdCUyMHJlc2VhcmNoZXJ8ZW58MHx8fHwxNzkyMDIxODY2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1579154341569-342c6b3e3aa8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwcm90cmFpdCUyMHJlc2VhcmNoZXJ8ZW58MHx8fHwxNzkyMDIxODY2fDA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "portrait researcher"
     }
   ]
