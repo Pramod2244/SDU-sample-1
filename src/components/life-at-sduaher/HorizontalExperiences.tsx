@@ -89,9 +89,11 @@ const HorizontalExperiences = () => {
     offset: ["start start", "end end"],
   });
 
-  const x = useTransform(scrollYProgress, [0.1, 0.9], ["0%", "-180%"]);
-  const textOpacity = useTransform(scrollYProgress, [0.05, 0.2], [1, 0]);
-  const textY = useTransform(scrollYProgress, [0, 0.2], ["0rem", "-5rem"]);
+  const textOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
+  const textY = useTransform(scrollYProgress, [0, 0.1], ["0rem", "-5rem"]);
+  
+  // Adjusted scroll range and distance for better timing and accuracy
+  const x = useTransform(scrollYProgress, [0.15, 0.95], ["5vw", "-170%"]);
   
   return (
     <section ref={targetRef} className="relative h-[300vh] bg-background">
@@ -111,11 +113,10 @@ const HorizontalExperiences = () => {
         </motion.div>
 
         {/* Horizontally Scrolling Cards */}
-        <motion.div style={{ x }} className="flex gap-8 pl-[5vw]">
+        <motion.div style={{ x }} className="flex gap-8">
           {experiences.map((exp) => (
             <ExperienceCard key={exp.id} {...exp} />
           ))}
-           <div className="w-[50vw] shrink-0" /> {/* Add padding at the end */}
         </motion.div>
       </div>
     </section>
