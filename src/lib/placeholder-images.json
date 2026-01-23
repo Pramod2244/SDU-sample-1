@@ -1,6 +1,12 @@
 {
   "placeholderImages": [
     {
+      "id": "hero-background-mobile",
+      "description": "A stunning photo of a gothic-style university building against a blue sky.",
+      "imageUrl": "https://images.unsplash.com/photo-1543818354-959c84b168a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx1bml2ZXJzaXR5JTIwZ290aGljJTIwYXJjaGl0ZWN0dXJlfGVufDB8fHx8MTc5MjA5NzQyN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "gothic university"
+    },
+    {
       "id": "campus-life-hero",
       "description": "Students walking and talking in a modern university hallway.",
       "imageUrl": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxzdHVkZW50cyUyMGhhbGx3YXl8ZW58MHx8fHwxNzkxODg4NTIwfDA&ixlib=rb-4.1.0&q=80&w=1200",
