@@ -19,7 +19,7 @@ const storyContent = [
 ];
 
 const Story = () => {
-    const [isMobile, setIsMobile] = useState(false);
+    const [isMobile, setIsMobile] = useState<boolean | undefined>(undefined);
     useEffect(() => {
         const checkIsMobile = () => setIsMobile(window.innerWidth < 768);
         checkIsMobile();
@@ -32,6 +32,10 @@ const Story = () => {
     target: targetRef,
     offset: ['start start', 'end end']
   });
+
+  if (isMobile === undefined) {
+      return <div className="bg-black h-[200vh]" />;
+  }
 
   if (isMobile) {
     return (

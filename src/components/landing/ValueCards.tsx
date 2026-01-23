@@ -51,7 +51,7 @@ const ValueCards = () => {
       animate="visible"
       variants={containerVariants}
     >
-      <div className="grid md:grid-cols-2 gap-x-12 gap-y-16">
+      <div className="grid md:grid-cols-2 gap-x-12 gap-y-8 md:gap-y-16">
         {sections.map((section, index) => (
           <motion.div key={index} variants={itemVariants}>
             <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">

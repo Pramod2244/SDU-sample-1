@@ -7,7 +7,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Image from 'next/image';
 
 const Hero = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState<boolean | undefined>(undefined);
   useEffect(() => {
     const checkIsMobile = () => setIsMobile(window.innerWidth < 768);
     checkIsMobile();
@@ -26,6 +26,10 @@ const Hero = () => {
   const videoOpacity = useTransform(scrollYProgress, [0, 0.5, 0.8], [0.6, 0.8, 0.4]);
 
   const heroBgImage = PlaceHolderImages.find((img) => img.id === 'be-legendary-hero-bg');
+
+  if (isMobile === undefined) {
+    return <div className="relative h-screen w-full bg-black" />;
+  }
 
   return (
     <section ref={targetRef} className="relative h-screen w-full text-white">
