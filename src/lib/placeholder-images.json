@@ -75,37 +75,37 @@
     {
       "id": "dept-anatomy",
       "description": "Anatomy lab with models.",
-      "imageUrl": "https://images.unsplash.com/photo-1705727210721-961cc64a6895?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxhbmF0b215JTIwbGFifGVufDB8fHx8MTc2OTAyMDcwNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1661769888923-28684383a152?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       "imageHint": "anatomy lab"
     },
     {
       "id": "dept-physiology",
       "description": "Physiology experiment setup.",
-      "imageUrl": "https://images.unsplash.com/photo-1722660430962-d796f374b801?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwaHlzaW9sb2d5JTIwbGFifGVufDB8fHx8MTc2OTAyMDcwNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1631597839371-30d44c45663e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       "imageHint": "physiology lab"
     },
     {
       "id": "dept-biochemistry",
       "description": "Biochemistry lab with test tubes.",
-      "imageUrl": "https://images.unsplash.com/photo-1748280317551-affaec88027d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxiaW9jaGVtaXN0cnklMjBsYWJ8ZW58MHx8fHwxNzY5MDIwNzA0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1578912891969-2b0a4e3a4e1f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       "imageHint": "biochemistry lab"
     },
     {
       "id": "dept-pathology",
       "description": "Microscope in a pathology lab.",
-      "imageUrl": "https://images.unsplash.com/photo-1630959300412-fe5827ce8fe2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwYXRob2xvZ3klMjBsYWJ8ZW58MHx8fHwxNzY5MDIwNzA0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1581093584851-46eea4b45bdd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       "imageHint": "pathology lab"
     },
     {
       "id": "dept-microbiology",
       "description": "Petri dishes in a microbiology lab.",
-      "imageUrl": "https://images.unsplash.com/photo-1631816285219-c6af3851e360?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxtaWNyb2Jpb2xvZ3klMjBsYWJ8ZW58MHx8fHwxNzY5MDIwNzA0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1581091224003-01a2e7b9220c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       "imageHint": "microbiology lab"
     },
     {
       "id": "dept-pharmacology",
       "description": "Pharmacology lab with various chemicals.",
-      "imageUrl": "https://images.unsplash.com/photo-1768498950658-87ecfe232b59?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwaGFybWFjb2xvZ3klMjBsYWJ8ZW58MHx8fHwxNzY5MDIwNzA0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1603913029197-0c213423737b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       "imageHint": "pharmacology lab"
     },
     {
@@ -183,7 +183,7 @@
     {
       "id": "scroll-story-1",
       "description": "A beautiful university campus with lush green lawns and modern architecture.",
-      "imageUrl": "https://images.unsplash.com/photo-1494949649113-4b74a8359b6c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx1bml2ZXJzaXR5JTIwY2FtcHVzJTIwZW5lcmd5fGVufDB8fHx8MTc5MjQ2MDA2OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1494949649113-4b74a8359b6c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx1bml2ZXJzaXR5JTIwY2FtcHVzJTIwZW5lcmd5fGVufDB8fHx8fDE3OTI0NjAwNjh8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "campus energy"
     },
     {
@@ -195,7 +195,7 @@
     {
       "id": "scroll-story-3",
       "description": "Candid shot of students laughing and enjoying a campus event, a memorable moment.",
-      "imageUrl": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtZW1vcmFibGUlMjBzdHVkZW50JTIwbW9tZW50fGVufDB8fHx8MTc5MjQ2MDEwNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtZW1vcmFibGUlMjBzdHVkZW50JTIwbW9tZW50fGVufDB8fHx8fDE3OTI0NjAxMDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "student moments"
     },
     {
@@ -275,6 +275,12 @@
       "description": "Happy graduates in caps and gowns celebrating.",
       "imageUrl": "https://images.unsplash.com/photo-1621640342714-23773a45084a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxncmFkdWF0aW9uJTIwY2VsZWJyYXRpb258ZW58MHx8fHwxNzkyNDYwODAwfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "graduation celebration"
+    },
+    {
+      "id": "footer-bg",
+      "description": "A fountain on a university campus in the evening.",
+      "imageUrl": "https://images.unsplash.com/photo-1590487796912-143f3af92429?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjYW1wdXMlMjBmb3VudGFpbnxlbnwwfHx8fDE3OTI1Mzk3OTd8MA&ixlib=rb-4.1.0&q=80&w=1920",
+      "imageHint": "campus fountain"
     }
   ]
 }
