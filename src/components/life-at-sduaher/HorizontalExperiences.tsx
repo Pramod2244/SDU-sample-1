@@ -86,21 +86,30 @@ const HorizontalExperiences = () => {
   const targetRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
-    offset: ["start end", "end start"],
+    offset: ["start start", "end end"],
   });
 
-  const x = useTransform(scrollYProgress, [0.1, 0.95], ["0%", "-100%"]);
+  const x = useTransform(scrollYProgress, [0.1, 1], ["5%", "-150%"]);
   
   return (
-    <section ref={targetRef} className="relative h-[250vh] bg-background py-20 lg:py-32">
+    <section ref={targetRef} className="relative h-[300vh] bg-background">
       <div className="sticky top-0 h-screen flex items-center overflow-hidden">
-        <div className="container mx-auto px-4 mb-12">
-            <h2 className="font-headline text-5xl md:text-7xl font-bold text-primary">Find Your Place.</h2>
-            <p className="mt-4 text-xl text-foreground/70 max-w-2xl">
-              From the stage to the sports field, discover a community where you belong.
-            </p>
+        
+        <div className="absolute top-0 left-0 right-0 h-full flex items-center z-10">
+          <div className="container mx-auto px-4">
+              <motion.div
+                initial={{ opacity: 0 }}
+                style={{ opacity: useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]) }}
+              >
+                <h2 className="font-headline text-5xl md:text-7xl font-bold text-primary">Find Your Place.</h2>
+                <p className="mt-4 text-xl text-foreground/70 max-w-2xl">
+                  From the stage to the sports field, discover a community where you belong.
+                </p>
+              </motion.div>
+          </div>
         </div>
-        <motion.div style={{ x }} className="flex gap-8 pl-8">
+
+        <motion.div style={{ x }} className="flex gap-8 pl-[5vw]">
           {experiences.map((exp) => (
             <ExperienceCard key={exp.id} {...exp} />
           ))}
