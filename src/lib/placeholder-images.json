@@ -21,7 +21,7 @@
     {
       "id": "campus-life-clubs",
       "description": "University library with students studying.",
-      "imageUrl": "https://images.unsplash.com/photo-1683319598210-d70486f2f996?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx1bml2ZXJzaXR5JTIwbGlicmFyeXxlbnwwfHx8fDE3NjkwMTQ1NjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMGNvbW11bml0eXxlbnwwfHx8fDE3OTI0NjA1MDJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "university library"
     },
     {
@@ -75,13 +75,13 @@
     {
       "id": "dept-anatomy",
       "description": "Anatomy lab with models.",
-      "imageUrl": "https://plus.unsplash.com/premium_photo-1661769888923-28684383a152?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "imageUrl": "https://images.unsplash.com/photo-1508387027939-27cccde53673?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8YW5hdG9teXxlbnwwfHx8fDE3NjkxNjQ3MjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "anatomy lab"
     },
     {
       "id": "dept-physiology",
       "description": "Physiology experiment setup.",
-      "imageUrl": "https://images.unsplash.com/photo-1631597839371-30d44c45663e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "imageUrl": "https://images.unsplash.com/photo-1559757175-0828e13882ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwaHlzaW9sb2d5fGVufDB8fHx8MTc2OTE2NDc1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "physiology lab"
     },
     {
@@ -123,7 +123,7 @@
     {
       "id": "dept-pediatrics",
       "description": "Doctor examining a child.",
-      "imageUrl": "https://images.unsplash.com/photo-1632053005736-6bd9cfc4daf9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cGVkaWF0cmljaWFuJTIwY2hpbGR8ZW58MHx8fHwxNzY5MDIwNzA0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1632053005736-6bd9cfc4daf9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cGVkaWF0cmljaWFuJTIwY2hpbGR8ZW58MHx8fHwxNzkyMDIwNzA0fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "pediatrician child"
     },
     {
@@ -207,7 +207,7 @@
     {
       "id": "horizontal-exp-2",
       "description": "A basketball court with a moody feel.",
-      "imageUrl": "https://images.unsplash.com/photo-1546519638-68e109498ffc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxiYXNrZXRiYWxsJTIwY291cnR8ZW58MHx8fHwxNzk0MTMwMTcxfDA&ixlib=rb-4.0.3&q=80&w=800",
+      "imageUrl": "https://images.unsplash.com/photo-1511795409834-ef04bbd51622?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx1bml2ZXJzaXR5JTIwZXZlbnR8ZW58MHx8fHwxNzk0Mjg1NTQyfDA&ixlib=rb-4.0.3&q=80&w=800",
       "imageHint": "basketball court"
     },
     {
