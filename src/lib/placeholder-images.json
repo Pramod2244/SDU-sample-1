@@ -2,9 +2,9 @@
   "placeholderImages": [
     {
       "id": "hero-background-mobile",
-      "description": "A stunning photo of a gothic-style university building against a blue sky.",
-      "imageUrl": "https://images.unsplash.com/photo-1543818354-959c84b168a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx1bml2ZXJzaXR5JTIwZ290aGljJTIwYXJjaGl0ZWN0dXJlfGVufDB8fHx8MTc5MjA5NzQyN3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "gothic university"
+      "description": "A detailed photo of the facade of a classic, gothic-style university building.",
+      "imageUrl": "https://images.unsplash.com/photo-1600869135438-60b94a03e157?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxnb3RoaWMlMjB1bml2ZXJzaXR5JTIwYnVpbGRpbmclMjBmYWNhZGV8ZW58MHx8fHwxNzkzODA0NjU3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "university facade"
     },
     {
       "id": "campus-life-hero",
@@ -45,7 +45,7 @@
     {
       "id": "news-featured",
       "description": "Front view of a university building with NIRF ranking banner.",
-      "imageUrl": "https://images.unsplash.com/photo-1562774053-633b84ca2553?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx1bml2ZXJzaXR5JTIwYnVpbGRpbmd8ZW58MHx8fHwxNzkxODAwMDQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1562774053-633b84ca2553?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx1bml2ZXJzaXR5JTIwYnVpbGRpbmd8ZW58MHx8fHwxNzkxODAwMDQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "university building"
     },
     {
