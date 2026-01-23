@@ -27,7 +27,7 @@ const LifeHero = () => {
         <motion.div style={{ scale: videoScale }} className="absolute inset-0">
           {!isMobile ? (
             <video
-              src="https://raw.githubusercontent.com/Pramod2244/hello-world/master/18088-288458760_small.mp4"
+              src="https://raw.githubusercontent.com/Pramod2244/hello-world/master/SDU%20(1).mp4"
               autoPlay
               muted
               loop
