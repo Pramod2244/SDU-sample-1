@@ -89,31 +89,33 @@ const HorizontalExperiences = () => {
     offset: ["start start", "end end"],
   });
 
-  const x = useTransform(scrollYProgress, [0.1, 1], ["5%", "-150%"]);
+  const x = useTransform(scrollYProgress, [0.1, 0.9], ["0%", "-180%"]);
+  const textOpacity = useTransform(scrollYProgress, [0.05, 0.2], [1, 0]);
+  const textY = useTransform(scrollYProgress, [0, 0.2], ["0rem", "-5rem"]);
   
   return (
     <section ref={targetRef} className="relative h-[300vh] bg-background">
       <div className="sticky top-0 h-screen flex items-center overflow-hidden">
         
-        <div className="absolute top-0 left-0 right-0 h-full flex items-center z-10">
+        {/* Sticky Text, fades out */}
+        <motion.div 
+            className="absolute top-1/4 left-0 right-0 z-10"
+            style={{ opacity: textOpacity, y: textY }}
+        >
           <div className="container mx-auto px-4">
-              <motion.div
-                initial={{ opacity: 0 }}
-                style={{ opacity: useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]) }}
-              >
-                <h2 className="font-headline text-5xl md:text-7xl font-bold text-primary">Find Your Place.</h2>
-                <p className="mt-4 text-xl text-foreground/70 max-w-2xl">
-                  From the stage to the sports field, discover a community where you belong.
-                </p>
-              </motion.div>
+            <h2 className="font-headline text-5xl md:text-7xl font-bold text-primary">Find Your Place.</h2>
+            <p className="mt-4 text-xl text-foreground/70 max-w-2xl">
+              From the stage to the sports field, discover a community where you belong.
+            </p>
           </div>
-        </div>
+        </motion.div>
 
+        {/* Horizontally Scrolling Cards */}
         <motion.div style={{ x }} className="flex gap-8 pl-[5vw]">
           {experiences.map((exp) => (
             <ExperienceCard key={exp.id} {...exp} />
           ))}
-           <div className="w-[50vw] shrink-0" />
+           <div className="w-[50vw] shrink-0" /> {/* Add padding at the end */}
         </motion.div>
       </div>
     </section>
