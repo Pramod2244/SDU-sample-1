@@ -21,8 +21,8 @@
     {
       "id": "campus-life-clubs",
       "description": "University library with students studying.",
-      "imageUrl": "https://images.unsplash.com/photo-1549057845-7ad495a43d42?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx1bml2ZXJzaXR5JTIwbGlicmFyeXxlbnwwfHx8fDE3OTQyODU3OTV8MA&ixlib=rb-4.0.3&q=80&w=1080",
-      "imageHint": "university library"
+      "imageUrl": "https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHVkZW50JTIwY2x1YnxlbnwwfHx8fDE3OTQyODU0OTF8MA&ixlib=rb-4.0.3&q=80&w=800",
+      "imageHint": "student club"
     },
     {
       "id": "campus-life-wellness",
@@ -87,7 +87,7 @@
     {
       "id": "dept-biochemistry",
       "description": "Biochemistry lab with test tubes.",
-      "imageUrl": "https://images.unsplash.com/photo-1578912891969-2b0a4e3a4a1f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "imageUrl": "https://images.unsplash.com/photo-1578912891969-2b0a4e3a4a1f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxiaW9jaGVtaXN0cnklMjBsYWJ8ZW58MHx8fHwxNzk0Mjg1OTUwfDA&ixlib=rb-4.0.3&q=80&w=1080",
       "imageHint": "biochemistry lab"
     },
     {
@@ -111,13 +111,13 @@
     {
       "id": "dept-general-medicine",
       "description": "Doctor consulting with a patient.",
-      "imageUrl": "https://images.unsplash.com/photo-1631217871099-88310a909a32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkb2N0b3IlMjBwYXRpZW50fGVufDB8fHx8MTc2OTAwOTg5OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1631217871099-88310a909a32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkb2N0b3IlMjBwYXRpZW50fGVufDB8fHx8fDE3NjkxNjQ2OTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "doctor patient"
     },
     {
       "id": "dept-general-surgery",
       "description": "Surgical theater.",
-      "imageUrl": "https://images.unsplash.com/photo-1640876777002-badf6aee5bcc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxvcGVyYXRpbmclMjByb29tfGVufDB8fHx8MTc2ODk5MTQyOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1640876777002-badf6aee5bcc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxvcGVyYXRpbmclMjByb29tfGVufDB8fHx8fDE3Njg5OTE0MjB8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "operating room"
     },
     {
@@ -171,7 +171,7 @@
     {
       "id": "legend-3",
       "description": "Portrait of a female researcher in a lab coat.",
-      "imageUrl": "https://images.unsplash.com/photo-1579154341569-342c6b3e3aa8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwcm90cmFpdCUyMHJlc2VhcmNoZXJ8ZW58MHx8fHwxNzkyMDIxODY2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1645066928295-2506defde470?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkb2N0b3IlMjBwb3RyYWl0fGVufDB8fHx8fDE3NjkyNTIzMjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "portrait researcher"
     },
     {
