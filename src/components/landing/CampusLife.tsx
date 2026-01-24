@@ -1,85 +1,131 @@
 "use client";
 
 import { useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { Card, CardContent } from "@/components/ui/card";
+import Link from "next/link";
+import { Users, HeartPulse, Lightbulb, ArrowRight } from "lucide-react";
 
-const topics = [
-  { id: "campus-life-housing", title: "Hostel & Mess", description: "Secure and comfortable on-campus housing with modern amenities and hygienic food.", imageHint: "student dormitory" },
-  { id: "campus-life-clubs", title: "Library & Information", description: "A vast collection of books, journals, and digital resources to support learning.", imageHint: "university library" },
-  { id: "campus-life-wellness", title: "Sports & Recreation", description: "Extensive facilities for indoor and outdoor sports to promote physical well-being.", imageHint: "sports facility" },
-  { id: "campus-life-community", title: "Student Wellness", description: "Comprehensive support for student health, counseling, and overall well-being.", imageHint: "students relaxing" },
+import { useIsMobile } from "@/hooks/use-mobile";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { Button } from "@/components/ui/button";
+
+const highlights = [
+  { icon: Users, text: "Clubs & Communities" },
+  { icon: HeartPulse, text: "Sports & Wellness" },
+  { icon: Lightbulb, text: "Innovation & Leadership" },
 ];
 
 const CampusLife = () => {
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
+  const targetRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start end", "end start"],
+  });
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.2, delayChildren: 0.3 } },
+  const backgroundScale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
+  const poster = PlaceHolderImages.find(p => p.id === 'campus-life-bg-video-poster');
+
+  const contentVariants = {
+    hidden: { opacity: 0, filter: "blur(4px)" },
+    visible: { opacity: 1, filter: "blur(0px)", transition: { duration: 0.8, ease: "easeOut", delay: 0.2 } },
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { type: "spring", damping: 15, stiffness: 100 } },
+  const highlightsContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2, delayChildren: 0.5 },
+    },
+  };
+
+  const highlightItemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
   };
 
   return (
-    <section id="campus-life" className="py-20 lg:py-32 bg-background overflow-hidden">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
-        >
-          <h2 className="font-headline text-4xl md:text-5xl font-bold text-primary">
-            Life at SDUAHER
-          </h2>
-          <p className="mt-4 text-lg text-foreground/80 max-w-3xl mx-auto">
-            Experience a vibrant and supportive campus environment that fosters both academic and personal growth.
-          </p>
-        </motion.div>
+    <section
+      id="campus-life"
+      ref={targetRef}
+      className="relative h-[80vh] min-h-[700px] lg:h-screen w-full overflow-hidden bg-black"
+    >
+      <div className="absolute inset-0 z-0">
+        {isMobile ? (
+          poster && <Image
+            src={poster.imageUrl}
+            alt={poster.description}
+            data-ai-hint={poster.imageHint}
+            fill
+            className="object-cover"
+            priority
+          />
+        ) : (
+          <motion.video
+            style={{ scale: backgroundScale }}
+            src="https://raw.githubusercontent.com/Pramod2244/hello-world/master/18088-288458760_small.mp4"
+            poster={poster?.imageUrl}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            className="w-full h-full object-cover"
+          />
+        )}
+        <div className="absolute inset-0 bg-black/60 bg-gradient-to-t from-black/70 via-black/40 to-black/20" />
       </div>
-      
-      <div ref={scrollRef} className="w-full cursor-grab">
+
+      <div className="relative z-10 h-full flex flex-col justify-center items-center text-center text-white px-4">
         <motion.div
-          drag="x"
-          dragConstraints={scrollRef}
-          className="flex gap-8 px-4 sm:px-8"
-          variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
+          viewport={{ once: true, amount: 0.5 }}
+          variants={contentVariants}
         >
-          {topics.map((topic) => {
-            const image = PlaceHolderImages.find((img) => img.id === topic.id);
-            return (
-              <motion.div key={topic.id} variants={itemVariants} className="min-w-[80vw] md:min-w-[400px]">
-                <Card className="h-full overflow-hidden shadow-lg group">
-                  <div className="relative h-64 w-full">
-                    {image && (
-                      <Image
-                        src={image.imageUrl}
-                        alt={image.description}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                        sizes="(max-width: 768px) 80vw, 400px"
-                        data-ai-hint={topic.imageHint}
-                      />
-                    )}
-                  </div>
-                  <CardContent className="p-6">
-                    <h3 className="font-headline text-2xl font-semibold mb-2">{topic.title}</h3>
-                    <p className="text-foreground/80">{topic.description}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            );
-          })}
+          <h2 className="font-headline text-5xl md:text-7xl font-bold">
+            Life at SDUAHER
+          </h2>
+          <p className="mt-4 text-lg md:text-xl text-white/80 max-w-2xl mx-auto">
+            A campus experience built for ambition, culture and connection.
+          </p>
+        </motion.div>
+
+        <motion.div
+          className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-16"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={highlightsContainerVariants}
+        >
+          {highlights.map((item, index) => (
+            <motion.div
+              key={index}
+              className="flex flex-col items-center gap-3"
+              variants={highlightItemVariants}
+            >
+              <div className="p-4 bg-white/10 rounded-2xl border border-white/20 backdrop-blur-sm">
+                <item.icon className="w-7 h-7 text-white" />
+              </div>
+              <span className="font-semibold text-base">{item.text}</span>
+            </motion.div>
+          ))}
+        </motion.div>
+        
+        <motion.div 
+          className="mt-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.8, delay: 1 }}
+        >
+          <Button size="lg" asChild className="bg-white/90 text-black hover:bg-white font-semibold group transition-all duration-300">
+            <Link href="/life-at-sduaher">
+              Explore Campus Life
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </Button>
         </motion.div>
       </div>
     </section>

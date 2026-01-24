@@ -281,6 +281,18 @@
       "description": "A fountain on a university campus in the evening.",
       "imageUrl": "https://images.unsplash.com/photo-1597816238833-28f9c049d564?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjYW1wdXMlMjBmb3VudGFpbiUyMGR1c2t8ZW58MHx8fHwxNzk0Mjg1ODU2fDA&ixlib=rb-4.0.3&q=80&w=1920",
       "imageHint": "campus fountain dusk"
+    },
+    {
+      "id": "campus-life-bg-video-poster",
+      "description": "A bustling university quad with students walking and sitting.",
+      "imageUrl": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjYW1wdXMlMjBsaWZlfGVufDB8fHx8MTc5NDg2NTUzM3ww&ixlib=rb-4.1.0&q=80&w=1920",
+      "imageHint": "campus life"
+    },
+    {
+      "id": "news-featured-reimagined",
+      "description": "A researcher looking at a futuristic screen with data visualizations.",
+      "imageUrl": "https://images.unsplash.com/photo-1581092921539-b131c10a30b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtZWRpY2FsJTIwcmVzZWFyY2glMjB0ZWNobm9sb2d5fGVufDB8fHx8MTc5NDg2NTU4N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "research technology"
     }
   ]
 }

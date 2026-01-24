@@ -71,6 +71,10 @@ export default {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
+      boxShadow: {
+        'soft-sm': '0 2px 8px -1px rgb(0 0 0 / 0.04), 0 2px 4px -2px rgb(0 0 0 / 0.04)',
+        'soft-lg': '0 8px 24px -4px rgb(0 0 0 / 0.05), 0 4px 8px -4px rgb(0 0 0 / 0.04)',
+      },
       keyframes: {
         'accordion-down': {
           from: {
@@ -88,10 +92,14 @@ export default {
             height: '0',
           },
         },
+        shine: {
+          '100%': { left: '125%' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        shine: 'shine 1s',
       },
     },
   },

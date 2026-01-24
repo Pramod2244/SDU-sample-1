@@ -3,107 +3,152 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar } from "lucide-react";
+import { ArrowRight, MapPin } from "lucide-react";
+import Link from "next/link";
+import { Button } from "../ui/button";
+
+const featuredNews = {
+  category: "Research",
+  title: "SDUAHER AI Lab Develops Breakthrough Diagnostic Tool",
+  preview: "Our new AI-powered imaging analysis tool promises to detect diseases earlier and more accurately than ever before.",
+  image: PlaceHolderImages.find((img) => img.id === "news-featured-reimagined"),
+  href: "#",
+};
+
+const upcomingEvents = [
+  {
+    date: "JUL 15",
+    title: "Global Health Symposium 2024",
+    location: "Virtual & On-Campus",
+    href: "#",
+  },
+  {
+    date: "AUG 01",
+    title: "InnovateMed Hackathon",
+    location: "Innovation Hub",
+    href: "#",
+  },
+  {
+    date: "SEP 05",
+    title: "Annual University Convocation",
+    location: "University Auditorium",
+    href: "#",
+  },
+];
 
 const NewsEvents = () => {
-  const featuredNewsImage = PlaceHolderImages.find((img) => img.id === "news-featured");
-  const event1Image = PlaceHolderImages.find((img) => img.id === "news-event1");
-  const event2Image = PlaceHolderImages.find((img) => img.id === "news-event2");
-
-  const events = [
-    {
-      date: "JUN 05",
-      title: "World Environment Day",
-      description: "Join us for a tree plantation drive on campus.",
-      image: event1Image
-    },
-    {
-      date: "JUN 21",
-      title: "International Yoga Day",
-      description: "A session on yoga and wellness for students and faculty.",
-      image: event2Image
-    },
-  ];
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2, delayChildren: 0.3 },
-    },
+  const leftColVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } },
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  const rightColContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.2, delay: 0.2 } },
+  };
+  
+  const rightColItemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
   };
 
   return (
-    <motion.section
-      id="news"
-      className="py-20 lg:py-32 bg-background"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-      variants={containerVariants}
-    >
+    <section id="news" className="py-20 lg:py-32 bg-card">
       <div className="container mx-auto px-4">
-        <motion.div variants={itemVariants} className="text-center mb-12">
-          <h2 className="font-headline text-4xl md:text-5xl font-bold text-primary">
-            News &amp; Events
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-12 lg:mb-16"
+        >
+          <h2 className="flex items-center gap-3 font-headline text-4xl md:text-5xl font-bold text-primary">
+            News & Events
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary/70 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+            </span>
           </h2>
-          <p className="mt-4 text-lg text-foreground/80 max-w-3xl mx-auto">
-            Stay up-to-date with the latest happenings and exciting events at SDUAHER.
+          <p className="mt-4 text-lg md:text-xl text-foreground/70 max-w-2xl">
+            Stay informed with the latest updates and happenings from SDUAHER.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8 items-start">
-          <motion.div variants={itemVariants}>
-            <h3 className="font-headline text-3xl font-semibold mb-6">Featured News</h3>
-            <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group">
-              {featuredNewsImage && (
-                <div className="relative h-80 w-full">
+        <div className="grid lg:grid-cols-5 gap-12 items-start">
+          {/* Featured News */}
+          <motion.div
+            className="lg:col-span-3"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={leftColVariants}
+          >
+            <Link href={featuredNews.href} className="group block overflow-hidden rounded-2xl bg-background border border-border shadow-soft-sm hover:shadow-soft-lg transition-all duration-300">
+              {featuredNews.image && (
+                <div className="relative aspect-video">
                   <Image
-                    src={featuredNewsImage.imageUrl}
-                    alt={featuredNewsImage.description}
+                    src={featuredNews.image.imageUrl}
+                    alt={featuredNews.title}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    data-ai-hint={featuredNewsImage.imageHint}
+                    data-ai-hint={featuredNews.image.imageHint}
                   />
                 </div>
               )}
-              <CardContent className="p-6">
-                <Badge variant="default" className="mb-2 bg-primary">Rankings</Badge>
-                <h4 className="font-headline text-2xl font-bold mb-2">SDUAHER Ranked 97th in NIRF 2023 University Rankings</h4>
-                <p className="text-foreground/80">
-                  SDUAHER has secured the 97th rank among universities in India in the National Institutional Ranking Framework (NIRF) 2023, a testament to our academic excellence.
+              <div className="p-6">
+                <Badge variant="secondary" className="mb-3">{featuredNews.category}</Badge>
+                <h3 className="font-headline text-2xl lg:text-3xl font-bold text-foreground mb-3 leading-tight">
+                  {featuredNews.title}
+                </h3>
+                <p className="text-base text-foreground/70 mb-5">
+                  {featuredNews.preview}
                 </p>
-              </CardContent>
-            </Card>
+                <div className="font-semibold text-primary inline-flex items-center group-hover:underline">
+                  Read More <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </div>
+              </div>
+            </Link>
           </motion.div>
-          
-          <motion.div variants={itemVariants} className="space-y-6">
-            <h3 className="font-headline text-3xl font-semibold mb-6">Upcoming Events</h3>
-            {events.map((event, index) => (
-              <motion.div key={index} variants={itemVariants}>
-                <Card className="flex items-center gap-4 p-4 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                  <div className="flex flex-col items-center justify-center bg-primary text-primary-foreground p-4 rounded-md w-24 text-center">
-                    <Calendar className="h-6 w-6 mb-1"/>
-                    <span className="font-bold text-lg">{event.date}</span>
+
+          {/* Upcoming Events */}
+          <motion.div
+            className="lg:col-span-2 space-y-6"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={rightColContainerVariants}
+          >
+            {upcomingEvents.map((event, index) => (
+              <motion.div key={index} variants={rightColItemVariants}>
+                <Link href={event.href} className="group flex items-start gap-4 rounded-xl p-4 transition-colors duration-300 hover:bg-background">
+                  <div className="flex flex-col items-center justify-center text-center font-bold">
+                    <span className="text-sm text-primary">{event.date.substring(0, 3)}</span>
+                    <span className="text-3xl font-headline text-foreground">{event.date.substring(4)}</span>
                   </div>
-                  <div className="flex-1">
-                    <h4 className="font-headline text-xl font-semibold">{event.title}</h4>
-                    <p className="text-sm text-foreground/70">{event.description}</p>
+                  <div className="relative flex-1 border-l border-border pl-4">
+                     {/* Animated border on hover */}
+                    <div className="absolute top-1/2 -translate-y-1/2 left-0 h-0 w-[2px] bg-primary transition-all duration-300 group-hover:h-1/2" />
+                    
+                    <h4 className="font-semibold text-lg leading-snug text-foreground mb-1 group-hover:text-primary transition-colors">
+                      {event.title}
+                    </h4>
+                    <p className="text-sm text-foreground/60 flex items-center gap-1.5">
+                      <MapPin className="h-3.5 w-3.5" /> {event.location}
+                    </p>
                   </div>
-                </Card>
+                </Link>
               </motion.div>
             ))}
+             <motion.div variants={rightColItemVariants} className="pt-2">
+                <Button variant="outline" className="w-full">
+                    View All Events <ArrowRight className="ml-2 h-4 w-4"/>
+                </Button>
+            </motion.div>
           </motion.div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 
