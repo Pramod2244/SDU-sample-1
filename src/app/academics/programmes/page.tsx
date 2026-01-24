@@ -1,6 +1,6 @@
 import Header from '@/components/landing/Header';
 import Footer from '@/components/landing/Footer';
-import VideoHero from '@/components/programmes/VideoHero';
+import ImageHero from '@/components/programmes/ImageHero';
 import ProgrammeLinksGrid from '@/components/programmes/ProgrammeLinksGrid';
 import FeatureSplitSection from '@/components/programmes/FeatureSplitSection';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -9,18 +9,18 @@ import { Card } from '@/components/ui/card';
 
 const ProgrammesListingPage = () => {
   const featureImage = PlaceHolderImages.find(img => img.id === 'programmes-feature');
+  const heroImage = PlaceHolderImages.find(img => img.id === 'programmes-hero-poster');
   
   return (
     <div className="bg-background text-foreground">
       <Header />
       <main>
-        <VideoHero
-          videoUrl="https://raw.githubusercontent.com/Pramod2244/hello-world/master/SDU%20(1).mp4"
-          posterImageUrl={PlaceHolderImages.find(img => img.id === 'programmes-hero-poster')?.imageUrl}
+        <ImageHero
           title="Programmes Offered"
-          subtitle="Discover future-focused learning opportunities at SDUAHER."
-          primaryCta={{ text: 'Explore Programmes', href: '#programmes-grid' }}
-          secondaryCta={{ text: 'Download Brochure', href: '#' }}
+          subtitle="Explore SDUAHER’s diverse programs designed to transform your future."
+          imageUrl={heroImage?.imageUrl}
+          ctaText="Explore Programmes"
+          ctaLink="#programmes-grid"
         />
         <ProgrammeLinksGrid />
         <FeatureSplitSection
