@@ -9,7 +9,7 @@
     {
       "id": "admissions-image",
       "description": "A diverse group of medical students in a classroom.",
-      "imageUrl": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtZWRpY2FsJTIwc3R1ZGVudHMlMjBjbGFzc3Jvb218ZW58MHx8fHwxNzkxNzk5MzE1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1622675363311-3e1904dc1885?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwbWVldGluZyUyMHxlbnwwfHx8fDE3NjkyNTI2NTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "medical students classroom"
     },
     {
@@ -21,8 +21,8 @@
     {
       "id": "campus-life-clubs",
       "description": "University library with students studying.",
-      "imageUrl": "https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHVkZW50JTIwY2x1YnxlbnwwfHx8fDE3OTQyODU0OTF8MA&ixlib=rb-4.0.3&q=80&w=800",
-      "imageHint": "student club"
+      "imageUrl": "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMGNvbW11bml0eXxlbnwwfHx8fDE3OTI0NjA1MDJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "students community"
     },
     {
       "id": "campus-life-wellness",
@@ -129,7 +129,7 @@
     {
       "id": "be-legendary-hero-bg",
       "description": "A stunning wide shot of a modern university campus at sunset.",
-      "imageUrl": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx1bml2ZXJzaXR5JTIwY2FtcHVzfGVufDB8fHx8MTc5MTg3MjE3N3ww&ixlib=rb-4.1.0&q=80&w=1920",
+      "imageUrl": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx1bml2ZXJzaXR5JTIwY2FtcHVzfGVufDB8fHx8fDE3OTE4NzIxNzN8MA&ixlib=rb-4.1.0&q=80&w=1920",
       "imageHint": "university campus"
     },
     {
@@ -171,7 +171,7 @@
     {
       "id": "legend-3",
       "description": "Portrait of a female researcher in a lab coat.",
-      "imageUrl": "https://images.unsplash.com/photo-1645066928295-2506defde470?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkb2N0b3IlMjBwb3RyYWl0fGVufDB8fHx8fDE3NjkyNTIzMjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1645066928295-2506defde470?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkb2N0b3IlMjBwb3RyYWl0fGVufDB8fHx8MTc2OTI1MjMyMXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "portrait researcher"
     },
     {
@@ -201,7 +201,7 @@
     {
       "id": "horizontal-exp-1",
       "description": "Students collaborating in a university club meeting.",
-      "imageUrl": "https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHVkZW50JTIwY2x1YnxlbnwwfHx8fDE3OTQyODU0OTF8MA&ixlib=rb-4.0.3&q=80&w=800",
+      "imageUrl": "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMGNvbW11bml0eXxlbnwwfHx8fDE3OTI0NjA1MDJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "student club"
     },
     {
@@ -244,13 +244,13 @@
       "id": "wellness-2",
       "description": "Campus security officer patrolling at night.",
       "imageUrl": "https://images.unsplash.com/photo-1581568736305-49a04e012c13?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzZWN1cml0eSUyMHxlbnwwfHx8fDE3NjkxNjQzMTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "campus security camera"
+      "imageHint": "campus security"
     },
     {
       "id": "wellness-3",
       "description": "A diverse group of students in a community gathering.",
-      "imageUrl": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHVkZW50JTIwY29tbXVuaXR5JTIwZ3JvdXB8ZW58MHx8fHwxNzk0Mjg1NzQwfDA&ixlib=rb-4.0.3&q=80&w=1080",
-      "imageHint": "student community group"
+      "imageUrl": "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMGNvbW11bml0eXxlbnwwfHx8fDE3OTI0NjA1MDJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "students community"
     },
     {
       "id": "city-parallax-bg",
