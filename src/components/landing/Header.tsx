@@ -206,9 +206,9 @@ const Header = () => {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "tween", ease: "easeInOut", duration: 0.4 }}
-            className="fixed inset-0 z-50 bg-card p-6 lg:hidden"
+            className="fixed inset-0 z-50 bg-card lg:hidden flex flex-col"
           >
-            <div className="flex justify-between items-center mb-10">
+            <div className="flex justify-between items-center p-6 flex-shrink-0">
               <Link href="/" className="font-headline text-2xl font-bold text-primary">
                 SDUAHER
               </Link>
@@ -216,43 +216,47 @@ const Header = () => {
                 <X />
               </Button>
             </div>
-            <nav className="flex flex-col">
-              {allNavLinksForMobile.map((link) =>
-                link.subLinks ? (
-                  <Accordion key={link.name} type="single" collapsible className="w-full">
-                    <AccordionItem value={link.name} className="border-b">
-                      <AccordionTrigger className="py-3 text-xl font-medium text-foreground hover:text-primary hover:no-underline">
+            
+            <div className="flex-grow overflow-y-auto">
+                <nav className="flex flex-col px-6 pb-6">
+                {allNavLinksForMobile.map((link) =>
+                    link.subLinks ? (
+                    <Accordion key={link.name} type="single" collapsible className="w-full">
+                        <AccordionItem value={link.name} className="border-b">
+                        <AccordionTrigger className="py-3 text-xl font-medium text-foreground hover:text-primary hover:no-underline">
+                            {link.name}
+                        </AccordionTrigger>
+                        <AccordionContent>
+                            <div className="flex flex-col space-y-2 pl-6 border-l border-border ml-2">
+                            {link.subLinks.map((subLink) => (
+                                <Link
+                                key={subLink.name}
+                                href={subLink.href}
+                                onClick={() => setIsMenuOpen(false)}
+                                className="py-2 text-lg text-foreground/80 hover:text-primary"
+                                >
+                                {subLink.name}
+                                </Link>
+                            ))}
+                            </div>
+                        </AccordionContent>
+                        </AccordionItem>
+                    </Accordion>
+                    ) : (
+                    <Link
+                        key={link.name}
+                        href={link.href}
+                        onClick={() => setIsMenuOpen(false)}
+                        className="py-3 text-xl font-medium text-foreground hover:text-primary border-b"
+                    >
                         {link.name}
-                      </AccordionTrigger>
-                      <AccordionContent>
-                        <div className="flex flex-col space-y-2 pl-6 border-l border-border ml-2">
-                          {link.subLinks.map((subLink) => (
-                            <Link
-                              key={subLink.name}
-                              href={subLink.href}
-                              onClick={() => setIsMenuOpen(false)}
-                              className="py-2 text-lg text-foreground/80 hover:text-primary"
-                            >
-                              {subLink.name}
-                            </Link>
-                          ))}
-                        </div>
-                      </AccordionContent>
-                    </AccordionItem>
-                  </Accordion>
-                ) : (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    onClick={() => setIsMenuOpen(false)}
-                    className="py-3 text-xl font-medium text-foreground hover:text-primary border-b"
-                  >
-                    {link.name}
-                  </Link>
-                )
-              )}
-            </nav>
-            <div className="mt-10 flex flex-col space-y-4">
+                    </Link>
+                    )
+                )}
+                </nav>
+            </div>
+
+            <div className="p-6 pt-4 flex flex-col space-y-4 flex-shrink-0">
               <Button size="lg">Apply</Button>
               <Button size="lg" variant="outline" className="flex items-center gap-2">
                 <Search className="h-5 w-5"/> Search
