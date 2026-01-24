@@ -71,16 +71,16 @@ const Header = () => {
       href: "#admissions",
       subLinks: [
         { name: "Admission Process", href: "#admissions" },
-        { name: "Programmes Offered", href: "#academics" },
+        { name: "Programmes Offered", href: "/academics/programmes" },
         { name: "Fee Structure", href: "#" },
         { name: "Admission Enquiry", href: "#" },
       ],
     },
     {
       name: "Academics",
-      href: "#academics",
+      href: "/academics/programmes",
       subLinks: [
-        { name: "Programmes Offered", href: "#academics" },
+        { name: "Programmes Offered", href: "/academics/programmes" },
         { name: "Constituent Colleges", href: "/academics/schools-and-colleges" },
         { name: "Departments", href: "/academics/schools-and-colleges" },
       ]
@@ -208,8 +208,8 @@ const Header = () => {
             transition={{ type: "tween", ease: "easeInOut", duration: 0.4 }}
             className="fixed inset-0 z-50 bg-card lg:hidden flex flex-col"
           >
-            <div className="flex justify-between items-center p-6 flex-shrink-0">
-              <Link href="/" className="font-headline text-2xl font-bold text-primary">
+            <div className="flex justify-between items-center p-6 flex-shrink-0 border-b">
+              <Link href="/" className="font-headline text-2xl font-bold text-primary" onClick={() => setIsMenuOpen(false)}>
                 SDUAHER
               </Link>
               <Button onClick={() => setIsMenuOpen(false)} size="icon" variant="ghost">
@@ -218,45 +218,45 @@ const Header = () => {
             </div>
             
             <div className="flex-grow overflow-y-auto">
-                <nav className="flex flex-col px-6 pb-6">
-                {allNavLinksForMobile.map((link) =>
-                    link.subLinks ? (
-                    <Accordion key={link.name} type="single" collapsible className="w-full">
-                        <AccordionItem value={link.name} className="border-b">
-                        <AccordionTrigger className="py-3 text-xl font-medium text-foreground hover:text-primary hover:no-underline">
+                <nav className="flex flex-col px-6">
+                <Accordion type="multiple" className="w-full">
+                  {allNavLinksForMobile.map((link) =>
+                      link.subLinks ? (
+                      <AccordionItem key={link.name} value={link.name} className="border-b">
+                          <AccordionTrigger className="py-4 text-xl font-medium text-foreground hover:text-primary hover:no-underline">
+                              {link.name}
+                          </AccordionTrigger>
+                          <AccordionContent>
+                              <div className="flex flex-col space-y-2 pl-6 border-l border-border ml-2">
+                              {link.subLinks.map((subLink) => (
+                                  <Link
+                                  key={subLink.name}
+                                  href={subLink.href}
+                                  onClick={() => setIsMenuOpen(false)}
+                                  className="py-2 text-lg text-foreground/80 hover:text-primary"
+                                  >
+                                  {subLink.name}
+                                  </Link>
+                              ))}
+                              </div>
+                          </AccordionContent>
+                      </AccordionItem>
+                      ) : (
+                        <Link
+                            key={link.name}
+                            href={link.href}
+                            onClick={() => setIsMenuOpen(false)}
+                            className="py-4 text-xl font-medium text-foreground hover:text-primary border-b flex items-center"
+                        >
                             {link.name}
-                        </AccordionTrigger>
-                        <AccordionContent>
-                            <div className="flex flex-col space-y-2 pl-6 border-l border-border ml-2">
-                            {link.subLinks.map((subLink) => (
-                                <Link
-                                key={subLink.name}
-                                href={subLink.href}
-                                onClick={() => setIsMenuOpen(false)}
-                                className="py-2 text-lg text-foreground/80 hover:text-primary"
-                                >
-                                {subLink.name}
-                                </Link>
-                            ))}
-                            </div>
-                        </AccordionContent>
-                        </AccordionItem>
-                    </Accordion>
-                    ) : (
-                    <Link
-                        key={link.name}
-                        href={link.href}
-                        onClick={() => setIsMenuOpen(false)}
-                        className="py-3 text-xl font-medium text-foreground hover:text-primary border-b"
-                    >
-                        {link.name}
-                    </Link>
-                    )
-                )}
+                        </Link>
+                      )
+                  )}
+                </Accordion>
                 </nav>
             </div>
 
-            <div className="p-6 pt-4 flex flex-col space-y-4 flex-shrink-0">
+            <div className="p-6 pt-4 border-t flex flex-col space-y-4 flex-shrink-0">
               <Button size="lg">Apply</Button>
               <Button size="lg" variant="outline" className="flex items-center gap-2">
                 <Search className="h-5 w-5"/> Search
