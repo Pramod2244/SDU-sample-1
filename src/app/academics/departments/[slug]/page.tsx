@@ -90,7 +90,7 @@ export default function DepartmentDetailPage() {
         
         <div className="container mx-auto px-4 relative z-10">
           <Link href="/academics/departments">
-            <Button variant="ghost" className="mb-8 text-primary hover:text-primary/80 gap-2 pl-0">
+            <Button variant="ghost" className="mb-8 text-primary hover:bg-transparent hover:opacity-70 transition-opacity gap-2 pl-0">
               <ArrowLeft className="h-4 w-4" /> Back to Departments
             </Button>
           </Link>
