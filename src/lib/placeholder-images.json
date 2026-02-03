@@ -213,7 +213,7 @@
     {
       "id": "horizontal-exp-1",
       "description": "Students collaborating in a university club meeting.",
-      "imageUrl": "https://images.unsplash.com/photo-1581568736305-49a04e012c13?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw9fHxzZWN1cml0eSUyMHxlbnwwfHx8fDE3NjkxNjQzMTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1581568736305-49a04e012c13?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzZWN1cml0eSUyMHxlbnwwfHx8fDE3NjkxNjQzMTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "student club"
     },
     {
@@ -267,7 +267,7 @@
     {
       "id": "city-parallax-bg",
       "description": "A vibrant skyline of a city at dusk, representing Kolar.",
-      "imageUrl": "https://images.unsplash.com/photo-1534289910392-16508933568c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBJbmRpYW4lMjBjaXR5JTIwZHVza3xlbnwwfHx8fDE3OTI0NjA2NDR8MA&ixlib=rb-4.1.0&q=80&w=1920",
+      "imageUrl": "https://images.unsplash.com/photo-1534289910392-16508933568c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBJbmRpYW58ZW58MHx8fHwxNzkyNDYwNjQ0fDA&ixlib=rb-4.1.0&q=80&w=1920",
       "imageHint": "modern Indian city"
     },
     {
@@ -347,6 +347,84 @@
       "description": "A vibrant group of students collaborating in a club activity.",
       "imageUrl": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHVkZW50JTIwY2x1YnxlbnwwfHx8fDE3OTY5MDIzMDF8MA&ixlib=rb-4.0.3&q=80&w=1080",
       "imageHint": "student club"
+    },
+    {
+      "id": "founder-photo",
+      "description": "Portrait of Late Sri Devaraj Urs.",
+      "imageUrl": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxleGVjdXRpdmUlMjBwb3J0cmFpdHxlbnwwfHx8fDE3OTI0NjA4MDB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "executive portrait"
+    },
+    {
+      "id": "trustee-1",
+      "description": "Trustee member 1.",
+      "imageUrl": "https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxidXNpbmVzcyUyMG1hbnxlbnwwfHx8fDE3OTI0NjA4NTB8MA&ixlib=rb-4.1.0&q=80&w=400",
+      "imageHint": "business man"
+    },
+    {
+      "id": "trustee-2",
+      "description": "Trustee member 2.",
+      "imageUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxidXNpbmVzcyUyMHdvbWFufGVufDB8fHx8MTc5MjQ2MDg3NXww&ixlib=rb-4.1.0&q=80&w=400",
+      "imageHint": "business woman"
+    },
+    {
+      "id": "trustee-3",
+      "description": "Trustee member 3.",
+      "imageUrl": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtYWxlJTIwcHJvZmVzc2lvbmFsfGVufDB8fHx8MTc5MjQ2MDg5NXww&ixlib=rb-4.1.0&q=80&w=400",
+      "imageHint": "male professional"
+    },
+    {
+      "id": "trustee-4",
+      "description": "Trustee member 4.",
+      "imageUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxmZW1hbGUlMjBwcm9mZXNzaW9uYWx8ZW58MHx8fHwxNzkyNDYwOTE1fDA&ixlib=rb-4.1.0&q=80&w=400",
+      "imageHint": "female professional"
+    },
+    {
+      "id": "trustee-5",
+      "description": "Trustee member 5.",
+      "imageUrl": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxidXNpbmVzcyUyMG1hbnxlbnwwfHx8fDE3OTI0NjA5MzV8MA&ixlib=rb-4.1.0&q=80&w=400",
+      "imageHint": "business man"
+    },
+    {
+      "id": "trustee-6",
+      "description": "Trustee member 6.",
+      "imageUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxmZW1hbGUlMjBwb3J0cmFpdHxlbnwwfHx8fDE3OTI0NjA5NTV8MA&ixlib=rb-4.1.0&q=80&w=400",
+      "imageHint": "female portrait"
+    },
+    {
+      "id": "trustee-7",
+      "description": "Trustee member 7.",
+      "imageUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxtYWxlJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzkyNDYwOTc1fDA&ixlib=rb-4.1.0&q=80&w=400",
+      "imageHint": "male portrait"
+    },
+    {
+      "id": "trustee-8",
+      "description": "Trustee member 8.",
+      "imageUrl": "https://images.unsplash.com/photo-1567532939103-c003de675a64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZmVtYWxlJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzkyNDYwOTk1fDA&ixlib=rb-4.1.0&q=80&w=400",
+      "imageHint": "female portrait"
+    },
+    {
+      "id": "trustee-9",
+      "description": "Trustee member 9.",
+      "imageUrl": "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8bWFsZSUyMHBvcnRyYWl0fGVufDB8fHx8MTc5MjQ2MTAxNXww&ixlib=rb-4.1.0&q=80&w=400",
+      "imageHint": "male portrait"
+    },
+    {
+      "id": "trustee-10",
+      "description": "Trustee member 10.",
+      "imageUrl": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMnx8bWFsZSUyMHBvcnRyYWl0fGVufDB8fHx8MTc5MjQ2MTAzNXww&ixlib=rb-4.1.0&q=80&w=400",
+      "imageHint": "male portrait"
+    },
+    {
+      "id": "trustee-11",
+      "description": "Trustee member 11.",
+      "imageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8ZmVtYWxlJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzkyNDYxMDU1fDA&ixlib=rb-4.1.0&q=80&w=400",
+      "imageHint": "female portrait"
+    },
+    {
+      "id": "trustee-12",
+      "description": "Trustee member 12.",
+      "imageUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8ZmVtYWxlJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzkyNDYxMDc1fDA&ixlib=rb-4.1.0&q=80&w=400",
+      "imageHint": "female portrait"
     }
   ]
 }

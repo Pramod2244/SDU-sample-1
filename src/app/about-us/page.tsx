@@ -3,12 +3,12 @@
 
 import Header from '@/components/landing/Header';
 import Footer from '@/components/landing/Footer';
-import { motion, useScroll, useTransform, useInView } from 'framer-motion';
+import { motion, useScroll, useTransform, useInView, AnimatePresence } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
-import { ArrowDown, CheckCircle2, MapPin, Phone, Mail, Award, Users, BookOpen, HeartPulse } from 'lucide-react';
+import { ArrowDown, CheckCircle2, MapPin, Phone, Mail, Award, Users, BookOpen, HeartPulse, ChevronRight, Quote } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 // --- Sub-components ---
@@ -249,6 +249,277 @@ const VisionMission = () => {
   );
 };
 
+const FounderSection = () => {
+  const founderPhoto = PlaceHolderImages.find(img => img.id === 'founder-photo');
+  
+  return (
+    <section className="relative py-20 lg:py-40 bg-background overflow-hidden">
+      {/* Heritage Texture Background */}
+      <div className="absolute inset-0 opacity-5 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/pinstripe-dark.png')]" />
+      
+      <div className="container mx-auto px-4">
+        <div className="grid lg:grid-cols-12 gap-16 items-center">
+          {/* Left: Founder Photo */}
+          <motion.div 
+            className="lg:col-span-5 relative"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+          >
+            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl group">
+              {founderPhoto && (
+                <motion.div
+                  initial={{ scale: 1.2 }}
+                  whileInView={{ scale: 1 }}
+                  transition={{ duration: 10, ease: "linear" }}
+                  className="h-full w-full"
+                >
+                  <Image 
+                    src={founderPhoto.imageUrl} 
+                    alt="Late Sri Devaraj Urs" 
+                    fill 
+                    className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                    data-ai-hint="executive portrait"
+                  />
+                </motion.div>
+              )}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <motion.div 
+                className="absolute inset-0 border-2 border-primary/20 rounded-2xl m-4 pointer-events-none"
+                animate={{ opacity: [0.2, 0.5, 0.2] }}
+                transition={{ duration: 3, repeat: Infinity }}
+              />
+            </div>
+          </motion.div>
+
+          {/* Right: Legacy Story */}
+          <div className="lg:col-span-7 space-y-8">
+            <div className="space-y-2">
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="flex items-center gap-4 text-primary font-bold tracking-[0.2em] uppercase text-sm"
+              >
+                <div className="h-[1px] w-12 bg-primary" />
+                Founder & Visionary
+              </motion.div>
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="font-headline text-5xl md:text-7xl font-bold text-primary"
+              >
+                Sri Devaraj Urs
+              </motion.h2>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="relative pl-8 border-l-4 border-primary/20"
+            >
+              <Quote className="absolute -left-6 -top-4 text-primary/10 h-12 w-12" />
+              <p className="text-2xl italic font-headline text-foreground/80 leading-snug">
+                "A vision rooted in service, education, and humanity. To empower the rural community with the light of knowledge and the care of healing."
+              </p>
+            </motion.div>
+
+            <div className="space-y-6 text-lg text-foreground/70 leading-relaxed">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6 }}
+              >
+                Sri Devaraj Urs, the former Chief Minister of Karnataka, was a transformative leader whose life was dedicated to social justice and the upliftment of the underprivileged. His conviction that education and healthcare are the fundamental pillars of a progressive society led to the inception of this institution.
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.8 }}
+              >
+                Today, his legacy lives on through SDUAHER, which stands as a testament to his enduring commitment to excellence, integrity, and the service of mankind. We carry forward his mantle, ensuring that every student who passes through these halls is imbued with a spirit of leadership and a heart for service.
+              </motion.p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const LeadershipTransition = () => {
+  return (
+    <div className="bg-background py-12 flex flex-col items-center justify-center overflow-hidden">
+      <motion.div 
+        initial={{ width: 0 }}
+        whileInView={{ width: "80%" }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.5, ease: "easeInOut" }}
+        className="h-[1px] bg-primary/20"
+      />
+      <motion.p 
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 1, duration: 1 }}
+        className="mt-8 text-sm uppercase tracking-[0.5em] text-primary/60 font-medium text-center"
+      >
+        Guided by Vision, Led by Collective Wisdom
+      </motion.p>
+    </div>
+  );
+};
+
+const TrusteesSection = () => {
+  const trustees = [
+    { name: "Shri G.H. Nagaraja", title: "President", img: "trustee-1" },
+    { name: "Shri J. Rajendra", title: "Vice-President", img: "trustee-2" },
+    { name: "Shri K.G. Hanumantha Raju", title: "Secretary", img: "trustee-3" },
+    { name: "Shri M. Chandra Reddy", title: "Treasurer", img: "trustee-4" },
+    { name: "Dr. C.K. Ranjan", title: "Trustee Member", img: "trustee-5" },
+    { name: "Shri R.L. Jalappa", title: "Honorary Patron", img: "trustee-6" },
+    { name: "Smt. Shanti Devi", title: "Trustee Member", img: "trustee-7" },
+    { name: "Shri V. Ramaswamy", title: "Trustee Member", img: "trustee-8" },
+    { name: "Shri T. Muninarayana", title: "Trustee Member", img: "trustee-9" },
+    { name: "Shri B.V. Muniyappa", title: "Trustee Member", img: "trustee-10" },
+    { name: "Shri N. Lokesh", title: "Trustee Member", img: "trustee-11" },
+    { name: "Shri S. Srinivasan", title: "Trustee Member", img: "trustee-12" },
+  ];
+
+  const [rotation, setRotation] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const orbitRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!isHovered) {
+      const interval = setInterval(() => {
+        setRotation(prev => prev + 0.05);
+      }, 16);
+      return () => clearInterval(interval);
+    }
+  }, [isHovered]);
+
+  return (
+    <section className="py-20 lg:py-40 bg-primary/[0.02] relative overflow-hidden min-h-[900px]">
+      <div className="container mx-auto px-4 relative z-10 h-full">
+        <div className="text-center mb-24">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-headline text-5xl md:text-6xl font-bold text-primary"
+          >
+            The Circle of Leadership
+          </motion.h2>
+          <motion.p 
+             initial={{ opacity: 0, y: 20 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             viewport={{ once: true }}
+             transition={{ delay: 0.2 }}
+             className="mt-6 text-xl text-foreground/60 max-w-2xl mx-auto"
+          >
+            Governed by a dedicated board of trustees committed to the founding principles of social justice and excellence.
+          </motion.p>
+        </div>
+
+        {/* Orbit Design - Desktop */}
+        <div className="relative hidden lg:flex items-center justify-center h-[700px] w-full max-w-6xl mx-auto">
+          {/* Orbiting Lines */}
+          <div className="absolute inset-0 border-2 border-primary/5 rounded-full scale-[0.8] pointer-events-none" />
+          <div className="absolute inset-0 border-2 border-primary/5 rounded-full scale-[0.5] pointer-events-none" />
+          
+          <motion.div 
+            ref={orbitRef}
+            className="relative h-full w-full"
+            style={{ rotate: rotation }}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            {trustees.map((t, i) => {
+              const angle = (i * (360 / trustees.length));
+              const radius = 350; // px
+              const x = Math.cos((angle * Math.PI) / 180) * radius;
+              const y = Math.sin((angle * Math.PI) / 180) * radius;
+
+              const imagePlaceholder = PlaceHolderImages.find(img => img.id === t.img);
+
+              return (
+                <motion.div
+                  key={i}
+                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                  style={{ x, y }}
+                >
+                  <motion.div 
+                    style={{ rotate: -rotation }} // Counter rotate to keep text upright
+                    whileHover={{ scale: 1.1 }}
+                    className="w-48 p-4 bg-white/80 backdrop-blur-xl border border-white/50 rounded-2xl shadow-soft-lg cursor-pointer group transition-all"
+                  >
+                    <div className="relative h-20 w-20 mx-auto mb-3 rounded-full overflow-hidden border-2 border-primary/10">
+                      {imagePlaceholder && <Image src={imagePlaceholder.imageUrl} alt={t.name} fill className="object-cover" />}
+                    </div>
+                    <div className="text-center">
+                      <h4 className="font-bold text-sm text-primary leading-tight mb-1">{t.name}</h4>
+                      <p className="text-[10px] uppercase tracking-wider text-foreground/50">{t.title}</p>
+                    </div>
+                    
+                    {/* Hover Glow */}
+                    <motion.div 
+                      className="absolute inset-0 bg-primary/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"
+                    />
+                  </motion.div>
+                </motion.div>
+              );
+            })}
+          </motion.div>
+          
+          {/* Center Hub */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-40 w-40 bg-primary rounded-full flex flex-col items-center justify-center text-white text-center p-4 shadow-2xl z-20">
+             <div className="text-xs uppercase tracking-[0.2em] mb-1">Board Of</div>
+             <div className="font-headline text-xl font-bold">Trustees</div>
+             <motion.div 
+               animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
+               transition={{ duration: 3, repeat: Infinity }}
+               className="absolute inset-0 border-8 border-white/10 rounded-full"
+             />
+          </div>
+        </div>
+
+        {/* Mobile: Grid / Carousel Alternative */}
+        <div className="lg:hidden grid grid-cols-2 md:grid-cols-3 gap-4">
+          {trustees.map((t, i) => {
+            const imagePlaceholder = PlaceHolderImages.find(img => img.id === t.img);
+            return (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+                className="p-4 bg-white rounded-xl shadow-soft-sm border border-border"
+              >
+                 <div className="relative h-16 w-16 mx-auto mb-2 rounded-full overflow-hidden">
+                   {imagePlaceholder && <Image src={imagePlaceholder.imageUrl} alt={t.name} fill className="object-cover" />}
+                 </div>
+                 <div className="text-center">
+                    <h4 className="font-bold text-xs text-primary leading-tight">{t.name}</h4>
+                    <p className="text-[8px] uppercase text-foreground/50">{t.title}</p>
+                 </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const WhyChooseUs = () => {
   const points = [
     { title: "Holistic Medical Training", icon: Award, desc: "A curriculum that integrates basic science with clinical application." },
@@ -428,6 +699,12 @@ export default function AboutUsPage() {
 
         <InstitutionOverview />
         <VisionMission />
+        
+        {/* New Leadership Sections */}
+        <FounderSection />
+        <LeadershipTransition />
+        <TrusteesSection />
+        
         <WhyChooseUs />
         <GallerySection />
         <ContactSection />
