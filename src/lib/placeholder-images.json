@@ -387,7 +387,7 @@
     {
       "id": "trustee-6",
       "description": "Trustee member 6.",
-      "imageUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxmZW1hbGUlMjBwb3J0cmFpdHxlbnwwfHx8fDE3OTI0NjA5NTV8MA&ixlib=rb-4.1.0&q=80&w=400",
+      "imageUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw8fHxmZW1hbGUlMjBwb3J0cmFpdHxlbnwwfHx8fDE3OTI0NjA5NTV8MA&ixlib=rb-4.1.0&q=80&w=400",
       "imageHint": "female portrait"
     },
     {
@@ -423,8 +423,26 @@
     {
       "id": "trustee-12",
       "description": "Trustee member 12.",
-      "imageUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8ZmVtYWxlJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzkyNDYxMDc1fDA&ixlib=rb-4.1.0&q=80&w=400",
+      "imageUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8ZmVtYWxlJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzkyNDYxMDU1fDA&ixlib=rb-4.1.0&q=80&w=400",
       "imageHint": "female portrait"
+    },
+    {
+      "id": "bearer-principal",
+      "description": "Professional portrait of the Principal.",
+      "imageUrl": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkb2N0b3IlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjkyNTIzMjF8MA&ixlib=rb-4.1.0&q=80&w=800",
+      "imageHint": "doctor portrait"
+    },
+    {
+      "id": "bearer-vice-principal",
+      "description": "Professional portrait of the Vice Principal.",
+      "imageUrl": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwb3J0cmFpdCUyMHN1cmdlb258ZW58MHx8fHwxNzkyMDIxODQyfDA&ixlib=rb-4.1.0&q=80&w=800",
+      "imageHint": "portrait surgeon"
+    },
+    {
+      "id": "bearer-medical-superintendent",
+      "description": "Professional portrait of the Medical Superintendent.",
+      "imageUrl": "https://images.unsplash.com/photo-1537368910025-700350fe46c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtYWxlJTIwZG9jdG9yfGVufDB8fHx8MTc5MTAyNDkzM3ww&ixlib=rb-4.1.0&q=80&w=800",
+      "imageHint": "male doctor"
     }
   ]
 }

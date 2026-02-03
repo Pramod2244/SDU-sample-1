@@ -69,6 +69,15 @@ const Header = () => {
       ],
     },
     {
+      name: "Office Bearers",
+      href: "/office-bearers/principal",
+      subLinks: [
+        { name: "Principal", href: "/office-bearers/principal" },
+        { name: "Vice Principal", href: "/office-bearers/vice-principal" },
+        { name: "Medical Superintendent", href: "/office-bearers/medical-superintendent" },
+      ],
+    },
+    {
       name: "Admissions & Aid",
       href: "#admissions",
       subLinks: [
