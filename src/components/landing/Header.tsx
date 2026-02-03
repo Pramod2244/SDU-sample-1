@@ -1,5 +1,4 @@
-
-"use client";
+'use client';
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
@@ -78,6 +77,15 @@ const Header = () => {
       ],
     },
     {
+      name: "Academics",
+      href: "/academics/programmes",
+      subLinks: [
+        { name: "Programmes Offered", href: "/academics/programmes" },
+        { name: "Departments", href: "/academics/departments" },
+        { name: "Constituent Colleges", href: "/academics/schools-and-colleges" },
+      ]
+    },
+    {
       name: "Admissions & Aid",
       href: "#admissions",
       subLinks: [
@@ -86,15 +94,6 @@ const Header = () => {
         { name: "Fee Structure", href: "#" },
         { name: "Admission Enquiry", href: "#" },
       ],
-    },
-    {
-      name: "Academics",
-      href: "/academics/programmes",
-      subLinks: [
-        { name: "Programmes Offered", href: "/academics/programmes" },
-        { name: "Constituent Colleges", href: "/academics/schools-and-colleges" },
-        { name: "Departments", href: "/academics/schools-and-colleges" },
-      ]
     },
     { name: "Research", href: "#" },
     { name: "Life at SDUAHER", href: "/life-at-sduaher" },
