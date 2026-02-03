@@ -128,21 +128,21 @@ const Header = () => {
                   key={link.name}
                   href={link.href}
                   className={cn(
-                    "font-medium transition-colors text-lg",
+                    "font-medium transition-colors text-lg focus-visible:outline-none focus-visible:ring-0",
                     isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80"
                   )}
                 >
                   {link.name}
                 </Link>
               ))}
-              <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground">Apply</Button>
+              <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground focus-visible:ring-0 focus-visible:ring-offset-0">Apply</Button>
             </div>
           </div>
         </div>
 
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-20">
-            <Link href="/" className={cn("font-headline text-3xl font-bold transition-colors duration-500", isScrolled ? "text-primary" : "text-white", "hover:text-primary")}>
+            <Link href="/" className={cn("font-headline text-3xl font-bold transition-colors duration-500 focus-visible:outline-none focus-visible:ring-0", isScrolled ? "text-primary" : "text-white", "hover:text-primary")}>
               SDUAHER
             </Link>
             <nav className="hidden lg:flex items-center space-x-1">
@@ -156,23 +156,27 @@ const Header = () => {
                     <DropdownMenuTrigger asChild>
                       <Button
                         variant="ghost"
-                        className={cn("text-lg font-medium px-3 py-2", isScrolled ? "text-foreground hover:bg-transparent hover:text-primary" : "text-white hover:bg-white/10 hover:text-white")}
+                        className={cn(
+                          "text-lg font-medium px-3 py-2 focus-visible:ring-0 focus-visible:ring-offset-0 focus:ring-0 focus:bg-transparent",
+                          isScrolled ? "text-foreground hover:bg-transparent hover:text-primary" : "text-white hover:bg-white/10 hover:text-white",
+                          openMenu === link.name && "text-primary"
+                        )}
                         onMouseEnter={() => handleMouseEnter(link.name)}
                         onMouseLeave={handleMouseLeave}
                       >
                         {link.name}
-                        <ChevronDown className="ml-1 h-4 w-4" />
+                        <ChevronDown className={cn("ml-1 h-4 w-4 transition-transform duration-200", openMenu === link.name && "rotate-180")} />
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent
                       onMouseEnter={() => handleMouseEnter(link.name)}
                       onMouseLeave={handleMouseLeave}
-                      className="relative bg-card border before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-[4px] before:bg-primary"
+                      className="relative bg-card border-none shadow-soft-lg before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-[4px] before:bg-primary min-w-[220px] p-2"
                       sideOffset={14}
                     >
                       {link.subLinks.map((subLink) => (
-                        <DropdownMenuItem key={subLink.name} asChild>
-                          <Link href={subLink.href} className="text-foreground" onClick={() => setOpenMenu(null)}>
+                        <DropdownMenuItem key={subLink.name} asChild className="focus:bg-primary/5 focus:text-primary cursor-pointer rounded-lg">
+                          <Link href={subLink.href} className="text-foreground w-full py-2.5 px-3 font-medium" onClick={() => setOpenMenu(null)}>
                             {subLink.name}
                           </Link>
                         </DropdownMenuItem>
@@ -184,7 +188,7 @@ const Header = () => {
                     key={link.name}
                     href={link.href}
                     className={cn(
-                      "text-lg font-medium transition-colors px-3 py-2 rounded-md",
+                      "text-lg font-medium transition-colors px-3 py-2 rounded-md focus-visible:outline-none focus-visible:ring-0",
                       isScrolled ? "text-foreground hover:text-primary hover:bg-transparent" : "text-white hover:text-white/80 hover:bg-white/10"
                     )}
                     onMouseEnter={() => setOpenMenu(null)}
@@ -193,13 +197,13 @@ const Header = () => {
                   </Link>
                 )
               )}
-               <Button size="icon" variant="ghost" className={cn(isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80", "ml-2")}>
+               <Button size="icon" variant="ghost" className={cn(isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80", "ml-2 focus-visible:ring-0 focus-visible:ring-offset-0")}>
                   <Search className="h-5 w-5"/>
                </Button>
             </nav>
             
             <div className="lg:hidden">
-              <Button onClick={() => setIsMenuOpen(true)} size="icon" variant="ghost" className={cn(isScrolled ? "text-foreground" : "text-white hover:text-white hover:bg-white/10")}>
+              <Button onClick={() => setIsMenuOpen(true)} size="icon" variant="ghost" className={cn(isScrolled ? "text-foreground" : "text-white hover:text-white hover:bg-white/10", "focus-visible:ring-0")}>
                 <Menu />
               </Button>
             </div>
@@ -220,7 +224,7 @@ const Header = () => {
               <Link href="/" className="font-headline text-2xl font-bold text-primary" onClick={() => setIsMenuOpen(false)}>
                 SDUAHER
               </Link>
-              <Button onClick={() => setIsMenuOpen(false)} size="icon" variant="ghost">
+              <Button onClick={() => setIsMenuOpen(false)} size="icon" variant="ghost" className="focus-visible:ring-0">
                 <X />
               </Button>
             </div>
@@ -231,7 +235,7 @@ const Header = () => {
                   {allNavLinksForMobile.map((link) =>
                       link.subLinks ? (
                       <AccordionItem key={link.name} value={link.name} className="border-b">
-                          <AccordionTrigger className="py-4 text-xl font-medium text-foreground hover:text-primary hover:no-underline">
+                          <AccordionTrigger className="py-4 text-xl font-medium text-foreground hover:text-primary hover:no-underline focus-visible:ring-0">
                               {link.name}
                           </AccordionTrigger>
                           <AccordionContent>
@@ -265,8 +269,8 @@ const Header = () => {
             </div>
 
             <div className="p-6 pt-4 border-t flex flex-col space-y-4 flex-shrink-0">
-              <Button size="lg">Apply</Button>
-              <Button size="lg" variant="outline" className="flex items-center gap-2">
+              <Button size="lg" className="focus-visible:ring-0">Apply</Button>
+              <Button size="lg" variant="outline" className="flex items-center gap-2 focus-visible:ring-0">
                 <Search className="h-5 w-5"/> Search
               </Button>
             </div>
