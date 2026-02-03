@@ -25,7 +25,6 @@ const icons: Record<string, any> = {
 
 const DepartmentCard = ({ dept, index }: { dept: any; index: number }) => {
   const Icon = icons[dept.slug] || Stethoscope;
-  const image = PlaceHolderImages.find(img => img.id === dept.heroImageId);
 
   return (
     <motion.div
@@ -35,12 +34,12 @@ const DepartmentCard = ({ dept, index }: { dept: any; index: number }) => {
       transition={{ delay: index * 0.05, duration: 0.5 }}
     >
       <Link href={`/academics/departments/${dept.slug}`}>
-        <Card className="group relative overflow-hidden bg-card border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 h-full">
+        <Card className="group relative overflow-hidden bg-card/80 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 h-full">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
           
           <CardContent className="p-8 flex flex-col h-full relative z-10">
-            <div className="mb-6 h-12 w-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-500">
-              <Icon className="h-6 w-6" />
+            <div className="mb-6 h-14 w-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-500">
+              <Icon className="h-7 w-7" />
             </div>
             
             <h3 className="font-headline text-2xl font-bold text-primary mb-3">{dept.name}</h3>
@@ -63,42 +62,60 @@ const DepartmentCard = ({ dept, index }: { dept: any; index: number }) => {
 };
 
 export default function DepartmentsPage() {
-  const bgTexture = PlaceHolderImages.find(img => img.id === 'page-background-texture');
-
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
       <Header />
       
-      {/* Parallax Background Decorations */}
-      <div className="fixed inset-0 pointer-events-none opacity-20">
+      {/* Dynamic Futuristic Background Decorations */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        {/* Large moving glow blobs */}
         <motion.div 
-          animate={{ rotate: 360 }}
-          transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-[20%] -left-[10%] w-[60%] aspect-square rounded-full border-[100px] border-primary/5 blur-3xl"
+          animate={{ 
+            x: [0, 100, 0],
+            y: [0, -50, 0],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -top-[10%] -left-[5%] w-[50%] aspect-square rounded-full bg-primary/10 blur-[120px]"
         />
         <motion.div 
-          animate={{ rotate: -360 }}
-          transition={{ duration: 150, repeat: Infinity, ease: "linear" }}
-          className="absolute -bottom-[20%] -right-[10%] w-[60%] aspect-square rounded-full border-[100px] border-primary/5 blur-3xl"
+          animate={{ 
+            x: [0, -100, 0],
+            y: [0, 100, 0],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -bottom-[10%] -right-[5%] w-[50%] aspect-square rounded-full bg-primary/10 blur-[120px]"
         />
+        
+        {/* Subtle mesh pattern */}
+        <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/graphy.png')]" />
       </div>
 
-      <main className="relative z-10 pt-32 pb-20">
+      <main className="relative z-10 pt-40 pb-20">
         <div className="container mx-auto px-4">
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
-            className="max-w-3xl mb-20"
+            className="max-w-3xl mb-24"
           >
-            <h1 className="font-headline text-6xl md:text-8xl font-bold text-primary leading-none mb-6">
+            <motion.span 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="text-primary font-bold tracking-[0.3em] uppercase text-sm mb-4 block"
+            >
+              Academic Excellence
+            </motion.span>
+            <h1 className="font-headline text-6xl md:text-8xl font-bold text-primary leading-none mb-8">
               Departments
             </h1>
-            <p className="text-xl text-foreground/60 leading-relaxed max-w-xl">
+            <p className="text-xl md:text-2xl text-foreground/60 leading-relaxed max-w-2xl">
               Excellence across 20+ specialized medical disciplines, blending clinical mastery with groundbreaking academic research.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {departmentsData.map((dept, i) => (
               <DepartmentCard key={dept.slug} dept={dept} index={i} />
             ))}
