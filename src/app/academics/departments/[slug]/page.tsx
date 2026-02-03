@@ -57,7 +57,8 @@ export default function DepartmentDetailPage() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      const yOffset = -100;
+      // Offset calculation: Header (120px) + SubNav (approx 70px) + Buffer
+      const yOffset = -200;
       const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
@@ -103,8 +104,8 @@ export default function DepartmentDetailPage() {
         </div>
       </section>
 
-      {/* Sticky Internal Nav */}
-      <nav className="sticky top-20 z-40 bg-white/80 backdrop-blur-xl border-y border-border hidden lg:block">
+      {/* Sticky Internal Nav - Adjusted top to 120px to match Header height */}
+      <nav className="sticky top-[120px] z-40 bg-white/80 backdrop-blur-xl border-y border-border hidden lg:block">
         <div className="container mx-auto px-4">
           <div className="flex justify-center gap-12">
             {navItems.map((item) => (
@@ -133,7 +134,7 @@ export default function DepartmentDetailPage() {
         <div className="max-w-5xl mx-auto space-y-32">
           
           {/* Overview */}
-          <section id="overview" className="scroll-mt-40 grid md:grid-cols-2 gap-16 items-center">
+          <section id="overview" className="scroll-mt-[220px] grid md:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <h2 className="font-headline text-4xl font-bold text-primary">Overview</h2>
               <p className="text-lg text-foreground/70 leading-relaxed">
@@ -156,7 +157,7 @@ export default function DepartmentDetailPage() {
           </section>
 
           {/* Faculty */}
-          <section id="faculty" className="scroll-mt-40 space-y-12">
+          <section id="faculty" className="scroll-mt-[220px] space-y-12">
             <h2 className="font-headline text-4xl font-bold text-primary">Faculty Members</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {dept.faculty.map((f, i) => {
@@ -180,7 +181,7 @@ export default function DepartmentDetailPage() {
           </section>
 
           {/* Programs */}
-          <section id="programs" className="scroll-mt-40 space-y-12">
+          <section id="programs" className="scroll-mt-[220px] space-y-12">
             <h2 className="font-headline text-4xl font-bold text-primary">Academic Programs</h2>
             <div className="grid md:grid-cols-2 gap-6">
               {dept.programs.map((p, i) => (
@@ -196,7 +197,7 @@ export default function DepartmentDetailPage() {
           </section>
 
           {/* Infrastructure */}
-          <section id="infrastructure" className="scroll-mt-40 space-y-12">
+          <section id="infrastructure" className="scroll-mt-[220px] space-y-12">
             <h2 className="font-headline text-4xl font-bold text-primary">Infrastructure & Facilities</h2>
             <div className="grid md:grid-cols-2 gap-8">
               {dept.infrastructure.map((inf, i) => {
@@ -216,7 +217,7 @@ export default function DepartmentDetailPage() {
           </section>
 
           {/* Research */}
-          <section id="research" className="scroll-mt-40 space-y-12">
+          <section id="research" className="scroll-mt-[220px] space-y-12">
             <h2 className="font-headline text-4xl font-bold text-primary">Research & Publications</h2>
             <div className="space-y-4">
               {dept.research.map((r, i) => (
@@ -231,7 +232,7 @@ export default function DepartmentDetailPage() {
           </section>
 
           {/* Contact */}
-          <section id="contact" className="scroll-mt-40">
+          <section id="contact" className="scroll-mt-[220px]">
             <div className="p-12 bg-primary rounded-[3rem] text-primary-foreground relative overflow-hidden">
               <div className="relative z-10 grid md:grid-cols-2 gap-16 items-center">
                 <div className="space-y-8">
