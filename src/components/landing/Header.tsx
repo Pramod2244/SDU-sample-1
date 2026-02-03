@@ -152,12 +152,13 @@ const Header = () => {
                     key={link.name}
                     open={openMenu === link.name}
                     onOpenChange={(isOpen) => !isOpen && setOpenMenu(null)}
+                    modal={false}
                   >
                     <DropdownMenuTrigger asChild>
                       <Button
                         variant="ghost"
                         className={cn(
-                          "text-lg font-medium px-3 py-2 focus-visible:ring-0 focus-visible:ring-offset-0 focus:ring-0 focus:bg-transparent",
+                          "text-lg font-medium px-3 py-2 outline-none focus-visible:ring-0 focus-visible:ring-offset-0 focus:ring-0 focus:bg-transparent",
                           isScrolled ? "text-foreground hover:bg-transparent hover:text-primary" : "text-white hover:bg-white/10 hover:text-white",
                           openMenu === link.name && "text-primary"
                         )}
@@ -165,13 +166,19 @@ const Header = () => {
                         onMouseLeave={handleMouseLeave}
                       >
                         {link.name}
-                        <ChevronDown className={cn("ml-1 h-4 w-4 transition-transform duration-200", openMenu === link.name && "rotate-180")} />
+                        <motion.div
+                          animate={{ rotate: openMenu === link.name ? 180 : 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="ml-1"
+                        >
+                          <ChevronDown className="h-4 w-4" />
+                        </motion.div>
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent
                       onMouseEnter={() => handleMouseEnter(link.name)}
                       onMouseLeave={handleMouseLeave}
-                      className="relative bg-card border-none shadow-soft-lg before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-[4px] before:bg-primary min-w-[220px] p-2"
+                      className="relative bg-card border-none shadow-soft-lg before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-[4px] before:bg-primary min-w-[220px] p-2 pointer-events-auto"
                       sideOffset={14}
                     >
                       {link.subLinks.map((subLink) => (
