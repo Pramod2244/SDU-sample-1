@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect, useRef } from "react";
@@ -36,7 +37,7 @@ const Header = () => {
   const handleMouseLeave = () => {
     menuTimeout.current = setTimeout(() => {
       setOpenMenu(null);
-    }, 150); // a small delay to allow moving between trigger and content
+    }, 150);
   };
 
   useEffect(() => {
@@ -58,12 +59,13 @@ const Header = () => {
 
   const mainNavLinks = [
     {
-      name: "Who We Are",
-      href: "#about",
+      name: "About Us",
+      href: "/about-us",
       subLinks: [
-        { name: "Overview", href: "#about" },
-        { name: "Vision & Mission", href: "#about" },
-        { name: "Leadership", href: "#" },
+        { name: "SDUMC Overview", href: "/about-us" },
+        { name: "Vision & Mission", href: "/about-us#vision" },
+        { name: "Why choose SDUMC?", href: "/about-us#why-sdumc" },
+        { name: "Campus Gallery", href: "/about-us#gallery" },
       ],
     },
     {
@@ -110,7 +112,6 @@ const Header = () => {
           isScrolled ? "bg-card shadow-md" : "bg-transparent"
         )}
       >
-        {/* Top bar */}
         <div className={cn("hidden lg:block transition-colors border-b", isScrolled ? "bg-secondary/50 border-border" : "bg-transparent border-transparent")}>
           <div className="container mx-auto px-4 flex justify-end items-center h-10">
             <div className="flex items-center space-x-6 text-base">
@@ -130,7 +131,6 @@ const Header = () => {
             </div>
           </div>
         </div>
-
 
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-20">
@@ -206,7 +206,7 @@ const Header = () => {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "tween", ease: "easeInOut", duration: 0.4 }}
-            className="fixed inset-0 z-50 bg-card lg:hidden flex flex-col"
+            className="fixed inset-0 z-[60] bg-card lg:hidden flex flex-col"
           >
             <div className="flex justify-between items-center p-6 flex-shrink-0 border-b">
               <Link href="/" className="font-headline text-2xl font-bold text-primary" onClick={() => setIsMenuOpen(false)}>

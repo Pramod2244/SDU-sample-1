@@ -1,6 +1,48 @@
 {
   "placeholderImages": [
     {
+      "id": "about-hero-bg",
+      "description": "Wide shot of SDUMC campus and hospital at dawn.",
+      "imageUrl": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtZWRpY2FsJTIwY2FtcHVzfGVufDB8fHx8fDE3OTI0NTk5ODd8MA&ixlib=rb-4.1.0&q=80&w=1920",
+      "imageHint": "medical campus"
+    },
+    {
+      "id": "institution-collage-1",
+      "description": "Historical building of Sri Devaraj Urs Educational Trust.",
+      "imageUrl": "https://images.unsplash.com/photo-1562774053-701939374585?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx1bml2ZXJzaXR5JTIwYnVpbGRpbmclMjBpbmRpYW58ZW58MHx8fHwxNzk2OTAxODUxfDA&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageHint": "university building"
+    },
+    {
+      "id": "institution-collage-2",
+      "description": "Students collaborating in a modern medical library.",
+      "imageUrl": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMGxpYnJhcnl8ZW58MHx8fHwxNzkyNDYwMTA2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "medical library"
+    },
+    {
+      "id": "gallery-panoramic",
+      "description": "Panoramic view of SDUMC campus greenery.",
+      "imageUrl": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx1bml2ZXJzaXR5JTIwY2FtcHVzfGVufDB8fHx8fDE3OTI0NTk5ODd8MA&ixlib=rb-4.1.0&q=80&w=1920",
+      "imageHint": "campus panoramic"
+    },
+    {
+      "id": "gallery-lab",
+      "description": "Advanced medical simulation laboratory.",
+      "imageUrl": "https://images.unsplash.com/photo-1532187643623-dbf267341858?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMGxhYnxlbnwwfHx8fDE3OTE5NDQ1Mjd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "medical lab"
+    },
+    {
+      "id": "hospital-clinical",
+      "description": "Surgeons in a high-tech operating theater.",
+      "imageUrl": "https://images.unsplash.com/photo-1551601651-2a8555f1a136?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtZWRpY2luZSUyMGhlcm98ZW58MHx8fHwxNzk2OTAyMDYxfDA&ixlib=rb-4.0.3&q=80&w=1920",
+      "imageHint": "operating theater"
+    },
+    {
+      "id": "map-placeholder",
+      "description": "A clean, modern map showing the Kolar region.",
+      "imageUrl": "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtYXB8ZW58MHx8fHwxNzk2OTA1NTg3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract map"
+    },
+    {
       "id": "hero-background-mobile",
       "description": "A stunning wide shot of a modern university campus at sunset, with students walking.",
       "imageUrl": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx1bml2ZXJzaXR5JTIwY2FtcHVzfGVufDB8fHx8fDE3OTQxMjY1NDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
@@ -171,7 +213,7 @@
     {
       "id": "horizontal-exp-1",
       "description": "Students collaborating in a university club meeting.",
-      "imageUrl": "https://images.unsplash.com/photo-1581568736305-49a04e012c13?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzZWN1cml0eSUyMHxlbnwwfHx8fDE3NjkxNjQzMTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1581568736305-49a04e012c13?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw9fHxzZWN1cml0eSUyMHxlbnwwfHx8fDE3NjkxNjQzMTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "student club"
     },
     {
