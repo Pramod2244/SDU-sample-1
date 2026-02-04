@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useMemo } from 'react';
@@ -22,6 +21,7 @@ import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
 import { motion, AnimatePresence } from 'framer-motion';
 import { format } from 'date-fns';
+import { cn } from '@/lib/utils';
 
 const ITEMS_PER_PAGE = 5;
 
