@@ -1,4 +1,3 @@
-
 'use client';
 
 import { format, isToday, isFuture, isPast } from 'date-fns';
@@ -19,7 +18,7 @@ export default function TimelineRail({ dates, selectedDate, onDateClick }: Timel
     .slice(0, 10); // Show top 10 relevant dates
 
   return (
-    <div className="sticky top-32 space-y-8">
+    <div className="sticky top-[220px] space-y-8">
       <div className="flex items-center justify-between mb-6">
         <h3 className="font-headline text-2xl font-bold text-primary">Timeline</h3>
         <button 
