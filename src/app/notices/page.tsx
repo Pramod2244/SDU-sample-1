@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useMemo } from 'react';
@@ -59,9 +60,9 @@ export default function NoticeBoardPage() {
 
   return (
     <div className="bg-background min-h-screen selection:bg-primary selection:text-white">
-      <Header />
+      <Header transparent={false} />
       
-      <main className="pt-24">
+      <main className="pt-[120px]">
         {/* Urgent Header */}
         <PinnedMarquee notices={pinnedNotices} />
 
@@ -97,7 +98,7 @@ export default function NoticeBoardPage() {
           </div>
         </section>
 
-        {/* Filtering Bar - Adjusted top to 120px to sit below Header */}
+        {/* Filtering Bar */}
         <section className="sticky top-[120px] z-30 bg-white/80 backdrop-blur-xl border-y border-border py-4">
           <div className="container mx-auto px-4">
             <div className="flex flex-wrap items-center justify-between gap-6">

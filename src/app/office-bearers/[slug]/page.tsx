@@ -212,7 +212,7 @@ export default function OfficeBearerPage() {
 
   return (
     <div className="bg-background min-h-screen">
-      <Header />
+      <Header transparent={false} />
       <main>
         <ProfileHero bearer={bearer} />
         <MessageSection bearer={bearer} />

@@ -20,7 +20,11 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const Header = () => {
+interface HeaderProps {
+  transparent?: boolean;
+}
+
+const Header = ({ transparent = true }: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
@@ -49,6 +53,8 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const isHeroMode = transparent && !isScrolled;
 
   const topNavLinks = [
     { name: "Notice Board", href: "/notices" },
@@ -119,10 +125,10 @@ const Header = () => {
         transition={{ duration: 0.5, ease: "easeOut" }}
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-          isScrolled ? "bg-card shadow-md" : "bg-transparent"
+          isHeroMode ? "bg-transparent" : "bg-card shadow-md"
         )}
       >
-        <div className={cn("hidden lg:block transition-colors border-b", isScrolled ? "bg-secondary/50 border-border" : "bg-transparent border-transparent")}>
+        <div className={cn("hidden lg:block transition-colors border-b", isHeroMode ? "bg-transparent border-transparent" : "bg-secondary/50 border-border")}>
           <div className="container mx-auto px-4 flex justify-end items-center h-10">
             <div className="flex items-center space-x-6 text-base">
               {topNavLinks.map((link) => (
@@ -131,7 +137,7 @@ const Header = () => {
                   href={link.href}
                   className={cn(
                     "font-medium transition-colors text-lg focus-visible:outline-none focus-visible:ring-0",
-                    isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80"
+                    isHeroMode ? "text-white hover:text-white/80" : "text-foreground hover:text-primary"
                   )}
                 >
                   {link.name}
@@ -144,10 +150,10 @@ const Header = () => {
 
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-20">
-            <Link href="/" className={cn("font-headline text-3xl font-bold transition-colors duration-500 focus-visible:outline-none focus-visible:ring-0", isScrolled ? "text-primary" : "text-white", "hover:text-primary")}>
+            <Link href="/" className={cn("font-headline text-3xl font-bold transition-colors duration-500 focus-visible:outline-none focus-visible:ring-0", isHeroMode ? "text-white" : "text-primary", "hover:text-primary")}>
               SDUAHER
             </Link>
-            <nav className="hidden lg:flex items-center space-x-1">
+            <nav className="hidden lg:flex items-center space-x-2">
               {mainNavLinks.map((link) =>
                 link.subLinks ? (
                   <DropdownMenu
@@ -161,7 +167,7 @@ const Header = () => {
                         variant="ghost"
                         className={cn(
                           "text-lg font-medium px-3 py-2 outline-none focus-visible:ring-0 focus-visible:ring-offset-0 focus:ring-0 focus:bg-transparent",
-                          isScrolled ? "text-foreground hover:bg-transparent hover:text-primary" : "text-white hover:bg-white/10 hover:text-white",
+                          isHeroMode ? "text-white hover:bg-white/10 hover:text-white" : "text-foreground hover:bg-transparent hover:text-primary",
                           openMenu === link.name && "text-primary"
                         )}
                         onMouseEnter={() => handleMouseEnter(link.name)}
@@ -198,7 +204,7 @@ const Header = () => {
                     href={link.href}
                     className={cn(
                       "text-lg font-medium transition-colors px-3 py-2 rounded-md focus-visible:outline-none focus-visible:ring-0",
-                      isScrolled ? "text-foreground hover:text-primary hover:bg-transparent" : "text-white hover:text-white/80 hover:bg-white/10"
+                      isHeroMode ? "text-white hover:text-white/80 hover:bg-white/10" : "text-foreground hover:text-primary hover:bg-transparent"
                     )}
                     onMouseEnter={() => setOpenMenu(null)}
                   >
@@ -206,13 +212,13 @@ const Header = () => {
                   </Link>
                 )
               )}
-               <Button size="icon" variant="ghost" className={cn(isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80", "ml-2 focus-visible:ring-0 focus-visible:ring-offset-0")}>
+               <Button size="icon" variant="ghost" className={cn(isHeroMode ? "text-white hover:text-white/80" : "text-foreground hover:text-primary", "ml-2 focus-visible:ring-0 focus-visible:ring-offset-0")}>
                   <Search className="h-5 w-5"/>
                </Button>
             </nav>
             
             <div className="lg:hidden">
-              <Button onClick={() => setIsMenuOpen(true)} size="icon" variant="ghost" className={cn(isScrolled ? "text-foreground" : "text-white hover:text-white hover:bg-white/10", "focus-visible:ring-0")}>
+              <Button onClick={() => setIsMenuOpen(true)} size="icon" variant="ghost" className={cn(isHeroMode ? "text-white hover:text-white hover:bg-white/10" : "text-foreground", "focus-visible:ring-0")}>
                 <Menu />
               </Button>
             </div>

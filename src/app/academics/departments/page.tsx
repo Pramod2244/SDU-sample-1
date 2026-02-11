@@ -1,3 +1,4 @@
+
 'use client';
 
 import Header from '@/components/landing/Header';
@@ -64,7 +65,7 @@ const DepartmentCard = ({ dept, index }: { dept: any; index: number }) => {
 export default function DepartmentsPage() {
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
-      <Header />
+      <Header transparent={false} />
       
       {/* Dynamic Futuristic Background Decorations */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
