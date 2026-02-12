@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
@@ -29,11 +28,36 @@ import {
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-// --- Sub-components ---
-
 const ImpactCounter = ({ value, label, icon: Icon }: { value: string, label: string, icon: any }) => {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const targetValue = parseInt(value.replace(/\D/g, ''));
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        let start = 0;
+        const duration = 2000;
+        const increment = targetValue / (duration / 16);
+        const timer = setInterval(() => {
+          start += increment;
+          if (start >= targetValue) {
+            setCount(targetValue);
+            clearInterval(timer);
+          } else {
+            setCount(Math.floor(start));
+          }
+        }, 16);
+      }
+    }, { threshold: 0.5 });
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [targetValue]);
+
   return (
     <motion.div 
+      ref={ref}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -42,7 +66,7 @@ const ImpactCounter = ({ value, label, icon: Icon }: { value: string, label: str
       <div className="h-16 w-16 bg-primary/5 rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
         <Icon className="h-8 w-8" />
       </div>
-      <div className="text-4xl md:text-5xl font-bold text-primary mb-2">{value}</div>
+      <div className="text-4xl md:text-5xl font-bold text-primary mb-2">{count}{value.includes('+') ? '+' : ''}</div>
       <div className="text-sm font-bold uppercase tracking-widest text-foreground/40 text-center">{label}</div>
     </motion.div>
   );
@@ -63,7 +87,6 @@ export default function ResearchCenterPage() {
     <div className="bg-background min-h-screen selection:bg-primary selection:text-white">
       <Header transparent={true} />
       
-      {/* Immersive Magazine Reader Overlay */}
       <AnimatePresence>
         {selectedJournal && (
           <MagazineReader 
@@ -75,16 +98,18 @@ export default function ResearchCenterPage() {
 
       <main>
         {/* Section 1: Cinematic Hero */}
-        <section ref={heroRef} className="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        <section ref={heroRef} className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black">
           <motion.div style={{ scale: heroScale, opacity: heroOpacity }} className="absolute inset-0">
+            {/* Fallback Image */}
             <Image 
-              src={PlaceHolderImages.find(img => img.id === 'research-hero-bg')?.imageUrl || ''} 
+              src={PlaceHolderImages.find(img => img.id === 'research-hero-bg')?.imageUrl || 'https://images.unsplash.com/photo-1579154341569-342c6b3e3aa8?auto=format&fit=crop&q=80&w=1920'} 
               alt="Research Hero" 
               fill 
               className="object-cover"
               priority
             />
-            <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]" />
+            {/* Dark Overlay */}
+            <div className="absolute inset-0 bg-black/50 backdrop-blur-[1px]" />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-background" />
           </motion.div>
 
@@ -125,7 +150,7 @@ export default function ResearchCenterPage() {
         </section>
 
         {/* Section 3 & 4: Research Explorer */}
-        <section className="py-20 lg:py-32">
+        <section id="projects" className="py-20 lg:py-32">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16 space-y-4">
               <h2 className="font-headline text-4xl md:text-6xl font-bold text-primary">Ongoing Research</h2>
@@ -152,7 +177,7 @@ export default function ResearchCenterPage() {
               ))}
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-12">
+            <div className="grid md:grid-cols-2 gap-12">
               <AnimatePresence mode="popLayout">
                 {filteredProjects.map((project, i) => (
                   <motion.div
@@ -162,10 +187,10 @@ export default function ResearchCenterPage() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.9 }}
                     transition={{ delay: i * 0.1 }}
-                    className="group relative overflow-hidden rounded-[2.5rem] bg-white border border-border/50 shadow-soft-lg hover:shadow-2xl transition-all h-[500px]"
+                    className="group relative overflow-hidden rounded-[2.5rem] bg-white border border-border/50 shadow-soft-lg hover:shadow-2xl transition-all h-[500px] cursor-pointer"
                   >
                     <Image 
-                      src={PlaceHolderImages.find(img => img.id === project.imageId)?.imageUrl || ''} 
+                      src={PlaceHolderImages.find(img => img.id === project.imageId)?.imageUrl || 'https://images.unsplash.com/photo-1579154341569-342c6b3e3aa8?auto=format&fit=crop&q=80&w=1080'} 
                       alt={project.title} 
                       fill 
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -199,15 +224,6 @@ export default function ResearchCenterPage() {
               <h2 className="font-headline text-4xl md:text-6xl font-bold">Research Labs</h2>
               <p className="text-white/60 text-lg max-w-xl">World-class infrastructure equipped with high-precision diagnostic and analytical tools.</p>
             </div>
-            <div className="hidden lg:flex gap-4">
-               <div className="h-1 w-24 bg-white/10 rounded-full overflow-hidden">
-                  <motion.div 
-                    className="h-full bg-white"
-                    animate={{ x: [-100, 100] }}
-                    transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
-                  />
-               </div>
-            </div>
           </div>
 
           <div className="flex gap-8 overflow-x-auto px-4 pb-12 no-scrollbar snap-x snap-mandatory">
@@ -219,7 +235,7 @@ export default function ResearchCenterPage() {
             ].map((lab, i) => (
               <div key={i} className="min-w-[300px] md:min-w-[600px] aspect-[4/3] relative rounded-[3rem] overflow-hidden snap-center group">
                 <Image 
-                  src={PlaceHolderImages.find(img => img.id === lab.id)?.imageUrl || ''} 
+                  src={PlaceHolderImages.find(img => img.id === lab.id)?.imageUrl || 'https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&q=80&w=1080'} 
                   alt={lab.title} 
                   fill 
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -238,7 +254,7 @@ export default function ResearchCenterPage() {
         </section>
 
         {/* Section 8: Published Journals (Magazine Style) */}
-        <section className="py-20 lg:py-40 bg-[#fdfaf1]/50">
+        <section id="journals" className="py-20 lg:py-40 bg-[#fdfaf1]/50">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center mb-24 space-y-6">
               <span className="text-primary font-bold uppercase tracking-[0.3em] text-xs">Library & Publications</span>
@@ -256,14 +272,14 @@ export default function ResearchCenterPage() {
                 >
                   <div className="relative aspect-[3/4] rounded-lg shadow-[0_30px_60px_-12px_rgba(0,0,0,0.3)] group-hover:shadow-[0_50px_100px_-20px_rgba(0,0,0,0.4)] transition-all duration-500 overflow-hidden bg-white">
                     <Image 
-                      src={PlaceHolderImages.find(img => img.id === journal.coverImageId)?.imageUrl || ''} 
+                      src={PlaceHolderImages.find(img => img.id === journal.coverImageId)?.imageUrl || 'https://images.unsplash.com/photo-1589330694653-ded6df03f754?auto=format&fit=crop&q=80&w=800'} 
                       alt={journal.title} 
                       fill 
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors" />
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                       <div className="bg-white/90 backdrop-blur-xl text-primary px-8 py-4 rounded-full font-bold uppercase tracking-widest flex items-center gap-3">
+                       <div className="bg-white/90 backdrop-blur-xl text-primary px-8 py-4 rounded-full font-bold uppercase tracking-widest flex items-center gap-3 shadow-xl">
                           <Maximize2 className="h-5 w-5" /> Open Magazine
                        </div>
                     </div>
