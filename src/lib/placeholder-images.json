@@ -291,7 +291,7 @@
     {
       "id": "footer-bg",
       "description": "A fountain on a university campus in the evening.",
-      "imageUrl": "https://images.unsplash.com/photo-1583373834259-46cc92173cb7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOHx8dW5pdmVyc2l0eXxlbnwwfHx8fDE3NjkyNTQyMDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-15833373834259-46cc92173cb7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOHx8dW5pdmVyc2l0eXxlbnwwfHx8fDE3NjkyNTQyMDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "campus fountain dusk"
     },
     {
@@ -417,13 +417,13 @@
     {
       "id": "trustee-11",
       "description": "Trustee member 11.",
-      "imageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8ZmVtYWxlJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzkyNDYxMDU1fDA&ixlib=rb-4.1.0&q=80&w=400",
+      "imageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8ZmVtYWxlJTIwcHJvdG90eXBlfGVufDB8fHx8MTc5MjQ2MTA1NXww&ixlib=rb-4.1.0&q=80&w=400",
       "imageHint": "female portrait"
     },
     {
       "id": "trustee-12",
       "description": "Trustee member 12.",
-      "imageUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8ZmVtYWxlJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzkyNDYxMDU1fDA&ixlib=rb-4.1.0&q=80&w=400",
+      "imageUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8ZmVtYWxlJTIwcHJvdG90eXBlfGVufDB8fHx8MTc5MjQ2MTA1NXww&ixlib=rb-4.1.0&q=80&w=400",
       "imageHint": "female portrait"
     },
     {
@@ -455,6 +455,48 @@
       "description": "Community health camp setup.",
       "imageUrl": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
       "imageHint": "community health"
+    },
+    {
+      "id": "research-hero-bg",
+      "description": "Laboratory scientists working with high-tech equipment.",
+      "imageUrl": "https://images.unsplash.com/photo-1579154341569-342c6b3e3aa8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtZWRpY2FsJTIwcmVzZWFyY2h8ZW58MHx8fHwxNzkxODcyMjA5fDA&ixlib=rb-4.1.0&q=80&w=1920",
+      "imageHint": "research laboratory"
+    },
+    {
+      "id": "journal-cover-1",
+      "description": "Cover of an academic medical journal.",
+      "imageUrl": "https://images.unsplash.com/photo-1589330694653-ded6df03f754?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtZWRpY2FsJTIwam91cm5hbHxlbnwwfHx8fDE3NjkyNTIzMjF8MA&ixlib=rb-4.1.0&q=80&w=800",
+      "imageHint": "medical journal"
+    },
+    {
+      "id": "journal-cover-2",
+      "description": "Cover of an innovation healthcare magazine.",
+      "imageUrl": "https://images.unsplash.com/photo-1505751172107-573225ad4b70?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxoZWFsdGhjYXJlJTIwaW5ub3ZhdGlvbnxlbnwwfHx8fDE3NjkyNTIzMjF8MA&ixlib=rb-4.1.0&q=80&w=800",
+      "imageHint": "healthcare magazine"
+    },
+    {
+      "id": "research-project-1",
+      "description": "Visualizing genomic data.",
+      "imageUrl": "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxnZW5vbWljc3xlbnwwfHx8fDE3NjkyNTIzMjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "genomics research"
+    },
+    {
+      "id": "research-project-2",
+      "description": "Microscopic view of cellular structures.",
+      "imageUrl": "https://images.unsplash.com/photo-1576086213369-97a306d36557?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjZWxsJTIwYmlvbG9neXxlbnwwfHx8fDE3NjkyNTIzMjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cell biology"
+    },
+    {
+      "id": "lab-facility-1",
+      "description": "High-tech molecular biology lab.",
+      "imageUrl": "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxsYWJvcmF0b3J5JTIwZXF1aXBtZW50fGVufDB8fHx8MTc2OTI1MjMyMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "molecular biology"
+    },
+    {
+      "id": "lab-facility-2",
+      "description": "Advanced diagnostic imaging center.",
+      "imageUrl": "https://images.unsplash.com/photo-1516549655169-df83a0774514?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtcmklMjBzY2FufGVufDB8fHx8MTc2OTI1MjMyMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "medical imaging"
     }
   ]
 }

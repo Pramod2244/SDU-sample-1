@@ -58,6 +58,7 @@ const Header = ({ transparent = true }: HeaderProps) => {
 
   const topNavLinks = [
     { name: "Notice Board", href: "/notices" },
+    { name: "Research", href: "/research" },
     { name: "News", href: "#news" },
     { name: "Events", href: "#news" },
     { name: "Visit", href: "#" },
@@ -102,6 +103,7 @@ const Header = ({ transparent = true }: HeaderProps) => {
         { name: "Admission Enquiry", href: "#" },
       ],
     },
+    { name: "Research & Innovation", href: "/research" },
     { name: "News & Notices", href: "/notices" },
     { name: "Life at SDUAHER", href: "/life-at-sduaher" },
     { name: "Be Legendary", href: "/be-legendary" },
@@ -110,6 +112,7 @@ const Header = ({ transparent = true }: HeaderProps) => {
   const allNavLinksForMobile = [
     ...mainNavLinks,
     { name: "Notice Board", href: "/notices"},
+    { name: "Research Hub", href: "/research"},
     { name: "News", href: "#news"},
     { name: "Events", href: "#news"},
     { name: "Visit", href: "#"},
