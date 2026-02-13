@@ -21,7 +21,7 @@
     {
       "id": "gallery-panoramic",
       "description": "Panoramic view of SDUMC campus greenery.",
-      "imageUrl": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx1bml2ZXJzaXR5JTIwY2FtcHVzfGVufDB8fHx8fDE3OTI0NTk5ODd8MA&ixlib=rb-4.1.0&q=80&w=1920",
+      "imageUrl": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHgxbml2ZXJzaXR5JTIwY2FtcHVzfGVufDB8fHx8fDE3OTI0NTk5ODd8MA&ixlib=rb-4.1.0&q=80&w=1920",
       "imageHint": "campus panoramic"
     },
     {
@@ -93,7 +93,7 @@
     {
       "id": "journal-cover-1",
       "description": "Cover of an academic medical journal.",
-      "imageUrl": "https://images.unsplash.com/photo-1589330694653-ded6df03f754?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtZWRpY2FsJTIwam91cm5hbHxlbnwwfHx8fDE3NjkyNTIzMjF8MA&ixlib=rb-4.1.0&q=80&w=800",
+      "imageUrl": "https://images.unsplash.com/photo-1589330694653-ded6df03f754?auto=format&fit=crop&q=80&w=800",
       "imageHint": "medical journal"
     },
     {
@@ -101,6 +101,18 @@
       "description": "Visualizing genomic data.",
       "imageUrl": "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxnZW5vbWljc3xlbnwwfHx8fDE3NjkyNTIzMjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "genomics research"
+    },
+    {
+      "id": "footer-bg",
+      "description": "Wide shot of a prestigious university campus library building.",
+      "imageUrl": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=1920",
+      "imageHint": "university architecture"
+    },
+    {
+      "id": "faculty-dean",
+      "description": "Professional portrait of a medical faculty member.",
+      "imageUrl": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=800",
+      "imageHint": "doctor portrait"
     }
   ]
 }

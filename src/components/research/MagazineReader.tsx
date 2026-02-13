@@ -3,7 +3,7 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ChevronLeft, ChevronRight, Maximize2, Minimize2 } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { JournalIssue } from '@/lib/research-data';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -21,7 +21,7 @@ export default function MagazineReader({ issue, onClose }: MagazineReaderProps) 
   const controlsTimeout = useRef<NodeJS.Timeout | null>(null);
 
   const totalPages = issue.pages.length;
-  // Total spreads
+  // Total spreads (on desktop, we show 2 pages per spread)
   const maxSpreadIndex = isMobile ? totalPages - 1 : Math.ceil(totalPages / 2) - 1;
 
   useEffect(() => {
@@ -73,13 +73,13 @@ export default function MagazineReader({ issue, onClose }: MagazineReaderProps) 
 
     return (
       <div className={cn(
-        "h-full p-8 md:p-12 lg:p-16 flex flex-col bg-[#F7F5EF] relative shadow-inner overflow-hidden select-none transition-all",
+        "h-full p-8 md:p-12 lg:p-16 flex flex-col bg-[#F7F5EF] relative overflow-hidden select-none",
         side === 'left' ? "rounded-l-sm" : "rounded-r-sm"
       )}>
         {/* Spine Shadow */}
         <div className={cn(
           "absolute top-0 bottom-0 w-24 pointer-events-none z-10",
-          side === 'left' ? "right-0 bg-gradient-to-l from-black/[0.03] to-transparent" : "left-0 bg-gradient-to-r from-black/[0.03] to-transparent"
+          side === 'left' ? "right-0 bg-gradient-to-l from-black/[0.05] to-transparent" : "left-0 bg-gradient-to-r from-black/[0.05] to-transparent"
         )} />
 
         {page.type === 'cover' && (
@@ -101,15 +101,15 @@ export default function MagazineReader({ issue, onClose }: MagazineReaderProps) 
         )}
 
         {page.type === 'article' && (
-          <div className="space-y-8">
+          <div className="space-y-8 h-full">
             <h2 className="font-headline text-4xl lg:text-5xl font-bold text-primary leading-tight">{page.title}</h2>
             {page.image && (
-              <div className="relative aspect-[16/10] rounded-sm overflow-hidden shadow-lg grayscale-[0.2] hover:grayscale-0 transition-all duration-700">
+              <div className="relative aspect-[16/10] rounded-sm overflow-hidden shadow-lg">
                 <Image src={page.image} alt={page.title} fill className="object-cover" />
               </div>
             )}
             {page.pullQuote && (
-              <blockquote className="text-2xl italic font-headline text-primary border-l-4 border-primary/20 pl-6 py-2 bg-primary/[0.01] my-4">
+              <blockquote className="text-2xl italic font-headline text-primary border-l-4 border-primary/20 pl-6 py-2 bg-primary/[0.01] my-4 text-center">
                 "{page.pullQuote}"
               </blockquote>
             )}
@@ -147,7 +147,7 @@ export default function MagazineReader({ issue, onClose }: MagazineReaderProps) 
 
         <div className="mt-auto pt-8 flex justify-between items-center text-[10px] font-black uppercase tracking-[0.2em] opacity-30">
           <span>{issue.title}</span>
-          <span>{index + 1}</span>
+          <span>{index + 1} / {issue.pages.length}</span>
         </div>
       </div>
     );
@@ -158,49 +158,40 @@ export default function MagazineReader({ issue, onClose }: MagazineReaderProps) 
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center overflow-hidden"
+      className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-2xl flex flex-col items-center justify-center overflow-hidden"
     >
-      {/* Background Blur Overlay */}
-      <div className="absolute inset-0 z-0 bg-[#F7F5EF]/10 backdrop-blur-2xl" />
-      <div className="absolute inset-0 bg-black/40 z-0" />
-
       {/* Close Button */}
-      <AnimatePresence>
-        {showControls && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="absolute top-8 right-8 z-50"
-          >
-            <Button 
-              variant="ghost" 
-              onClick={onClose} 
-              className="text-white hover:bg-white/10 h-12 w-12 rounded-full backdrop-blur-md"
-            >
-              <X className="h-6 w-6" />
-            </Button>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="absolute top-8 right-8 z-[110]"
+      >
+        <Button 
+          variant="ghost" 
+          onClick={onClose} 
+          className="text-white hover:bg-white/10 h-12 w-12 rounded-full"
+        >
+          <X className="h-6 w-6" />
+        </Button>
+      </motion.div>
 
-      {/* Book Frame */}
-      <div className="relative w-full h-full flex items-center justify-center p-4 md:p-12 lg:p-20 overflow-hidden">
+      {/* Magazine spread container */}
+      <div className="relative w-full h-full flex items-center justify-center p-4 md:p-8 lg:p-12">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentPage}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            initial={{ opacity: 0, scale: 0.95, x: 20 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            exit={{ opacity: 0, scale: 0.95, x: -20 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
             className={cn(
-              "relative grid h-full w-full max-w-[1400px] shadow-[0_40px_100px_-20px_rgba(0,0,0,0.6)] rounded-sm perspective-1000",
+              "relative grid h-full w-full max-w-[1400px] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.7)] rounded-sm",
               isMobile ? "grid-cols-1 max-w-[500px]" : "grid-cols-2"
             )}
           >
-            {/* Center Spine */}
+            {/* Spine */}
             {!isMobile && (
-              <div className="absolute left-1/2 top-0 bottom-0 w-[4px] -translate-x-1/2 bg-black/[0.08] z-20" />
+              <div className="absolute left-1/2 top-0 bottom-0 w-[2px] -translate-x-1/2 bg-black/10 z-20" />
             )}
             
             {isMobile ? (
@@ -218,14 +209,14 @@ export default function MagazineReader({ issue, onClose }: MagazineReaderProps) 
         <div className="absolute inset-0 flex z-30 pointer-events-none">
           <div className="w-1/2 h-full pointer-events-auto cursor-w-resize group" onClick={handlePrev}>
             <div className="absolute left-10 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity">
-              <div className="h-16 w-16 rounded-full bg-black/20 backdrop-blur-xl flex items-center justify-center text-white">
+              <div className="h-16 w-16 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white">
                 <ChevronLeft className="h-8 w-8" />
               </div>
             </div>
           </div>
           <div className="w-1/2 h-full pointer-events-auto cursor-e-resize group" onClick={handleNext}>
             <div className="absolute right-10 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity">
-              <div className="h-16 w-16 rounded-full bg-black/20 backdrop-blur-xl flex items-center justify-center text-white">
+              <div className="h-16 w-16 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white">
                 <ChevronRight className="h-8 w-8" />
               </div>
             </div>
@@ -242,12 +233,12 @@ export default function MagazineReader({ issue, onClose }: MagazineReaderProps) 
             exit={{ y: 50, opacity: 0 }}
             className="absolute bottom-10 left-1/2 -translate-x-1/2 z-50 w-full max-w-sm px-6"
           >
-            <div className="bg-black/40 backdrop-blur-2xl rounded-full px-8 py-4 border border-white/10 shadow-2xl text-center">
+            <div className="bg-white/10 backdrop-blur-xl rounded-full px-8 py-4 border border-white/10 shadow-2xl text-center">
               <div className="flex justify-between text-[10px] font-black uppercase tracking-[0.3em] text-white/60 mb-2">
-                <span>Spread {currentPage + 1} / {maxSpreadIndex + 1}</span>
+                <span>Spread {currentPage + 1} of {maxSpreadIndex + 1}</span>
                 <span className="text-white/80">{issue.year} Review</span>
               </div>
-              <div className="h-0.5 w-full bg-white/10 rounded-full overflow-hidden">
+              <div className="h-0.5 w-full bg-white/5 rounded-full overflow-hidden">
                 <motion.div 
                   className="h-full bg-primary"
                   animate={{ width: `${((currentPage + 1) / (maxSpreadIndex + 1)) * 100}%` }}

@@ -22,12 +22,9 @@ import {
   BookOpen, 
   Globe, 
   Trophy, 
-  Search, 
-  ExternalLink,
   ChevronRight,
   Maximize2
 } from 'lucide-react';
-import { cn } from '@/lib/utils';
 
 const ImpactCounter = ({ value, label, icon: Icon }: { value: string, label: string, icon: any }) => {
   const [count, setCount] = useState(0);
@@ -84,6 +81,8 @@ export default function ResearchCenterPage() {
 
   const filteredProjects = projectsData.filter(p => activeCategory === 'All' || p.category === activeCategory);
 
+  const heroImage = PlaceHolderImages.find(img => img.id === 'research-hero-bg');
+
   return (
     <div className="bg-background min-h-screen selection:bg-primary selection:text-white">
       <Header transparent={true} />
@@ -101,14 +100,17 @@ export default function ResearchCenterPage() {
         {/* Section 1: Cinematic Hero */}
         <section ref={heroRef} className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black">
           <motion.div style={{ scale: heroScale, opacity: heroOpacity }} className="absolute inset-0">
-            <Image 
-              src={PlaceHolderImages.find(img => img.id === 'research-hero-bg')?.imageUrl || 'https://images.unsplash.com/photo-1579154341569-342c6b3e3aa8?auto=format&fit=crop&q=80&w=1920'} 
-              alt="Research Hero" 
-              fill 
-              className="object-cover opacity-60"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-background" />
+            {heroImage && (
+              <Image 
+                src={heroImage.imageUrl} 
+                alt={heroImage.description} 
+                fill 
+                className="object-cover opacity-70"
+                priority
+                data-ai-hint={heroImage.imageHint}
+              />
+            )}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-background" />
           </motion.div>
 
           <div className="relative z-10 text-center px-4 max-w-5xl">
@@ -177,36 +179,42 @@ export default function ResearchCenterPage() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <AnimatePresence mode="popLayout">
-                {filteredProjects.map((project, i) => (
-                  <motion.div
-                    key={project.id}
-                    layout
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, scale: 0.9 }}
-                    transition={{ delay: i * 0.1 }}
-                    className="group relative overflow-hidden rounded-2xl bg-white border border-border/50 shadow-soft-lg hover:shadow-2xl transition-all h-[400px] cursor-pointer"
-                  >
-                    <Image 
-                      src={PlaceHolderImages.find(img => img.id === project.imageId)?.imageUrl || 'https://images.unsplash.com/photo-1579154341569-342c6b3e3aa8?auto=format&fit=crop&q=80&w=1080'} 
-                      alt={project.title} 
-                      fill 
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
-                    
-                    <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                      <span className="text-primary-foreground/60 text-xs font-bold uppercase tracking-widest mb-2 block">{project.category}</span>
-                      <h3 className="font-headline text-2xl font-bold mb-4 leading-tight">{project.title}</h3>
-                      <div className="flex items-center gap-2 mb-4 opacity-80">
-                        <span className="text-xs font-medium">PI: {project.pi}</span>
+                {filteredProjects.map((project, i) => {
+                  const projectImage = PlaceHolderImages.find(img => img.id === project.imageId);
+                  return (
+                    <motion.div
+                      key={project.id}
+                      layout
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, scale: 0.9 }}
+                      transition={{ delay: i * 0.1 }}
+                      className="group relative overflow-hidden rounded-2xl bg-white border border-border/50 shadow-soft-lg hover:shadow-2xl transition-all h-[400px] cursor-pointer"
+                    >
+                      {projectImage && (
+                        <Image 
+                          src={projectImage.imageUrl} 
+                          alt={project.title} 
+                          fill 
+                          className="object-cover transition-transform duration-700 group-hover:scale-110"
+                          data-ai-hint={projectImage.imageHint}
+                        />
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+                      
+                      <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+                        <span className="text-primary-foreground/60 text-xs font-bold uppercase tracking-widest mb-2 block">{project.category}</span>
+                        <h3 className="font-headline text-2xl font-bold mb-4 leading-tight">{project.title}</h3>
+                        <div className="flex items-center gap-2 mb-4 opacity-80">
+                          <span className="text-xs font-medium">PI: {project.pi}</span>
+                        </div>
+                        <Button variant="secondary" size="sm" className="rounded-full px-6 gap-2 group/btn">
+                          View Details <ChevronRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                        </Button>
                       </div>
-                      <Button variant="secondary" size="sm" className="rounded-full px-6 gap-2 group/btn">
-                        View Details <ChevronRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
-                      </Button>
-                    </div>
-                  </motion.div>
-                ))}
+                    </motion.div>
+                  );
+                })}
               </AnimatePresence>
             </div>
           </div>
@@ -222,34 +230,40 @@ export default function ResearchCenterPage() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-16 max-w-5xl mx-auto">
-              {journalsData.map((journal) => (
-                <motion.div
-                  key={journal.id}
-                  whileHover={{ y: -15 }}
-                  className="group cursor-pointer"
-                  onClick={() => setSelectedJournal(journal)}
-                >
-                  <div className="relative aspect-[3/4] rounded-sm shadow-2xl transition-all duration-500 overflow-hidden bg-white">
-                    <Image 
-                      src={PlaceHolderImages.find(img => img.id === journal.coverImageId)?.imageUrl || 'https://images.unsplash.com/photo-1589330694653-ded6df03f754?auto=format&fit=crop&q=80&w=800'} 
-                      alt={journal.title} 
-                      fill 
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors" />
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                       <div className="bg-white/90 backdrop-blur-xl text-primary px-8 py-4 rounded-full font-bold uppercase tracking-widest flex items-center gap-3 shadow-xl">
-                          <Maximize2 className="h-5 w-5" /> Open Magazine
-                       </div>
+              {journalsData.map((journal) => {
+                const coverImage = PlaceHolderImages.find(img => img.id === journal.coverImageId);
+                return (
+                  <motion.div
+                    key={journal.id}
+                    whileHover={{ y: -15 }}
+                    className="group cursor-pointer"
+                    onClick={() => setSelectedJournal(journal)}
+                  >
+                    <div className="relative aspect-[3/4] rounded-sm shadow-2xl transition-all duration-500 overflow-hidden bg-white">
+                      {coverImage && (
+                        <Image 
+                          src={coverImage.imageUrl} 
+                          alt={journal.title} 
+                          fill 
+                          className="object-cover group-hover:scale-105 transition-transform duration-700"
+                          data-ai-hint={coverImage.imageHint}
+                        />
+                      )}
+                      <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors" />
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                         <div className="bg-white/90 backdrop-blur-xl text-primary px-8 py-4 rounded-full font-bold uppercase tracking-widest flex items-center gap-3 shadow-xl">
+                            <Maximize2 className="h-5 w-5" /> Open Magazine
+                         </div>
+                      </div>
                     </div>
-                  </div>
-                  <div className="mt-8 text-center space-y-2">
-                    <h3 className="font-headline text-3xl font-bold text-primary">{journal.title}</h3>
-                    <p className="text-sm font-bold uppercase tracking-widest text-foreground/40">{journal.issueNo}</p>
-                    <p className="text-base text-foreground/60 max-w-sm mx-auto">{journal.summary}</p>
-                  </div>
-                </motion.div>
-              ))}
+                    <div className="mt-8 text-center space-y-2">
+                      <h3 className="font-headline text-3xl font-bold text-primary">{journal.title}</h3>
+                      <p className="text-sm font-bold uppercase tracking-widest text-foreground/40">{journal.issueNo}</p>
+                      <p className="text-base text-foreground/60 max-w-sm mx-auto">{journal.summary}</p>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </section>
